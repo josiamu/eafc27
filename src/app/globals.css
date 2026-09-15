@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --bg: #f3f6f1;
+  --surface: #ffffff;
+  --surface-2: #e7eee3;
+  --fg: #0f1a14;
+  --muted: #4b5b51;
+  --border: #d2dccf;
+  --accent: #1d7440;
+  --accent-fg: #ffffff;
+  --highlight: #c6ef2f;
+  --highlight-fg: #0f1a14;
+  --defender: #e4585d;
+  --star: #b07d00;
+  --pitch: #2e7a44;
+  --pitch-stripe: #2a7040;
+  --pitch-line: rgb(255 255 255 / 0.8);
+  --glyph-bg: #1c2821;
+  --glyph-fg: #f2f6f3;
+  --glyph-ring: rgb(0 0 0 / 0.18);
+  --warn-bg: #fff4d6;
+  --warn-fg: #6b4a00;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0a110d;
+    --surface: #111b15;
+    --surface-2: #19261e;
+    --fg: #e7efe9;
+    --muted: #9cb0a3;
+    --border: #25362c;
+    --accent: #c6ef2f;
+    --accent-fg: #0a110d;
+    --pitch: #1b5530;
+    --pitch-stripe: #184d2b;
+    --glyph-bg: #26352c;
+    --glyph-ring: rgb(255 255 255 / 0.14);
+  --star: #c6ef2f;
+    --warn-bg: #3a2e0c;
+    --warn-fg: #ffd978;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0a110d;
+  --surface: #111b15;
+  --surface-2: #19261e;
+  --fg: #e7efe9;
+  --muted: #9cb0a3;
+  --border: #25362c;
+  --accent: #c6ef2f;
+  --accent-fg: #0a110d;
+  --pitch: #1b5530;
+  --pitch-stripe: #184d2b;
+  --glyph-bg: #26352c;
+  --glyph-ring: rgb(255 255 255 / 0.14);
+  --star: #c6ef2f;
+  --warn-bg: #3a2e0c;
+  --warn-fg: #ffd978;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-highlight: var(--highlight);
+  --color-highlight-fg: var(--highlight-fg);
+  --color-warn-bg: var(--warn-bg);
+  --color-warn-fg: var(--warn-fg);
+  --font-sans: var(--font-body), system-ui, sans-serif;
+  --font-display: var(--font-heading), var(--font-body), system-ui, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

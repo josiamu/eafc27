@@ -1,0 +1,37 @@
+{
+  "slug": "heel-to-heel-flick",
+  "game": "FC26",
+  "name": { "th": "ฮีลทูฮีล (เขี่ยส้นสลับ)", "en": "Heel to Heel Flick" },
+  "summary": {
+    "th": "เขี่ยบอลด้วยส้นเท้าข้างหนึ่งไปอีกข้าง แล้วพาบอลพุ่งไปข้างหน้าพร้อมเร่งความเร็ว",
+    "en": "Flick the ball from one heel to the other and burst forward with extra momentum."
+  },
+  "stars": 3,
+  "difficulty": 2,
+  "contexts": ["jogging", "sprinting"],
+  "situations": [
+    { "th": "มีพื้นที่ว่างข้างหน้าและอยากเร่งผ่านกองหลังด้านข้าง", "en": "There's open space ahead and you want to burst past a defender beside you" }
+  ],
+  "sequence": [
+    { "inputs": [{ "kind": "flick", "stick": "STICK_R", "direction": "up" }] },
+    { "inputs": [{ "kind": "flick", "stick": "STICK_R", "direction": "down" }] }
+  ],
+  "diagram": {
+    "start": { "player": [58, 50], "ball": [62, 50] },
+    "defender": [86, 58],
+    "keyframes": [
+      { "step": 0, "player": [64, 50], "ball": [63, 46] },
+      { "step": 1, "player": [72, 48], "ball": [82, 44] },
+      { "step": 1, "player": [84, 45], "ball": [88, 44] }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-26-skill-moves/",
+    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
+    "https://eafczone.com/ea-fc-skill-moves/"
+  ],
+  "verified": false
+}

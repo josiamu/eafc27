@@ -1,0 +1,11 @@
+export function DataBadge({ label }: { label: string }) {
+  return (
+    <span className="inline-flex items-center gap-1.5 rounded-full bg-warn-bg px-2.5 py-1 text-xs font-medium text-warn-fg">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden>
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 8v5M12 16.5v.5" />
+      </svg>
+      {label}
+    </span>
+  );
+}

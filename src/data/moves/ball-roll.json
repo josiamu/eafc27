@@ -1,0 +1,42 @@
+{
+  "slug": "ball-roll",
+  "game": "FC26",
+  "name": { "th": "ลากบอลด้านข้าง", "en": "Ball Roll" },
+  "summary": {
+    "th": "ค้างอนาล็อกขวาไปด้านข้าง นักเตะใช้ฝ่าเท้าลากบอลหนีแนวแท็กเกิล เปิดมุมจ่ายหรือยิง",
+    "en": "Hold the right stick sideways and the player drags the ball across with the sole, escaping a tackle and opening a passing or shooting angle."
+  },
+  "stars": 2,
+  "difficulty": 1,
+  "contexts": ["standing", "jogging"],
+  "situations": [
+    { "th": "กองหลังพุ่งเข้าแท็กเกิลจากด้านหน้า", "en": "A defender is lunging in from the front" },
+    { "th": "ต้องการขยับบอลออกข้างเพื่อเปิดมุมยิง", "en": "You need to shift the ball sideways to open a shot" }
+  ],
+  "sequence": [
+    {
+      "inputs": [{ "kind": "hold-stick", "stick": "STICK_R", "direction": "right" }],
+      "note": {
+        "th": "ค้างไว้นานเท่าไร นักเตะก็ลากบอลต่อไปเท่านั้น ค้างซ้ายเพื่อลากไปอีกฝั่ง",
+        "en": "The player keeps rolling as long as you hold. Hold left to roll the other way."
+      }
+    }
+  ],
+  "diagram": {
+    "start": { "player": [62, 50], "ball": [66, 50] },
+    "defender": [80, 50],
+    "keyframes": [
+      { "step": 0, "player": [63, 58], "ball": [67, 60] },
+      { "step": 0, "player": [64, 67], "ball": [68, 69] }
+    ]
+  },
+  "playstyles": [],
+  "followUps": ["heel-to-heel-flick"],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-26-skill-moves/",
+    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
+    "https://eafczone.com/ea-fc-skill-moves/"
+  ],
+  "verified": true
+}

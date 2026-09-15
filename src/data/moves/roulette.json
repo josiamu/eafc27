@@ -1,0 +1,41 @@
+{
+  "slug": "roulette",
+  "game": "FC26",
+  "name": { "th": "รูเล็ต (หมุนตัวหลบ)", "en": "Roulette" },
+  "summary": {
+    "th": "นักเตะหมุนตัวรอบบอลโดยใช้ตัวบังไว้ หลบกองหลังที่ยืนขวางตรงหน้า",
+    "en": "The player spins around the ball while shielding it, rolling past a defender standing in front."
+  },
+  "stars": 2,
+  "difficulty": 2,
+  "contexts": ["standing", "jogging"],
+  "situations": [
+    { "th": "กองหลังยืนขวางตรงหน้าและกำลังจะเข้าปะทะ", "en": "A defender is square in front of you and about to challenge" }
+  ],
+  "sequence": [
+    {
+      "inputs": [{ "kind": "rotate", "stick": "STICK_R", "path": ["down", "left", "up", "right"] }],
+      "note": {
+        "th": "แหล่งข้อมูลยังบอกทิศหมุนไม่ตรงกัน รอยืนยันในเกม",
+        "en": "Sources disagree on the rotation; waiting to confirm in game."
+      }
+    }
+  ],
+  "diagram": {
+    "start": { "player": [62, 50], "ball": [66, 50] },
+    "defender": [78, 47],
+    "keyframes": [
+      { "step": 0, "player": [67, 55], "ball": [70, 58] },
+      { "step": 0, "player": [76, 59], "ball": [80, 57] },
+      { "step": 0, "player": [88, 53], "ball": [92, 51] }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-26-skill-moves/",
+    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/"
+  ],
+  "verified": false
+}

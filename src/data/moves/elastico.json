@@ -1,0 +1,43 @@
+{
+  "slug": "elastico",
+  "game": "FC26",
+  "name": { "th": "อีลาสติโก", "en": "Elastico" },
+  "summary": {
+    "th": "แตะบอลออกด้านนอกหลอกกองหลัง แล้วดึงกลับเข้าด้านในทันทีด้วยเท้าข้างเดียว",
+    "en": "Push the ball outside to fool the defender, then snap it back inside with the same foot."
+  },
+  "stars": 5,
+  "difficulty": 3,
+  "contexts": ["standing", "jogging"],
+  "situations": [
+    { "th": "กองหลังยืนรอตรงหน้าและเอนตัวตามบอล", "en": "A defender waits in front of you and leans with the ball" },
+    { "th": "ต้องการตัดเข้าในเพื่อยิงหรือจ่าย", "en": "You want to cut inside to shoot or pass" }
+  ],
+  "sequence": [
+    {
+      "inputs": [{ "kind": "rotate", "stick": "STICK_R", "path": ["right", "down-right", "down", "down-left", "left"] }],
+      "note": {
+        "th": "หมุนครึ่งวงล่างจากขวาไปซ้าย ทำกลับด้านคือจากซ้ายไปขวาจะได้ Reverse Elastico",
+        "en": "Roll along the bottom half from right to left. Going left to right gives the Reverse Elastico."
+      }
+    }
+  ],
+  "diagram": {
+    "start": { "player": [62, 50], "ball": [66, 50] },
+    "defender": [80, 51],
+    "keyframes": [
+      { "step": 0, "player": [64, 52], "ball": [68, 57] },
+      { "step": 0, "player": [68, 47], "ball": [72, 42] },
+      { "step": 0, "player": [84, 41], "ball": [88, 39] }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-26-skill-moves/",
+    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
+    "https://eafczone.com/ea-fc-skill-moves/"
+  ],
+  "verified": true
+}
