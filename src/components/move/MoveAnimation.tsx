@@ -51,8 +51,8 @@ export function MoveAnimation({ move, locale, t }: { move: Move; locale: Locale;
     "inline-flex h-9 min-w-9 items-center justify-center rounded-full border border-border bg-surface px-3 text-sm text-fg hover:bg-surface-2 disabled:opacity-40";
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-border bg-surface">
-      <div className="relative">
+    <div className="grid overflow-hidden rounded-2xl border border-border bg-surface lg:grid-cols-[3fr_2fr]">
+      <div className="relative self-start">
         <PitchDiagram
           player={current.player}
           ball={current.ball}
