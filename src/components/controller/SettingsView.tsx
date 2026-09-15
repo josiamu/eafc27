@@ -16,6 +16,7 @@ import {
 } from "@/controller/store";
 import { fill, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/th";
+import { ControllerDiagram } from "./ControllerDiagram";
 import { GlyphView } from "./GlyphView";
 
 type T = Dictionary["settings"];
@@ -97,6 +98,8 @@ function PresetSection({ settings, locale, t }: { settings: ControllerSettings; 
 }
 
 function CustomizeSection({ settings, t }: { settings: ControllerSettings; t: T }) {
+  const [selected, setSelected] = useState<ButtonId>("FACE_BOTTOM");
+  const glyph = appearance(settings, selected);
   const hasOverrides = Object.keys(settings.overrides).length > 0;
 
   return (
@@ -111,59 +114,67 @@ function CustomizeSection({ settings, t }: { settings: ControllerSettings; t: T 
           </button>
         }
       />
-      <ul className={`divide-y divide-border ${CARD}`}>
-        {BUTTON_IDS.map((id) => {
-          const glyph = appearance(settings, id);
-          return (
-            <li key={id} className="flex flex-wrap items-end gap-3 p-3">
-              <div className="flex min-w-44 flex-1 items-center gap-3 self-center">
-                <GlyphView glyph={glyph} direction={glyph.shape === "stick" ? "up" : undefined} title={glyph.name} />
-                <span className="text-sm">{t.roles[id]}</span>
-              </div>
-              <label className="flex flex-col gap-1 text-xs text-muted">
-                {t.label}
-                <input
-                  className={`${INPUT} w-20`}
-                  value={glyph.label}
-                  maxLength={12}
-                  onChange={(e) => setOverride(id, { label: e.target.value })}
-                />
-              </label>
-              <label className="flex flex-col gap-1 text-xs text-muted">
-                {t.name}
-                <input
-                  className={`${INPUT} w-36`}
-                  value={glyph.name}
-                  maxLength={40}
-                  onChange={(e) => setOverride(id, { name: e.target.value })}
-                />
-              </label>
-              <label className="flex flex-col gap-1 text-xs text-muted">
-                {t.color}
-                <input
-                  type="color"
-                  className="h-9 w-12 cursor-pointer rounded-lg border border-border bg-bg p-1"
-                  value={glyph.color ?? "#f2f6f3"}
-                  onChange={(e) => setOverride(id, { color: e.target.value })}
-                />
-              </label>
-              <label className="flex flex-col gap-1 text-xs text-muted">
-                {t.shape}
-                <select className={INPUT} value={glyph.shape} onChange={(e) => setOverride(id, { shape: e.target.value as GlyphShape })}>
-                  {GLYPH_SHAPES.map((shape) => (
-                    <option key={shape} value={shape}>
-                      {t.shapes[shape]}
-                    </option>
-                  ))}
-                </select>
-              </label>
-              <button type="button" className={SMALL_BUTTON} disabled={!settings.overrides[id]} onClick={() => setOverride(id, undefined)}>
-                {t.reset}
-              </button>
-            </li>
-          );
-        })}
-      </ul>
+
+      <div className={`${CARD} space-y-4 p-3 sm:p-5`}>
+        <ControllerDiagram
+          presetId={settings.presetId}
+          glyphFor={(id) => appearance(settings, id)}
+          roles={t.roles}
+          selected={selected}
+          onSelect={setSelected}
+          label={t.customizeTitle}
+        />
+        <p className="text-center text-xs text-muted">
+          {t.diagramHint}
+          {settings.presetId === "keyboard" && ` ${t.diagramKeyboardNote}`}
+        </p>
+
+        <div className="flex flex-wrap items-end gap-3 border-t border-border pt-4">
+          <div className="flex min-w-48 flex-1 items-center gap-3 self-center" aria-live="polite">
+            <GlyphView glyph={glyph} size="lg" direction={glyph.shape === "stick" ? "up" : undefined} title={glyph.name} />
+            <label className="flex flex-col gap-1 text-xs text-muted">
+              {t.editing}
+              <select className={INPUT} value={selected} onChange={(e) => setSelected(e.target.value as ButtonId)}>
+                {BUTTON_IDS.map((id) => (
+                  <option key={id} value={id}>
+                    {t.roles[id]} · {appearance(settings, id).name}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
+          <label className="flex flex-col gap-1 text-xs text-muted">
+            {t.label}
+            <input className={`${INPUT} w-20`} value={glyph.label} maxLength={12} onChange={(e) => setOverride(selected, { label: e.target.value })} />
+          </label>
+          <label className="flex flex-col gap-1 text-xs text-muted">
+            {t.name}
+            <input className={`${INPUT} w-36`} value={glyph.name} maxLength={40} onChange={(e) => setOverride(selected, { name: e.target.value })} />
+          </label>
+          <label className="flex flex-col gap-1 text-xs text-muted">
+            {t.color}
+            <input
+              type="color"
+              className="h-9 w-12 cursor-pointer rounded-lg border border-border bg-bg p-1"
+              value={glyph.color ?? "#f2f6f3"}
+              onChange={(e) => setOverride(selected, { color: e.target.value })}
+            />
+          </label>
+          <label className="flex flex-col gap-1 text-xs text-muted">
+            {t.shape}
+            <select className={INPUT} value={glyph.shape} onChange={(e) => setOverride(selected, { shape: e.target.value as GlyphShape })}>
+              {GLYPH_SHAPES.map((shape) => (
+                <option key={shape} value={shape}>
+                  {t.shapes[shape]}
+                </option>
+              ))}
+            </select>
+          </label>
+          <button type="button" className={SMALL_BUTTON} disabled={!settings.overrides[selected]} onClick={() => setOverride(selected, undefined)}>
+            {t.reset}
+          </button>
+        </div>
+      </div>
     </section>
   );
 }
