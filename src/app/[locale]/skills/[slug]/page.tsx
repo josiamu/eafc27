@@ -72,8 +72,12 @@ export default async function MovePage({ params }: PageProps<"/[locale]/skills/[
         <section className="space-y-2 rounded-2xl border border-border bg-surface p-4">
           <h2 className="font-display text-lg font-bold">{t.move.details}</h2>
           <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5 text-sm">
-            <dt className="text-muted">{t.move.contextLabel}</dt>
-            <dd>{move.contexts.map((c) => t.move.contexts[c]).join(" · ")}</dd>
+            {move.contexts.length > 0 && (
+              <>
+                <dt className="text-muted">{t.move.contextLabel}</dt>
+                <dd>{move.contexts.map((c) => t.move.contexts[c]).join(" · ")}</dd>
+              </>
+            )}
             <dt className="text-muted">{t.move.difficultyLabel}</dt>
             <dd>{t.move.difficulty[move.difficulty - 1]}</dd>
             {followUps.length > 0 && (

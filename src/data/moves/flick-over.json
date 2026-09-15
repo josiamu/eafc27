@@ -1,0 +1,82 @@
+{
+  "slug": "flick-over",
+  "game": "FC26",
+  "name": {
+    "th": "เขี่ยข้ามหัว",
+    "en": "Flick Over"
+  },
+  "summary": {
+    "th": "เขี่ยบอลลอยข้ามคู่แข่งที่อยู่ตรงหน้า",
+    "en": "Flick the ball over the opponent in front of you."
+  },
+  "stars": 5,
+  "difficulty": 2,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "คู่แข่งพุ่งเข้าสไลด์หรือยืนขวางใกล้มาก",
+      "en": "An opponent slides in or stands very close"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "hold-stick",
+          "stick": "STICK_R",
+          "direction": "up"
+        }
+      ]
+    }
+  ],
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      76,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          62,
+          50
+        ],
+        "ball": [
+          70,
+          50
+        ]
+      },
+      {
+        "step": 0,
+        "player": [
+          82,
+          50
+        ],
+        "ball": [
+          84,
+          50
+        ]
+      }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-26-skill-moves/",
+    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
+    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+  ],
+  "verified": true
+}

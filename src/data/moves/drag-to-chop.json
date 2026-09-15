@@ -1,0 +1,107 @@
+{
+  "slug": "drag-to-chop",
+  "game": "FC26",
+  "name": {
+    "th": "ลากแล้วสับ",
+    "en": "Drag To Chop"
+  },
+  "summary": {
+    "th": "ท่าใหม่ใน FC 26 ลากบอลแล้วสับเปลี่ยนทิศจากท่ายืน",
+    "en": "New in FC 26: drag the ball and chop it the other way from a standing start."
+  },
+  "stars": 4,
+  "difficulty": 3,
+  "contexts": [
+    "standing"
+  ],
+  "situations": [
+    {
+      "th": "ยืนคุมบอลโดยมีกองหลังประกบ",
+      "en": "Standing on the ball with a defender tight"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_L2"
+        },
+        {
+          "kind": "rotate",
+          "stick": "STICK_R",
+          "path": [
+            "left",
+            "down-left",
+            "down",
+            "down-right",
+            "right"
+          ]
+        }
+      ],
+      "note": {
+        "th": "หมุนขวา ลง ซ้าย สำหรับอีกฝั่ง",
+        "en": "Roll right, down, left for the other side."
+      }
+    }
+  ],
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      78,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          60,
+          48
+        ],
+        "ball": [
+          62,
+          46
+        ]
+      },
+      {
+        "step": 0,
+        "player": [
+          62,
+          54
+        ],
+        "ball": [
+          64,
+          58
+        ]
+      },
+      {
+        "step": 0,
+        "player": [
+          68,
+          60
+        ],
+        "ball": [
+          72,
+          62
+        ]
+      }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://insider-gaming.com/all-new-skill-moves-in-ea-fc-26-simplified-skills-explained/",
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+  ],
+  "verified": true
+}

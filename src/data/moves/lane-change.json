@@ -1,0 +1,90 @@
+{
+  "slug": "lane-change",
+  "game": "FC26",
+  "name": {
+    "th": "เปลี่ยนเลน",
+    "en": "Lane Change"
+  },
+  "summary": {
+    "th": "พาบอลเบี่ยงออกด้านข้างเพื่อเปลี่ยนแนววิ่ง",
+    "en": "Shift the ball sideways into a new running lane."
+  },
+  "stars": 4,
+  "difficulty": 1,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "กองหลังปิดแนววิ่งตรงหน้า",
+      "en": "A defender blocks your current lane"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "SHOULDER_L1"
+        },
+        {
+          "kind": "hold-stick",
+          "stick": "STICK_R",
+          "direction": "right"
+        }
+      ],
+      "note": {
+        "th": "ค้างซ้ายเพื่อเปลี่ยนไปอีกฝั่ง",
+        "en": "Hold left to switch the other way."
+      }
+    }
+  ],
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      80,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          66,
+          56
+        ],
+        "ball": [
+          70,
+          58
+        ]
+      },
+      {
+        "step": 0,
+        "player": [
+          76,
+          62
+        ],
+        "ball": [
+          80,
+          64
+        ]
+      }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-26-skill-moves/",
+    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
+    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+  ],
+  "verified": true
+}

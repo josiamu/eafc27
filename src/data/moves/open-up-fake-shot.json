@@ -1,0 +1,121 @@
+{
+  "slug": "open-up-fake-shot",
+  "game": "FC26",
+  "name": {
+    "th": "หลอกยิงแล้วเปิดตัว",
+    "en": "Open Up Fake Shot"
+  },
+  "summary": {
+    "th": "ง้างยิงแล้วยกเลิกทันที พร้อมเปิดตัวพาบอลออกด้านข้างเฉียงไปข้างหน้า",
+    "en": "Shape to shoot, cancel instantly and open your body to carry the ball diagonally forward."
+  },
+  "stars": 1,
+  "difficulty": 2,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "กองหลังรีบยื่นเท้าบล็อกลูกยิง",
+      "en": "A defender lunges to block your shot"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "SHOULDER_L1"
+        },
+        {
+          "kind": "tap",
+          "button": "FACE_RIGHT"
+        }
+      ],
+      "note": {
+        "th": "เริ่มท่ายิง หรือใช้ปุ่มโยนบอลแทนก็ได้",
+        "en": "Start a shot; the cross button works too."
+      }
+    },
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "SHOULDER_L1"
+        },
+        {
+          "kind": "tap",
+          "button": "FACE_BOTTOM"
+        },
+        {
+          "kind": "hold-stick",
+          "stick": "STICK_L",
+          "direction": "up-right"
+        }
+      ],
+      "note": {
+        "th": "กดจ่ายเพื่อยกเลิก แล้วดันอนาล็อกซ้ายไปขวาบน ทำอีกฝั่งดันไปซ้ายบน",
+        "en": "Press pass to cancel, pushing the left stick up-right. Use up-left for the other side."
+      }
+    }
+  ],
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      80,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          63,
+          50
+        ],
+        "ball": [
+          67,
+          50
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          68,
+          56
+        ],
+        "ball": [
+          72,
+          58
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          78,
+          60
+        ],
+        "ball": [
+          82,
+          61
+        ]
+      }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-26-skill-moves/",
+    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
+    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+  ],
+  "verified": true
+}

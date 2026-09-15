@@ -1,39 +1,45 @@
 {
-  "slug": "heel-to-heel-flick",
+  "slug": "ball-roll-and-flick",
   "game": "FC26",
   "name": {
-    "th": "ฮีลทูฮีล (เขี่ยส้นสลับ)",
-    "en": "Heel to Heel Flick"
+    "th": "ลากบอลแล้วเขี่ยไปข้างหน้า",
+    "en": "Ball Roll and Flick"
   },
   "summary": {
-    "th": "เขี่ยบอลด้วยส้นเท้าข้างหนึ่งไปอีกข้าง แล้วพาบอลพุ่งไปข้างหน้าพร้อมเร่งความเร็ว",
-    "en": "Flick the ball from one heel to the other and burst forward with extra momentum."
+    "th": "ขณะวิ่ง ลากบอลออกข้างแล้วเขี่ยไปข้างหน้าต่อทันที",
+    "en": "While running, roll the ball sideways then flick it forward."
   },
-  "stars": 4,
-  "difficulty": 2,
-  "contexts": [],
+  "stars": 5,
+  "difficulty": 3,
+  "contexts": [
+    "running"
+  ],
   "situations": [
     {
-      "th": "มีพื้นที่ว่างข้างหน้าและอยากเร่งผ่านกองหลังด้านข้าง",
-      "en": "There's open space ahead and you want to burst past a defender beside you"
+      "th": "วิ่งพาบอลเข้าหากองหลังและต้องการหลบด้านข้าง",
+      "en": "Running at a defender and wanting to slip past to the side"
     }
   ],
   "sequence": [
     {
       "inputs": [
         {
-          "kind": "flick",
+          "kind": "hold-stick",
           "stick": "STICK_R",
-          "direction": "up"
+          "direction": "right"
         }
-      ]
+      ],
+      "note": {
+        "th": "ค้างซ้ายแล้วปัดขึ้นเพื่อทำอีกฝั่ง",
+        "en": "Hold left then flick up for the other side."
+      }
     },
     {
       "inputs": [
         {
           "kind": "flick",
           "stick": "STICK_R",
-          "direction": "down"
+          "direction": "up"
         }
       ]
     }
@@ -50,41 +56,41 @@
       ]
     },
     "defender": [
-      86,
-      58
+      80,
+      50
     ],
     "keyframes": [
       {
         "step": 0,
         "player": [
           64,
-          50
+          56
         ],
         "ball": [
-          63,
-          46
+          68,
+          58
         ]
       },
       {
         "step": 1,
         "player": [
           72,
-          48
+          58
         ],
         "ball": [
           82,
-          44
+          58
         ]
       },
       {
         "step": 1,
         "player": [
           84,
-          45
+          58
         ],
         "ball": [
           88,
-          44
+          58
         ]
       }
     ]
@@ -96,8 +102,7 @@
     "https://fifauteam.com/fc-26-skill-moves/",
     "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
     "https://www.sportsdunia.com/esports/ea-fc-26-skills",
-    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide",
-    "https://eafczone.com/ea-fc-skill-moves/"
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
   ],
   "verified": true
 }

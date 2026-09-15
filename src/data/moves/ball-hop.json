@@ -1,0 +1,87 @@
+{
+  "slug": "ball-hop",
+  "game": "FC26",
+  "name": {
+    "th": "กระโดดคร่อมบอล",
+    "en": "Ball Hop"
+  },
+  "summary": {
+    "th": "กระโดดคร่อมบอลขณะยืนนิ่ง หลอกให้กองหลังขยับ",
+    "en": "Hop over the ball while standing to make the defender react."
+  },
+  "stars": 4,
+  "difficulty": 1,
+  "contexts": [
+    "standing"
+  ],
+  "situations": [
+    {
+      "th": "ยืนคุมบอลโดยมีกองหลังเฝ้าอยู่",
+      "en": "Holding the ball up with a defender watching"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "SHOULDER_L1"
+        },
+        {
+          "kind": "tap",
+          "button": "STICK_R_PRESS"
+        }
+      ]
+    }
+  ],
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      78,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          63,
+          50
+        ],
+        "ball": [
+          66,
+          50
+        ]
+      },
+      {
+        "step": 0,
+        "player": [
+          64,
+          50
+        ],
+        "ball": [
+          67,
+          50
+        ]
+      }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-26-skill-moves/",
+    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
+    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+  ],
+  "verified": true
+}

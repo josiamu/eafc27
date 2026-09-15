@@ -1,0 +1,112 @@
+{
+  "slug": "hocus-pocus",
+  "game": "FC26",
+  "name": {
+    "th": "โฮคัสโพคัส",
+    "en": "Hocus Pocus"
+  },
+  "summary": {
+    "th": "หลอกด้วยการหมุนบอลหลังขาหลักแล้วพาออกอีกฝั่ง",
+    "en": "Fake one way with a behind-the-leg touch, then take it out the other side."
+  },
+  "stars": 5,
+  "difficulty": 3,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "กองหลังยืนรอและอ่านทางเลี้ยงของคุณ",
+      "en": "A defender is reading your dribble"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "rotate",
+          "stick": "STICK_R",
+          "path": [
+            "down",
+            "down-left",
+            "left"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "kind": "rotate",
+          "stick": "STICK_R",
+          "path": [
+            "left",
+            "down-left",
+            "down",
+            "down-right",
+            "right"
+          ]
+        }
+      ]
+    }
+  ],
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      80,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          63,
+          47
+        ],
+        "ball": [
+          67,
+          45
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          68,
+          55
+        ],
+        "ball": [
+          72,
+          58
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          82,
+          58
+        ],
+        "ball": [
+          86,
+          58
+        ]
+      }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-26-skill-moves/",
+    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
+    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+  ],
+  "verified": true
+}

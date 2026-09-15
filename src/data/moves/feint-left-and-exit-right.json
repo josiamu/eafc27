@@ -1,0 +1,104 @@
+{
+  "slug": "feint-left-and-exit-right",
+  "game": "FC26",
+  "name": {
+    "th": "หลอกซ้ายแล้วออกขวา",
+    "en": "Feint Left and Exit Right"
+  },
+  "summary": {
+    "th": "ขณะวิ่ง หลอกเปลี่ยนทางไปซ้ายแล้วเร่งออกทางขวา",
+    "en": "While running, fake a change to the left and burst out to the right."
+  },
+  "stars": 3,
+  "difficulty": 2,
+  "contexts": [
+    "running"
+  ],
+  "situations": [
+    {
+      "th": "วิ่งพาบอลเข้าหากองหลังด้วยความเร็ว",
+      "en": "Running at a defender with pace"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "rotate",
+          "stick": "STICK_R",
+          "path": [
+            "left",
+            "down-left",
+            "down",
+            "down-right",
+            "right"
+          ]
+        }
+      ],
+      "note": {
+        "th": "แหล่งข้อมูลให้ปุ่มเดียวกับ Fake Left and Go Right หมุนขวาไปซ้ายเพื่อทำอีกฝั่ง",
+        "en": "Sources give the same input as Fake Left and Go Right. Roll right to left for the other side."
+      }
+    }
+  ],
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      82,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          64,
+          47
+        ],
+        "ball": [
+          68,
+          46
+        ]
+      },
+      {
+        "step": 0,
+        "player": [
+          74,
+          56
+        ],
+        "ball": [
+          79,
+          58
+        ]
+      },
+      {
+        "step": 0,
+        "player": [
+          90,
+          57
+        ],
+        "ball": [
+          94,
+          57
+        ]
+      }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-26-skill-moves/",
+    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+  ],
+  "verified": true
+}

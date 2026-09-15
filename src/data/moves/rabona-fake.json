@@ -1,0 +1,123 @@
+{
+  "slug": "rabona-fake",
+  "game": "FC26",
+  "name": {
+    "th": "หลอกยิงราโบน่า",
+    "en": "Rabona Fake"
+  },
+  "summary": {
+    "th": "ง้างเตะแบบไขว้ขาหลังแล้วยกเลิก หลอกให้คู่แข่งพุ่งเข้ามา",
+    "en": "Shape for a rabona behind your standing leg, then cancel to fool the opponent."
+  },
+  "stars": 5,
+  "difficulty": 3,
+  "contexts": [
+    "jogging"
+  ],
+  "situations": [
+    {
+      "th": "คู่แข่งพุ่งเข้าบล็อกลูกยิงหรือครอส",
+      "en": "An opponent lunges to block a shot or cross"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_L2"
+        },
+        {
+          "kind": "tap",
+          "button": "FACE_RIGHT"
+        }
+      ],
+      "note": {
+        "th": "เริ่มท่ายิง หรือใช้ปุ่มโยนบอลแทนก็ได้",
+        "en": "Start a shot; the cross button works too."
+      }
+    },
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_L2"
+        },
+        {
+          "kind": "tap",
+          "button": "FACE_BOTTOM"
+        },
+        {
+          "kind": "hold-stick",
+          "stick": "STICK_L",
+          "direction": "down"
+        }
+      ],
+      "note": {
+        "th": "กดจ่ายเพื่อยกเลิก พร้อมดันอนาล็อกซ้ายลง",
+        "en": "Press pass to cancel while pushing the left stick down."
+      }
+    }
+  ],
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      80,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          65,
+          50
+        ],
+        "ball": [
+          69,
+          50
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          66,
+          54
+        ],
+        "ball": [
+          68,
+          58
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          68,
+          60
+        ],
+        "ball": [
+          70,
+          64
+        ]
+      }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-26-skill-moves/",
+    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
+    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+  ],
+  "verified": true
+}

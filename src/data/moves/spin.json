@@ -1,0 +1,109 @@
+{
+  "slug": "spin",
+  "game": "FC26",
+  "name": {
+    "th": "หมุนตัว",
+    "en": "Spin"
+  },
+  "summary": {
+    "th": "หมุนตัวพาบอลหลบคู่แข่งไปด้านข้าง",
+    "en": "Spin with the ball to roll away from an opponent."
+  },
+  "stars": 4,
+  "difficulty": 3,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "คู่แข่งเข้าประกบจากด้านหน้าเฉียง",
+      "en": "An opponent closes in at an angle"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_L2"
+        },
+        {
+          "kind": "hold",
+          "button": "SHOULDER_R1"
+        },
+        {
+          "kind": "rotate",
+          "stick": "STICK_R",
+          "path": [
+            "down",
+            "down-right",
+            "right"
+          ]
+        }
+      ],
+      "note": {
+        "th": "แหล่งข้อมูลบอกปุ่มที่ต้องค้างไม่ตรงกัน (ไหล่ขวา, ทริกเกอร์ซ้ายกับไหล่ขวา, หรือทริกเกอร์ขวากับไหล่ขวา) และทิศหมุนต่างกัน ยังไม่ยืนยัน",
+        "en": "Sources disagree on the held buttons (right bumper; left trigger + right bumper; or right trigger + right bumper) and on the rotation; not confirmed."
+      }
+    }
+  ],
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      76,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          63,
+          53
+        ],
+        "ball": [
+          66,
+          55
+        ]
+      },
+      {
+        "step": 0,
+        "player": [
+          70,
+          57
+        ],
+        "ball": [
+          74,
+          56
+        ]
+      },
+      {
+        "step": 0,
+        "player": [
+          82,
+          53
+        ],
+        "ball": [
+          86,
+          51
+        ]
+      }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-26-skill-moves/",
+    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
+    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+  ],
+  "verified": false
+}

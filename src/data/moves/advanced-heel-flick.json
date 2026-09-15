@@ -1,0 +1,111 @@
+{
+  "slug": "advanced-heel-flick",
+  "game": "FC26",
+  "name": {
+    "th": "เขี่ยส้นขั้นสูง",
+    "en": "Advanced Heel Flick"
+  },
+  "summary": {
+    "th": "ท่าใหม่ใน FC 26 เขี่ยส้นเท้าแล้วเลือกทิศออกตัวด้วยอนาล็อกซ้าย",
+    "en": "New in FC 26: a heel flick where the left stick picks your exit."
+  },
+  "stars": 4,
+  "difficulty": 3,
+  "contexts": [
+    "jogging"
+  ],
+  "situations": [
+    {
+      "th": "วิ่งเหยาะเข้าหากองหลังและมีพื้นที่ด้านข้าง",
+      "en": "Jogging at a defender with space either side"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "flick",
+          "stick": "STICK_R",
+          "direction": "up"
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "kind": "flick",
+          "stick": "STICK_R",
+          "direction": "down"
+        },
+        {
+          "kind": "hold-stick",
+          "stick": "STICK_L",
+          "direction": "up-right"
+        }
+      ],
+      "note": {
+        "th": "ดันอนาล็อกซ้ายเฉียงซ้าย เฉียงขวา หรือไปข้างหน้า เพื่อเลือกทิศออก",
+        "en": "Push the left stick diagonally left, right or forward to choose the exit."
+      }
+    }
+  ],
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      80,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          64,
+          50
+        ],
+        "ball": [
+          64,
+          50
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          70,
+          54
+        ],
+        "ball": [
+          76,
+          56
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          82,
+          58
+        ],
+        "ball": [
+          86,
+          58
+        ]
+      }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://insider-gaming.com/all-new-skill-moves-in-ea-fc-26-simplified-skills-explained/",
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+  ],
+  "verified": true
+}

@@ -1,0 +1,106 @@
+{
+  "slug": "fake-pass",
+  "game": "FC26",
+  "name": {
+    "th": "หลอกจ่าย",
+    "en": "Fake Pass"
+  },
+  "summary": {
+    "th": "ง้างจ่ายบอลแล้วยกเลิก หลอกให้คู่แข่งขยับ",
+    "en": "Shape to pass, then cancel to make the opponent react."
+  },
+  "stars": 4,
+  "difficulty": 1,
+  "contexts": [
+    "standing"
+  ],
+  "situations": [
+    {
+      "th": "คู่แข่งอ่านทางจ่ายและพร้อมตัดบอล",
+      "en": "An opponent is reading the pass and ready to intercept"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_R2"
+        },
+        {
+          "kind": "tap",
+          "button": "FACE_LEFT"
+        }
+      ],
+      "note": {
+        "th": "กดปุ่มโยนบอล หรือปุ่มยิงแทนก็ได้",
+        "en": "Press cross; the shot button works too."
+      }
+    },
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_R2"
+        },
+        {
+          "kind": "tap",
+          "button": "FACE_BOTTOM"
+        }
+      ],
+      "note": {
+        "th": "กดจ่ายเพื่อยกเลิก",
+        "en": "Press pass to cancel."
+      }
+    }
+  ],
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      78,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          63,
+          50
+        ],
+        "ball": [
+          66,
+          50
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          62,
+          53
+        ],
+        "ball": [
+          64,
+          56
+        ]
+      }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
+    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+  ],
+  "verified": true
+}

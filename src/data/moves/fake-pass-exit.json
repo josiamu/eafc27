@@ -1,0 +1,122 @@
+{
+  "slug": "fake-pass-exit",
+  "game": "FC26",
+  "name": {
+    "th": "หลอกจ่ายแล้วพาบอลออก",
+    "en": "Fake Pass Exit"
+  },
+  "summary": {
+    "th": "หลอกจ่ายแล้วพาบอลออกเฉียงไปข้างหน้าทันที",
+    "en": "Fake a pass and carry the ball out diagonally forward."
+  },
+  "stars": 4,
+  "difficulty": 2,
+  "contexts": [
+    "standing"
+  ],
+  "situations": [
+    {
+      "th": "คู่แข่งขยับตามการหลอกจ่าย",
+      "en": "The opponent bites on the fake pass"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_R2"
+        },
+        {
+          "kind": "tap",
+          "button": "FACE_LEFT"
+        }
+      ],
+      "note": {
+        "th": "กดปุ่มโยนบอล หรือปุ่มยิงแทนก็ได้",
+        "en": "Press cross; the shot button works too."
+      }
+    },
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_R2"
+        },
+        {
+          "kind": "tap",
+          "button": "FACE_BOTTOM"
+        },
+        {
+          "kind": "flick",
+          "stick": "STICK_L",
+          "direction": "up-right"
+        }
+      ],
+      "note": {
+        "th": "กดจ่ายเพื่อยกเลิก พร้อมปัดอนาล็อกซ้ายไปขวาบน ทำอีกฝั่งปัดไปซ้ายบน",
+        "en": "Press pass to cancel while flicking the left stick up-right. Use up-left for the other side."
+      }
+    }
+  ],
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      80,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          63,
+          50
+        ],
+        "ball": [
+          66,
+          50
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          68,
+          56
+        ],
+        "ball": [
+          72,
+          58
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          80,
+          60
+        ],
+        "ball": [
+          84,
+          60
+        ]
+      }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
+    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+  ],
+  "verified": true
+}

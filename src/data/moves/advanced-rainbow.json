@@ -1,0 +1,128 @@
+{
+  "slug": "advanced-rainbow",
+  "game": "FC26",
+  "name": {
+    "th": "เรนโบว์ขั้นสูง",
+    "en": "Advanced Rainbow"
+  },
+  "summary": {
+    "th": "เกี่ยวบอลข้ามศีรษะจากท่ายืน ควบคุมจังหวะได้มากกว่าแบบง่าย",
+    "en": "A standing rainbow flick with more control than the simple version."
+  },
+  "stars": 5,
+  "difficulty": 3,
+  "contexts": [
+    "standing"
+  ],
+  "situations": [
+    {
+      "th": "กองหลังยืนรอตรงหน้าและมีพื้นที่ด้านหลัง",
+      "en": "A defender waits in front with space behind them"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "flick",
+          "stick": "STICK_R",
+          "direction": "down"
+        }
+      ],
+      "note": {
+        "th": "มีหนึ่งแหล่งให้ปัดลงสองครั้งแล้วปัดขึ้น",
+        "en": "One source says flick down twice, then up."
+      }
+    },
+    {
+      "inputs": [
+        {
+          "kind": "hold-stick",
+          "stick": "STICK_R",
+          "direction": "up"
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "kind": "flick",
+          "stick": "STICK_R",
+          "direction": "up"
+        }
+      ]
+    }
+  ],
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      80,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          61,
+          50
+        ],
+        "ball": [
+          63,
+          50
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          63,
+          50
+        ],
+        "ball": [
+          64,
+          50
+        ]
+      },
+      {
+        "step": 2,
+        "player": [
+          74,
+          50
+        ],
+        "ball": [
+          82,
+          50
+        ]
+      },
+      {
+        "step": 2,
+        "player": [
+          88,
+          50
+        ],
+        "ball": [
+          91,
+          50
+        ]
+      }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-26-skill-moves/",
+    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
+    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+  ],
+  "verified": true
+}

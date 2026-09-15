@@ -1,26 +1,30 @@
 {
-  "slug": "heel-to-heel-flick",
+  "slug": "heel-to-ball-roll",
   "game": "FC26",
   "name": {
-    "th": "ฮีลทูฮีล (เขี่ยส้นสลับ)",
-    "en": "Heel to Heel Flick"
+    "th": "เขี่ยส้นแล้วลากบอล",
+    "en": "Heel to Ball Roll"
   },
   "summary": {
-    "th": "เขี่ยบอลด้วยส้นเท้าข้างหนึ่งไปอีกข้าง แล้วพาบอลพุ่งไปข้างหน้าพร้อมเร่งความเร็ว",
-    "en": "Flick the ball from one heel to the other and burst forward with extra momentum."
+    "th": "เขี่ยบอลด้วยส้นเท้าต่อด้วยการลากบอลด้านข้าง",
+    "en": "Heel the ball across, then roll it sideways."
   },
   "stars": 4,
   "difficulty": 2,
   "contexts": [],
   "situations": [
     {
-      "th": "มีพื้นที่ว่างข้างหน้าและอยากเร่งผ่านกองหลังด้านข้าง",
-      "en": "There's open space ahead and you want to burst past a defender beside you"
+      "th": "ต้องการเปลี่ยนทิศเร็วในพื้นที่แคบ",
+      "en": "You need a quick change of direction in a tight space"
     }
   ],
   "sequence": [
     {
       "inputs": [
+        {
+          "kind": "hold",
+          "button": "SHOULDER_L1"
+        },
         {
           "kind": "flick",
           "stick": "STICK_R",
@@ -30,6 +34,10 @@
     },
     {
       "inputs": [
+        {
+          "kind": "hold",
+          "button": "SHOULDER_L1"
+        },
         {
           "kind": "flick",
           "stick": "STICK_R",
@@ -50,8 +58,8 @@
       ]
     },
     "defender": [
-      86,
-      58
+      80,
+      50
     ],
     "keyframes": [
       {
@@ -62,29 +70,29 @@
         ],
         "ball": [
           63,
-          46
+          50
         ]
       },
       {
         "step": 1,
         "player": [
-          72,
-          48
+          64,
+          56
         ],
         "ball": [
-          82,
-          44
+          66,
+          58
         ]
       },
       {
         "step": 1,
         "player": [
-          84,
-          45
+          66,
+          62
         ],
         "ball": [
-          88,
-          44
+          68,
+          64
         ]
       }
     ]
@@ -96,8 +104,7 @@
     "https://fifauteam.com/fc-26-skill-moves/",
     "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
     "https://www.sportsdunia.com/esports/ea-fc-26-skills",
-    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide",
-    "https://eafczone.com/ea-fc-skill-moves/"
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
   ],
   "verified": true
 }

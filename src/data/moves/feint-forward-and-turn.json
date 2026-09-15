@@ -1,21 +1,21 @@
 {
-  "slug": "heel-to-heel-flick",
+  "slug": "feint-forward-and-turn",
   "game": "FC26",
   "name": {
-    "th": "ฮีลทูฮีล (เขี่ยส้นสลับ)",
-    "en": "Heel to Heel Flick"
+    "th": "หลอกไปข้างหน้าแล้วหมุนกลับ",
+    "en": "Feint Forward and Turn"
   },
   "summary": {
-    "th": "เขี่ยบอลด้วยส้นเท้าข้างหนึ่งไปอีกข้าง แล้วพาบอลพุ่งไปข้างหน้าพร้อมเร่งความเร็ว",
-    "en": "Flick the ball from one heel to the other and burst forward with extra momentum."
+    "th": "ทำท่าจะพาบอลไปข้างหน้า แล้วหมุนกลับหลังทันที",
+    "en": "Fake a push forward, then turn back straight away."
   },
-  "stars": 4,
-  "difficulty": 2,
+  "stars": 2,
+  "difficulty": 1,
   "contexts": [],
   "situations": [
     {
-      "th": "มีพื้นที่ว่างข้างหน้าและอยากเร่งผ่านกองหลังด้านข้าง",
-      "en": "There's open space ahead and you want to burst past a defender beside you"
+      "th": "ทางข้างหน้าถูกปิดและต้องการเปลี่ยนเกม",
+      "en": "The way forward is blocked and you want to switch play"
     }
   ],
   "sequence": [
@@ -24,7 +24,7 @@
         {
           "kind": "flick",
           "stick": "STICK_R",
-          "direction": "up"
+          "direction": "down"
         }
       ]
     },
@@ -50,8 +50,8 @@
       ]
     },
     "defender": [
-      86,
-      58
+      80,
+      50
     ],
     "keyframes": [
       {
@@ -61,30 +61,30 @@
           50
         ],
         "ball": [
-          63,
-          46
+          68,
+          50
         ]
       },
       {
         "step": 1,
         "player": [
-          72,
-          48
+          60,
+          50
         ],
         "ball": [
-          82,
-          44
+          58,
+          50
         ]
       },
       {
         "step": 1,
         "player": [
-          84,
-          45
+          52,
+          51
         ],
         "ball": [
-          88,
-          44
+          50,
+          51
         ]
       }
     ]
@@ -96,8 +96,7 @@
     "https://fifauteam.com/fc-26-skill-moves/",
     "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
     "https://www.sportsdunia.com/esports/ea-fc-26-skills",
-    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide",
-    "https://eafczone.com/ea-fc-skill-moves/"
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
   ],
   "verified": true
 }

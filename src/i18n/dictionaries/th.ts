@@ -88,7 +88,7 @@ const th = {
     contexts: {
       standing: "ยืนนิ่ง",
       jogging: "วิ่งเหยาะ",
-      sprinting: "วิ่งเร็ว",
+      running: "วิ่ง",
     } satisfies Record<MoveContext, string>,
   },
   settings: {

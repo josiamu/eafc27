@@ -1,0 +1,122 @@
+{
+  "slug": "tornado-spin",
+  "game": "FC26",
+  "name": {
+    "th": "ทอร์นาโดสปิน",
+    "en": "Tornado Spin"
+  },
+  "summary": {
+    "th": "หมุนตัวเร็วรอบบอลแล้วพาบอลออกด้านข้าง",
+    "en": "Whirl around the ball and take it away to the side."
+  },
+  "stars": 5,
+  "difficulty": 3,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "คู่แข่งประกบจากด้านหน้าเฉียง",
+      "en": "An opponent closes from a front angle"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_L2"
+        },
+        {
+          "kind": "hold",
+          "button": "SHOULDER_R1"
+        },
+        {
+          "kind": "flick",
+          "stick": "STICK_R",
+          "direction": "up"
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_L2"
+        },
+        {
+          "kind": "hold",
+          "button": "SHOULDER_R1"
+        },
+        {
+          "kind": "flick",
+          "stick": "STICK_R",
+          "direction": "left"
+        }
+      ],
+      "note": {
+        "th": "ตามแหล่งข้อมูล ท่านี้ต่างจาก Spin Flick แค่ทิศปัดสุดท้าย มีหนึ่งแหล่งให้ปุ่มค้างต่างออกไป",
+        "en": "Per the sources this differs from the Spin Flick only in the last flick; one source gives different held buttons."
+      }
+    }
+  ],
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      78,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          64,
+          50
+        ],
+        "ball": [
+          65,
+          50
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          66,
+          44
+        ],
+        "ball": [
+          72,
+          40
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          76,
+          38
+        ],
+        "ball": [
+          80,
+          38
+        ]
+      }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-26-skill-moves/",
+    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
+    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+  ],
+  "verified": true
+}

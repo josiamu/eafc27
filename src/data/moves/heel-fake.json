@@ -1,0 +1,114 @@
+{
+  "slug": "heel-fake",
+  "game": "FC26",
+  "name": {
+    "th": "หลอกด้วยส้นเท้า",
+    "en": "Heel Fake"
+  },
+  "summary": {
+    "th": "ใช้ส้นเท้าหลอกดึงบอลซ้ายขวาให้กองหลังเสียหลัก",
+    "en": "Use heel touches left and right to unbalance the defender."
+  },
+  "stars": 5,
+  "difficulty": 3,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "กองหลังยืนรอและยังไม่เข้าปะทะ",
+      "en": "A defender is holding off, not committing"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_L2"
+        },
+        {
+          "kind": "flick",
+          "stick": "STICK_R",
+          "direction": "right"
+        }
+      ],
+      "note": {
+        "th": "หรือปัดซ้ายก่อนแล้วขวา แหล่งข้อมูลให้ปุ่มคล้าย Stutter Feint (3 ดาว)",
+        "en": "Or left then right. Sources list a very similar input for the 3-star Stutter Feint."
+      }
+    },
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_L2"
+        },
+        {
+          "kind": "flick",
+          "stick": "STICK_R",
+          "direction": "left"
+        }
+      ]
+    }
+  ],
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      80,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          63,
+          54
+        ],
+        "ball": [
+          67,
+          55
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          64,
+          46
+        ],
+        "ball": [
+          68,
+          45
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          72,
+          44
+        ],
+        "ball": [
+          76,
+          44
+        ]
+      }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-26-skill-moves/",
+    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
+    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+  ],
+  "verified": true
+}

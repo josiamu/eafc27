@@ -1,0 +1,82 @@
+{
+  "slug": "quick-ball-rolls",
+  "game": "FC26",
+  "name": {
+    "th": "ลากบอลรัว ๆ",
+    "en": "Quick Ball Rolls"
+  },
+  "summary": {
+    "th": "ลากบอลด้วยฝ่าเท้าต่อเนื่องตราบที่ยังค้างอนาล็อก",
+    "en": "Keep rolling the ball with the sole for as long as you hold."
+  },
+  "stars": 4,
+  "difficulty": 1,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "ต้องการถ่วงเวลาและรอเพื่อนวิ่งมาช่วย",
+      "en": "You want to slow play and wait for support"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "hold-stick",
+          "stick": "STICK_R",
+          "direction": "down"
+        }
+      ]
+    }
+  ],
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      78,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          60,
+          51
+        ],
+        "ball": [
+          63,
+          52
+        ]
+      },
+      {
+        "step": 0,
+        "player": [
+          57,
+          50
+        ],
+        "ball": [
+          60,
+          49
+        ]
+      }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-26-skill-moves/",
+    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
+    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+  ],
+  "verified": true
+}

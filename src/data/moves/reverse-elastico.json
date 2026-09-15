@@ -1,0 +1,103 @@
+{
+  "slug": "reverse-elastico",
+  "game": "FC26",
+  "name": {
+    "th": "อีลาสติโกกลับด้าน",
+    "en": "Reverse Elastico"
+  },
+  "summary": {
+    "th": "แตะบอลเข้าด้านในหลอก แล้วดึงออกด้านนอกทันที",
+    "en": "Push the ball inside to fake, then snap it back outside."
+  },
+  "stars": 5,
+  "difficulty": 3,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "กองหลังเอนตัวปิดทางด้านใน",
+      "en": "A defender leans to block the inside"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "rotate",
+          "stick": "STICK_R",
+          "path": [
+            "left",
+            "down-left",
+            "down",
+            "down-right",
+            "right"
+          ]
+        }
+      ],
+      "note": {
+        "th": "แหล่งข้อมูลให้ปุ่มเดียวกับ Fake Left and Go Right ยังไม่ยืนยันว่าเกมเลือกท่าอย่างไร",
+        "en": "Sources give the same input as Fake Left and Go Right; how the game picks isn't confirmed."
+      }
+    }
+  ],
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      80,
+      49
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          64,
+          48
+        ],
+        "ball": [
+          68,
+          43
+        ]
+      },
+      {
+        "step": 0,
+        "player": [
+          68,
+          53
+        ],
+        "ball": [
+          72,
+          58
+        ]
+      },
+      {
+        "step": 0,
+        "player": [
+          84,
+          59
+        ],
+        "ball": [
+          88,
+          61
+        ]
+      }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-26-skill-moves/",
+    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
+    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+  ],
+  "verified": true
+}

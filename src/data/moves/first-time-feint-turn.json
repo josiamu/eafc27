@@ -1,21 +1,21 @@
 {
-  "slug": "directional-nutmeg",
+  "slug": "first-time-feint-turn",
   "game": "FC26",
   "name": {
-    "th": "ลอดขาแบบกำหนดทิศ",
-    "en": "Directional Nutmeg"
+    "th": "หลอกรับบอลแล้วหมุนกลับ",
+    "en": "First Time Feint Turn"
   },
   "summary": {
-    "th": "ค้างปุ่มไหล่ทั้งสองแล้วปัดอนาล็อกขวา ส่งบอลลอดขากองหลังที่ยืนขวาง แล้ววิ่งอ้อมไปรับ",
-    "en": "Hold both bumpers and flick the right stick to slip the ball through a defender's legs, then run around to collect it."
+    "th": "ตอนบอลมาถึง หลอกว่าจะรับแล้วหมุนตัวพาบอลกลับทางเดิม",
+    "en": "As the pass arrives, fake the control and turn back the way you came."
   },
   "stars": 1,
-  "difficulty": 1,
+  "difficulty": 2,
   "contexts": [],
   "situations": [
     {
-      "th": "กองหลังยืนขวางตรงหน้าในระยะประชิด",
-      "en": "A defender stands square in front of you at close range"
+      "th": "รับบอลโดยมีคู่แข่งประกบจากด้านหน้า",
+      "en": "Receiving a pass with an opponent closing from the front"
     }
   ],
   "sequence": [
@@ -31,13 +31,13 @@
         },
         {
           "kind": "flick",
-          "stick": "STICK_R",
-          "direction": "up"
+          "stick": "STICK_L",
+          "direction": "down"
         }
       ],
       "note": {
-        "th": "ปัดไปทิศที่อยากส่งบอล ตัวอย่างนี้ปัดไปข้างหน้า",
-        "en": "Flick toward where you want the ball to go; this example goes forward."
+        "th": "ทำตอนบอลกำลังมาถึงตัว",
+        "en": "Do it as the ball arrives."
       }
     }
   ],
@@ -53,30 +53,30 @@
       ]
     },
     "defender": [
-      80,
+      74,
       50
     ],
     "keyframes": [
       {
         "step": 0,
         "player": [
-          72,
-          62
+          60,
+          50
         ],
         "ball": [
-          88,
-          50
+          62,
+          52
         ]
       },
       {
         "step": 0,
         "player": [
-          92,
-          53
+          52,
+          52
         ],
         "ball": [
-          95,
-          50
+          50,
+          53
         ]
       }
     ]

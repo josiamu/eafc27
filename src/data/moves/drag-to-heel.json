@@ -1,0 +1,114 @@
+{
+  "slug": "drag-to-heel",
+  "game": "FC26",
+  "name": {
+    "th": "ลากบอลเข้าส้น",
+    "en": "Drag to Heel"
+  },
+  "summary": {
+    "th": "ดึงบอลถอยแล้วส่งผ่านหลังส้นเท้าออกด้านข้าง",
+    "en": "Drag the ball back and push it behind your standing leg to the side."
+  },
+  "stars": 4,
+  "difficulty": 2,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "กองหลังเข้าปะทะจากด้านหน้า",
+      "en": "A defender steps in from the front"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "SHOULDER_L1"
+        },
+        {
+          "kind": "flick",
+          "stick": "STICK_R",
+          "direction": "down"
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "SHOULDER_L1"
+        },
+        {
+          "kind": "flick",
+          "stick": "STICK_R",
+          "direction": "right"
+        }
+      ],
+      "note": {
+        "th": "ปัดซ้ายเพื่อทำอีกฝั่ง มีหนึ่งแหล่งให้ปัดขึ้นในขั้นแรก",
+        "en": "Flick left for the other side. One source says flick up in the first step."
+      }
+    }
+  ],
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      78,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          60,
+          50
+        ],
+        "ball": [
+          62,
+          50
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          62,
+          56
+        ],
+        "ball": [
+          64,
+          60
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          70,
+          60
+        ],
+        "ball": [
+          74,
+          62
+        ]
+      }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-26-skill-moves/",
+    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
+    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+  ],
+  "verified": true
+}

@@ -1,0 +1,85 @@
+{
+  "slug": "body-feint",
+  "game": "FC26",
+  "name": {
+    "th": "โยกตัวหลอก",
+    "en": "Body Feint"
+  },
+  "summary": {
+    "th": "เอนตัวหลอกไปด้านหนึ่งให้กองหลังเสียจังหวะ แล้วพาบอลไปอีกทาง",
+    "en": "Dip your body one way to unbalance the defender, then carry on the other."
+  },
+  "stars": 2,
+  "difficulty": 1,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "กองหลังยืนรอและกำลังจะเข้าปะทะ",
+      "en": "A defender is waiting to step in"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "flick",
+          "stick": "STICK_R",
+          "direction": "right"
+        }
+      ],
+      "note": {
+        "th": "ปัดซ้ายเพื่อหลอกอีกฝั่ง",
+        "en": "Flick left to feint the other way."
+      }
+    }
+  ],
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      80,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          63,
+          55
+        ],
+        "ball": [
+          67,
+          53
+        ]
+      },
+      {
+        "step": 0,
+        "player": [
+          68,
+          47
+        ],
+        "ball": [
+          72,
+          46
+        ]
+      }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
+    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+  ],
+  "verified": true
+}

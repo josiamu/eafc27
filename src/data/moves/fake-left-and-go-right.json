@@ -1,0 +1,103 @@
+{
+  "slug": "fake-left-and-go-right",
+  "game": "FC26",
+  "name": {
+    "th": "หลอกซ้ายแล้วไปขวา",
+    "en": "Fake Left and Go Right"
+  },
+  "summary": {
+    "th": "ทำท่าจะพาบอลไปทางซ้าย แล้วตัดกลับไปทางขวา",
+    "en": "Shape to go left, then cut back to the right."
+  },
+  "stars": 3,
+  "difficulty": 2,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "กองหลังเอนตัวตามทิศที่คุณหลอก",
+      "en": "The defender leans the way you fake"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "rotate",
+          "stick": "STICK_R",
+          "path": [
+            "left",
+            "down-left",
+            "down",
+            "down-right",
+            "right"
+          ]
+        }
+      ],
+      "note": {
+        "th": "แหล่งข้อมูลให้ปุ่มเดียวกับ Reverse Elastico และ Feint Left & Exit Right ยังไม่ยืนยันว่าเกมเลือกท่าอย่างไร หมุนขวาไปซ้ายเพื่อทำอีกฝั่ง",
+        "en": "Sources give the same input as the Reverse Elastico and Feint Left & Exit Right; how the game picks isn't confirmed. Roll right to left for the other side."
+      }
+    }
+  ],
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      80,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          63,
+          46
+        ],
+        "ball": [
+          67,
+          45
+        ]
+      },
+      {
+        "step": 0,
+        "player": [
+          68,
+          55
+        ],
+        "ball": [
+          72,
+          57
+        ]
+      },
+      {
+        "step": 0,
+        "player": [
+          80,
+          58
+        ],
+        "ball": [
+          84,
+          58
+        ]
+      }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-26-skill-moves/",
+    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
+    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+  ],
+  "verified": true
+}

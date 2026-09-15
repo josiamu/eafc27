@@ -1,21 +1,21 @@
 {
-  "slug": "heel-to-heel-flick",
+  "slug": "stop-and-turn",
   "game": "FC26",
   "name": {
-    "th": "ฮีลทูฮีล (เขี่ยส้นสลับ)",
-    "en": "Heel to Heel Flick"
+    "th": "หยุดบอลแล้วหมุนตัว",
+    "en": "Stop and Turn"
   },
   "summary": {
-    "th": "เขี่ยบอลด้วยส้นเท้าข้างหนึ่งไปอีกข้าง แล้วพาบอลพุ่งไปข้างหน้าพร้อมเร่งความเร็ว",
-    "en": "Flick the ball from one heel to the other and burst forward with extra momentum."
+    "th": "หยุดบอลกะทันหันแล้วหมุนตัวไปด้านข้าง",
+    "en": "Stop the ball dead and turn to the side."
   },
   "stars": 4,
   "difficulty": 2,
   "contexts": [],
   "situations": [
     {
-      "th": "มีพื้นที่ว่างข้างหน้าและอยากเร่งผ่านกองหลังด้านข้าง",
-      "en": "There's open space ahead and you want to burst past a defender beside you"
+      "th": "ต้องการหยุดเกมแล้วเปลี่ยนทิศ",
+      "en": "You want to kill your momentum and change direction"
     }
   ],
   "sequence": [
@@ -33,9 +33,13 @@
         {
           "kind": "flick",
           "stick": "STICK_R",
-          "direction": "down"
+          "direction": "right"
         }
-      ]
+      ],
+      "note": {
+        "th": "แหล่งข้อมูลให้ปุ่มเดียวกับ Turn and Spin (5 ดาว) และบอกไม่ตรงกันว่าทำขณะยืนหรือวิ่ง ปัดซ้ายเพื่อหมุนอีกฝั่ง",
+        "en": "Sources give the same input as the 5-star Turn and Spin and disagree on standing vs running. Flick left to turn the other way."
+      }
     }
   ],
   "diagram": {
@@ -50,8 +54,8 @@
       ]
     },
     "defender": [
-      86,
-      58
+      78,
+      50
     ],
     "keyframes": [
       {
@@ -61,30 +65,30 @@
           50
         ],
         "ball": [
-          63,
-          46
+          65,
+          50
         ]
       },
       {
         "step": 1,
         "player": [
-          72,
-          48
+          64,
+          53
         ],
         "ball": [
-          82,
-          44
+          64,
+          57
         ]
       },
       {
         "step": 1,
         "player": [
-          84,
-          45
+          62,
+          60
         ],
         "ball": [
-          88,
-          44
+          62,
+          64
         ]
       }
     ]
@@ -96,8 +100,7 @@
     "https://fifauteam.com/fc-26-skill-moves/",
     "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
     "https://www.sportsdunia.com/esports/ea-fc-26-skills",
-    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide",
-    "https://eafczone.com/ea-fc-skill-moves/"
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
   ],
   "verified": true
 }

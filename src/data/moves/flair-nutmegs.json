@@ -1,0 +1,92 @@
+{
+  "slug": "flair-nutmegs",
+  "game": "FC26",
+  "name": {
+    "th": "ลอดขาแบบโชว์",
+    "en": "Flair Nutmegs"
+  },
+  "summary": {
+    "th": "ลอดขากองหลังด้วยท่าที่มีลีลามากขึ้น",
+    "en": "A flashier way to nutmeg a defender."
+  },
+  "stars": 4,
+  "difficulty": 2,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "กองหลังยืนแยกขาอยู่ตรงหน้า",
+      "en": "A defender stands in front with legs apart"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "SHOULDER_L1"
+        },
+        {
+          "kind": "hold",
+          "button": "SHOULDER_R1"
+        },
+        {
+          "kind": "flick",
+          "stick": "STICK_R",
+          "direction": "up"
+        }
+      ],
+      "note": {
+        "th": "ปัดทิศไหนก็ได้ แหล่งข้อมูลให้ปุ่มแทบเหมือน Directional Nutmeg",
+        "en": "Flick in any direction. Sources list nearly the same input as the Directional Nutmeg."
+      }
+    }
+  ],
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      80,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          72,
+          62
+        ],
+        "ball": [
+          88,
+          50
+        ]
+      },
+      {
+        "step": 0,
+        "player": [
+          92,
+          53
+        ],
+        "ball": [
+          95,
+          50
+        ]
+      }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-26-skill-moves/",
+    "https://www.sportsdunia.com/esports/ea-fc-26-skills"
+  ],
+  "verified": true
+}

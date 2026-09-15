@@ -1,0 +1,90 @@
+{
+  "slug": "reverse-stepover",
+  "game": "FC26",
+  "name": {
+    "th": "ข้ามบอลกลับด้าน",
+    "en": "Reverse Stepover"
+  },
+  "summary": {
+    "th": "ข้ามบอลจากด้านนอกเข้าใน หลอกกองหลังให้เดาทางผิด",
+    "en": "Step over the ball from outside in, sending the defender the wrong way."
+  },
+  "stars": 2,
+  "difficulty": 1,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "เผชิญหน้ากองหลังแบบตัวต่อตัว",
+      "en": "One-on-one with a defender"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "rotate",
+          "stick": "STICK_R",
+          "path": [
+            "right",
+            "up-right",
+            "up"
+          ]
+        }
+      ],
+      "note": {
+        "th": "หมุนจากซ้ายขึ้นบนเพื่อทำอีกฝั่ง",
+        "en": "Roll from left to up for the other side."
+      }
+    }
+  ],
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      80,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          63,
+          48
+        ],
+        "ball": [
+          67,
+          50
+        ]
+      },
+      {
+        "step": 0,
+        "player": [
+          70,
+          56
+        ],
+        "ball": [
+          74,
+          55
+        ]
+      }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-26-skill-moves/",
+    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
+    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+  ],
+  "verified": true
+}

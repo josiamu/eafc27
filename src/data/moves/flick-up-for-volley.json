@@ -1,0 +1,77 @@
+{
+  "slug": "flick-up-for-volley",
+  "game": "FC26",
+  "name": {
+    "th": "เขี่ยบอลขึ้นยิงวอลเลย์",
+    "en": "Flick Up for Volley"
+  },
+  "summary": {
+    "th": "เขี่ยบอลลอยขึ้นตรงหน้า เตรียมยิงหรือเปิดบอลกลางอากาศ",
+    "en": "Flick the ball up in front of you, ready to volley it."
+  },
+  "stars": 1,
+  "difficulty": 1,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "มีจังหวะว่างหน้าประตูและอยากยิงลูกลอย",
+      "en": "You have a moment of space near goal and want to volley"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "tap",
+          "button": "STICK_R_PRESS"
+        }
+      ]
+    }
+  ],
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          62,
+          50
+        ],
+        "ball": [
+          65,
+          49
+        ]
+      },
+      {
+        "step": 0,
+        "player": [
+          63,
+          50
+        ],
+        "ball": [
+          66,
+          50
+        ]
+      }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-26-skill-moves/",
+    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
+    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+  ],
+  "verified": true
+}

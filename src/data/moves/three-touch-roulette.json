@@ -1,21 +1,21 @@
 {
-  "slug": "directional-nutmeg",
+  "slug": "three-touch-roulette",
   "game": "FC26",
   "name": {
-    "th": "ลอดขาแบบกำหนดทิศ",
-    "en": "Directional Nutmeg"
+    "th": "รูเล็ตสามจังหวะ",
+    "en": "Three Touch Roulette"
   },
   "summary": {
-    "th": "ค้างปุ่มไหล่ทั้งสองแล้วปัดอนาล็อกขวา ส่งบอลลอดขากองหลังที่ยืนขวาง แล้ววิ่งอ้อมไปรับ",
-    "en": "Hold both bumpers and flick the right stick to slip the ball through a defender's legs, then run around to collect it."
+    "th": "หมุนตัวแบบรูเล็ตโดยแตะบอลสามครั้ง",
+    "en": "A roulette-style spin using three touches."
   },
-  "stars": 1,
-  "difficulty": 1,
+  "stars": 4,
+  "difficulty": 2,
   "contexts": [],
   "situations": [
     {
       "th": "กองหลังยืนขวางตรงหน้าในระยะประชิด",
-      "en": "A defender stands square in front of you at close range"
+      "en": "A defender is square in front at close range"
     }
   ],
   "sequence": [
@@ -23,21 +23,30 @@
       "inputs": [
         {
           "kind": "hold",
-          "button": "SHOULDER_L1"
-        },
-        {
-          "kind": "hold",
-          "button": "SHOULDER_R1"
+          "button": "TRIGGER_L2"
         },
         {
           "kind": "flick",
           "stick": "STICK_R",
-          "direction": "up"
+          "direction": "down"
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_L2"
+        },
+        {
+          "kind": "flick",
+          "stick": "STICK_R",
+          "direction": "right"
         }
       ],
       "note": {
-        "th": "ปัดไปทิศที่อยากส่งบอล ตัวอย่างนี้ปัดไปข้างหน้า",
-        "en": "Flick toward where you want the ball to go; this example goes forward."
+        "th": "ปัดซ้ายเพื่อหมุนอีกฝั่ง",
+        "en": "Flick left to spin the other way."
       }
     }
   ],
@@ -53,30 +62,41 @@
       ]
     },
     "defender": [
-      80,
+      76,
       50
     ],
     "keyframes": [
       {
         "step": 0,
         "player": [
-          72,
-          62
-        ],
-        "ball": [
-          88,
-          50
-        ]
-      },
-      {
-        "step": 0,
-        "player": [
-          92,
+          62,
           53
         ],
         "ball": [
-          95,
-          50
+          64,
+          55
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          68,
+          58
+        ],
+        "ball": [
+          72,
+          58
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          80,
+          56
+        ],
+        "ball": [
+          84,
+          55
         ]
       }
     ]

@@ -1,0 +1,112 @@
+{
+  "slug": "triple-elastico",
+  "game": "FC26",
+  "name": {
+    "th": "ทริปเปิลอีลาสติโก",
+    "en": "Triple Elastico"
+  },
+  "summary": {
+    "th": "อีลาสติโกที่มีจังหวะหลอกเพิ่ม ทำให้กองหลังเดายากขึ้น",
+    "en": "An elastico with an extra fake touch, harder for defenders to read."
+  },
+  "stars": 5,
+  "difficulty": 3,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "กองหลังรู้ทันอีลาสติโกธรรมดา",
+      "en": "The defender is wise to the normal elastico"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "rotate",
+          "stick": "STICK_R",
+          "path": [
+            "down",
+            "down-right",
+            "right"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "kind": "rotate",
+          "stick": "STICK_R",
+          "path": [
+            "right",
+            "down-right",
+            "down",
+            "down-left",
+            "left"
+          ]
+        }
+      ]
+    }
+  ],
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      80,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          63,
+          53
+        ],
+        "ball": [
+          67,
+          56
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          68,
+          46
+        ],
+        "ball": [
+          72,
+          42
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          82,
+          42
+        ],
+        "ball": [
+          86,
+          41
+        ]
+      }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-26-skill-moves/",
+    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
+    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+  ],
+  "verified": true
+}

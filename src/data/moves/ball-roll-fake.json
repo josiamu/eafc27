@@ -1,0 +1,106 @@
+{
+  "slug": "ball-roll-fake",
+  "game": "FC26",
+  "name": {
+    "th": "ลากบอลหลอก",
+    "en": "Ball Roll Fake"
+  },
+  "summary": {
+    "th": "ทำท่าจะลากบอลไปด้านหนึ่ง แล้วเปลี่ยนไปอีกด้านทันที",
+    "en": "Start a ball roll one way and switch to the other instantly."
+  },
+  "stars": 5,
+  "difficulty": 3,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "กองหลังตามการลากบอลของคุณ",
+      "en": "The defender follows your ball roll"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "hold-stick",
+          "stick": "STICK_R",
+          "direction": "right"
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "kind": "flick",
+          "stick": "STICK_R",
+          "direction": "left"
+        }
+      ],
+      "note": {
+        "th": "ทำอีกฝั่งค้างซ้ายแล้วปัดขวา มีหนึ่งแหล่งให้ทิศปัดต่างออกไป",
+        "en": "For the other side hold left, then flick right. One source gives a different flick."
+      }
+    }
+  ],
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      80,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          63,
+          56
+        ],
+        "ball": [
+          67,
+          58
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          64,
+          50
+        ],
+        "ball": [
+          68,
+          48
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          72,
+          46
+        ],
+        "ball": [
+          76,
+          45
+        ]
+      }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-26-skill-moves/",
+    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
+    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+  ],
+  "verified": true
+}

@@ -1,0 +1,111 @@
+{
+  "slug": "elastico-chop",
+  "game": "FC26",
+  "name": {
+    "th": "อีลาสติโกสับ",
+    "en": "Elastico Chop"
+  },
+  "summary": {
+    "th": "อีลาสติโกที่จบด้วยการสับบอลเปลี่ยนทิศแรง ๆ",
+    "en": "An elastico that finishes with a hard chop of the ball."
+  },
+  "stars": 5,
+  "difficulty": 3,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "กองหลังยืนรอตรงหน้าในระยะประชิด",
+      "en": "A defender waits in front at close range"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_L2"
+        },
+        {
+          "kind": "hold",
+          "button": "SHOULDER_R1"
+        },
+        {
+          "kind": "rotate",
+          "stick": "STICK_R",
+          "path": [
+            "left",
+            "down-left",
+            "down",
+            "down-right",
+            "right"
+          ]
+        }
+      ],
+      "note": {
+        "th": "หมุนจากขวาไปซ้ายเพื่อทำอีกฝั่ง มีหนึ่งแหล่งให้ปุ่มต่างออกไป",
+        "en": "Roll right to left for the other side. One source gives a different input."
+      }
+    }
+  ],
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      78,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          63,
+          46
+        ],
+        "ball": [
+          66,
+          44
+        ]
+      },
+      {
+        "step": 0,
+        "player": [
+          64,
+          54
+        ],
+        "ball": [
+          66,
+          58
+        ]
+      },
+      {
+        "step": 0,
+        "player": [
+          66,
+          60
+        ],
+        "ball": [
+          68,
+          64
+        ]
+      }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-26-skill-moves/",
+    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
+    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+  ],
+  "verified": true
+}

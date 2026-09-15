@@ -1,0 +1,90 @@
+{
+  "slug": "stepover",
+  "game": "FC26",
+  "name": {
+    "th": "ข้ามบอล (สเต็ปโอเวอร์)",
+    "en": "Stepover"
+  },
+  "summary": {
+    "th": "ยกเท้าข้ามบอลหลอกกองหลัง เปิดทางให้พาบอลออก",
+    "en": "Step over the ball to fool the defender and open a lane."
+  },
+  "stars": 2,
+  "difficulty": 1,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "เผชิญหน้ากองหลังแบบตัวต่อตัว",
+      "en": "One-on-one with a defender"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "rotate",
+          "stick": "STICK_R",
+          "path": [
+            "up",
+            "up-right",
+            "right"
+          ]
+        }
+      ],
+      "note": {
+        "th": "หมุนจากบนไปซ้ายเพื่อทำอีกฝั่ง",
+        "en": "Roll from up to left for the other side."
+      }
+    }
+  ],
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      80,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          63,
+          52
+        ],
+        "ball": [
+          67,
+          50
+        ]
+      },
+      {
+        "step": 0,
+        "player": [
+          70,
+          44
+        ],
+        "ball": [
+          74,
+          45
+        ]
+      }
+    ]
+  },
+  "playstyles": [],
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-26-skill-moves/",
+    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
+    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
+    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+  ],
+  "verified": true
+}

@@ -86,7 +86,7 @@ const en: Dictionary = {
     contexts: {
       standing: "Standing",
       jogging: "Jogging",
-      sprinting: "Sprinting",
+      running: "Running",
     },
   },
   settings: {

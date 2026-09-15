@@ -22,7 +22,7 @@ const step = z.object({ inputs: z.array(input).min(1), note: localized.optional(
 
 const keyframe = z.object({ step: z.number().int().min(0), player: point, ball: point }).strict();
 
-export const MOVE_CONTEXTS = ["standing", "jogging", "sprinting"] as const;
+export const MOVE_CONTEXTS = ["standing", "jogging", "running"] as const;
 
 export const moveSchema = z
   .object({
@@ -32,7 +32,8 @@ export const moveSchema = z
     summary: localized,
     stars: z.number().int().min(1).max(5),
     difficulty: z.number().int().min(1).max(3),
-    contexts: z.array(z.enum(MOVE_CONTEXTS)).min(1),
+    /** Only what a source states; empty when no source says. */
+    contexts: z.array(z.enum(MOVE_CONTEXTS)),
     situations: z.array(localized).min(1),
     sequence: z.array(step).min(1),
     diagram: z
