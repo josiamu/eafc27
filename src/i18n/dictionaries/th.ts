@@ -5,7 +5,7 @@ import type { InputKind, MoveContext } from "@/data/schema";
 const th = {
   meta: {
     title: "EAFC Skill Hub",
-    description: "สอนสกิลมูฟและเพลย์สไตล์ EA FC แสดงปุ่มตามจอยที่คุณถืออยู่จริง",
+    description: "สอนสกิลมูฟ EA FC แสดงปุ่มตามจอยที่คุณถืออยู่จริง",
   },
   skipToContent: "ข้ามไปที่เนื้อหา",
   nav: {
@@ -24,7 +24,7 @@ const th = {
   },
   dataBadge: "ข้อมูลอ้างอิง EA FC 26",
   home: {
-    eyebrow: "สกิลมูฟ · เพลย์สไตล์",
+    eyebrow: "สกิลมูฟ EA FC",
     title: "เรียนท่าเลี้ยงบอล ด้วยปุ่มของจอยคุณเอง",
     lead: "เลือกจอยที่ใช้ครั้งเดียว ทุกท่าในเว็บจะแสดงปุ่มตามนั้น ทั้ง PlayStation, Xbox และ Nintendo Switch",
     ctaSettings: "เลือกจอยของฉัน",

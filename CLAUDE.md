@@ -2,7 +2,7 @@
 
 # EAFC Skill Hub
 
-Bilingual (th default, en) static site teaching EA FC skill moves and PlayStyles. Plan and progress: `PLAN.md`.
+Bilingual (th default, en) static site teaching EA FC skill moves. Plan and progress: `PLAN.md`.
 
 ## Commands
 

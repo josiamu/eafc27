@@ -33,7 +33,7 @@ Copy the shape of an existing file (e.g. `elastico.json`) rather than writing fr
 - `name`, `summary`, `situations`, notes: natural Thai **and** English. Thai may keep the common English name in parentheses.
 - `difficulty` 1–3 is about execution timing, independent of stars.
 - `diagram`: pitch x 0–160 (attacking right), y 0–100 (player's right side = larger y). Start near player `[62,50]`, ball `[66,50]`, add a `defender` when the move beats one. Give every step ≥1 keyframe, keyframes in step order, keep motion plausible (a few units per touch, not across the pitch).
-- `followUps`: only slugs that exist. `playstyles`: leave `[]` until PlayStyle data exists.
+- `followUps`: only slugs that exist.
 - `video`: `null` unless you have a YouTube link.
 
 ## 4. Prove it

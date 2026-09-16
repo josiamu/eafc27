@@ -51,7 +51,6 @@ export const moveSchema = z
         keyframes: z.array(keyframe).min(1),
       })
       .strict(),
-    playstyles: z.array(z.string()),
     followUps: z.array(z.string()),
     video: z.url().nullable(),
     sources: z.array(z.url()).min(1),

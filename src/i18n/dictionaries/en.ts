@@ -3,7 +3,7 @@ import type { Dictionary } from "./th";
 const en: Dictionary = {
   meta: {
     title: "EAFC Skill Hub",
-    description: "Learn EA FC skill moves and PlayStyles with the buttons of the controller you actually hold",
+    description: "Learn EA FC skill moves with the buttons of the controller you actually hold",
   },
   skipToContent: "Skip to content",
   nav: {
@@ -22,7 +22,7 @@ const en: Dictionary = {
   },
   dataBadge: "Data based on EA FC 26",
   home: {
-    eyebrow: "Skill moves · PlayStyles",
+    eyebrow: "EA FC skill moves",
     title: "Learn skill moves with your own controller's buttons",
     lead: "Pick your controller once and every move on the site shows matching buttons — PlayStation, Xbox or Nintendo Switch.",
     ctaSettings: "Pick my controller",
