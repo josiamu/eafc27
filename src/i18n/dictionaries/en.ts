@@ -39,6 +39,15 @@ const en: Dictionary = {
     title: "Sample moves",
     lead: "A trial set to test the system before every move is added. Pick a move to see its inputs and animation.",
     starsGroup: "{n}-star moves",
+    filters: {
+      search: "Search moves",
+      searchPlaceholder: "Type a move name, e.g. elastico",
+      stars: "Star rating",
+      difficulty: "Difficulty",
+      clear: "Clear filters",
+      results: "{n} of {total} moves",
+      empty: "No moves match these filters. Try removing one.",
+    },
   },
   move: {
     back: "All sample moves",
