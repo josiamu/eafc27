@@ -131,6 +131,8 @@ const th = {
     bindPress: "กดจากจอย",
     bindListening: "กดปุ่มบนจอยได้เลย (Esc เพื่อยกเลิก)",
     bindUnsupported: "เบราว์เซอร์นี้อ่านจอยไม่ได้ เลือกปุ่มจากรายการแทนได้",
+    attackLabel: "บุก",
+    defendLabel: "รับ",
     padNone: "ยังไม่พบจอย เสียบหรือจับคู่จอย แล้วกดปุ่มใดก็ได้หนึ่งครั้ง",
     padFound: "พบจอย: {id}",
     suggest: "ดูเหมือนเป็นจอย {name}",
@@ -155,6 +157,23 @@ const th = {
       STICK_L: "อนาล็อกซ้าย",
       STICK_R: "อนาล็อกขวา",
     } satisfies Record<ButtonId, string>,
+    /**
+     * หน้าที่ของแต่ละปุ่มในคอนฟิก Classic ของ EA FC
+     * ใส่เฉพาะปุ่มที่แหล่งอ้างอิงสองแหล่งตรงกัน ปุ่มที่ไม่มีในนี้จะถอยไปใช้ชื่อตำแหน่งใน roles
+     * แหล่ง: fifplay.com/fc-26-controls, eafczone.com/ea-fc-controls
+     */
+    actions: {
+      FACE_BOTTOM: { attack: "จ่ายบอลเรียด", defend: "ประกบ" },
+      FACE_RIGHT: { attack: "ยิง" },
+      FACE_LEFT: { attack: "บอลโด่ง / ครอส", defend: "สไลด์" },
+      FACE_TOP: { attack: "ทะลุช่อง" },
+      SHOULDER_L1: { attack: "ชิพช็อต", defend: "สลับตัวผู้เล่น" },
+      SHOULDER_R1: { attack: "ยิงโค้ง", defend: "ให้เพื่อนเข้าประกบ" },
+      TRIGGER_L2: { defend: "ยืนกั้น" },
+      TRIGGER_R2: { attack: "วิ่ง" },
+      STICK_L: { attack: "บังคับทิศ" },
+      STICK_R: { attack: "สกิลมูฟ" },
+    },
   },
   footer: {
     note: "เว็บแฟนเมด ไม่เกี่ยวข้องกับ EA SPORTS ข้อมูลอาจต่างจากในเกมได้",

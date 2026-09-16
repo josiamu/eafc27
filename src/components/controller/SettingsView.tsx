@@ -92,6 +92,21 @@ function PresetSection({ settings, locale, t }: { settings: ControllerSettings; 
   );
 }
 
+type ActionPair = { attack?: string; defend?: string };
+
+/**
+ * What the button does in game, as "บุก: จ่ายบอลเรียด · รับ: ประกบ".
+ * Falls back to the physical name for buttons no source covers, such as Menu and the D-pad.
+ */
+function actionText(t: T, id: ButtonId): string {
+  const action = (t.actions as Partial<Record<ButtonId, ActionPair>>)[id];
+  const parts = [
+    action?.attack && `${t.attackLabel}: ${action.attack}`,
+    action?.defend && `${t.defendLabel}: ${action.defend}`,
+  ].filter((part) => typeof part === "string");
+  return parts.length > 0 ? parts.join(" · ") : t.roles[id];
+}
+
 function CustomizeSection({ settings, t }: { settings: ControllerSettings; t: T }) {
   const [selected, setSelected] = useState<ButtonId>("FACE_BOTTOM");
   const glyph = appearance(settings, selected);
@@ -115,6 +130,8 @@ function CustomizeSection({ settings, t }: { settings: ControllerSettings; t: T 
           presetId={settings.presetId}
           glyphFor={(id) => appearance(settings, id)}
           roles={t.roles}
+          actions={t.actions}
+          labels={{ attack: t.attackLabel, defend: t.defendLabel }}
           selected={selected}
           onSelect={setSelected}
           label={t.customizeTitle}
@@ -129,7 +146,7 @@ function CustomizeSection({ settings, t }: { settings: ControllerSettings; t: T 
               <select className={INPUT} value={selected} onChange={(e) => setSelected(e.target.value as ButtonId)}>
                 {BUTTON_IDS.map((id) => (
                   <option key={id} value={id}>
-                    {t.roles[id]} · {appearance(settings, id).name}
+                    {actionText(t, id)} · {appearance(settings, id).name}
                   </option>
                 ))}
               </select>
@@ -288,14 +305,14 @@ function BindSection({ settings, locale, t }: { settings: ControllerSettings; lo
             <li key={guide} className="flex flex-wrap items-center gap-3 p-3">
               <div className="flex w-52 items-center gap-2">
                 <GlyphView glyph={guideGlyph} title={guideGlyph.name} />
-                <span className="text-sm">{t.roles[guide]}</span>
+                <span className="text-sm">{actionText(t, guide)}</span>
               </div>
               <span aria-hidden className="text-muted">
                 →
               </span>
               <GlyphView glyph={actualGlyph} active={isListening || physical !== guide} title={actualGlyph.name} />
               <label className="sr-only" htmlFor={`bind-${guide}`}>
-                {t.bindActual}: {t.roles[guide]}
+                {t.bindActual}: {actionText(t, guide)}
               </label>
               <select
                 id={`bind-${guide}`}

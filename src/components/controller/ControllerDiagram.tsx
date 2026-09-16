@@ -67,6 +67,9 @@ type Props = {
   presetId: PresetId;
   glyphFor: (id: ButtonId) => Glyph;
   roles: Record<ButtonId, string>;
+  /** What each button does in game. Buttons with no entry fall back to their `roles` name. */
+  actions: Partial<Record<ButtonId, { attack?: string; defend?: string }>>;
+  labels: { attack: string; defend: string };
   selected: ButtonId;
   onSelect: (id: ButtonId) => void;
   label: string;
@@ -87,7 +90,7 @@ export function ControllerDiagram(props: Props) {
   );
 }
 
-function Controller({ presetId, glyphFor, roles, selected, onSelect, callouts }: Props & { callouts: boolean }) {
+function Controller({ presetId, glyphFor, roles, actions, labels, selected, onSelect, callouts }: Props & { callouts: boolean }) {
   const positions = LAYOUTS[presetId];
 
   const pressable = (id: ButtonId) => ({
@@ -121,6 +124,7 @@ function Controller({ presetId, glyphFor, roles, selected, onSelect, callouts }:
             const elbow = isLeft ? edge + 26 : edge - 26;
             const active = selected === id;
             const glyph = glyphFor(id);
+            const action = actions[id];
             return (
               <g key={id}>
                 <polyline
@@ -141,12 +145,18 @@ function Controller({ presetId, glyphFor, roles, selected, onSelect, callouts }:
                       stroke={active ? "var(--accent)" : "var(--border)"}
                       strokeWidth={active ? 3 : 1.5}
                     />
-                    <text x="14" y="19" fontSize="16" fontWeight="600" fill="var(--fg)">
+                    {/* Three lines at most: the box is 44 high and clips, so the type stays small. */}
+                    <text x="14" y="17" fontSize="15" fontWeight="600" fill="var(--fg)">
                       {glyph.name}
                     </text>
-                    <text x="14" y="36" fontSize="12" fill="var(--muted)">
-                      {roles[id]}
+                    <text x="14" y="30" fontSize="11" fill="var(--muted)">
+                      {action?.attack ? `${labels.attack}: ${action.attack}` : roles[id]}
                     </text>
+                    {action?.defend && (
+                      <text x="14" y="41" fontSize="11" fill="var(--muted)">
+                        {labels.defend}: {action.defend}
+                      </text>
+                    )}
                   </svg>
                 </g>
               </g>
