@@ -30,7 +30,7 @@ export function ThemeToggle({ labels }: { labels: Record<ThemeChoice, string> & 
     <button
       type="button"
       onClick={() => themeStore.set(next)}
-      className="inline-flex h-9 items-center gap-1.5 rounded-full border border-border bg-surface px-3 text-sm text-fg hover:bg-surface-2"
+      className="inline-flex h-9 items-center gap-1.5 rounded-full border border-control bg-surface px-3 text-sm text-fg hover:bg-surface-2"
       aria-label={`${labels.theme}: ${labels[theme]}`}
       title={`${labels.theme}: ${labels[theme]}`}
     >

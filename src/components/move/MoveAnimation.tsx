@@ -51,7 +51,7 @@ export function MoveAnimation({ move, locale, t }: { move: Move; locale: Locale;
   };
 
   const control =
-    "inline-flex h-9 min-w-9 items-center justify-center rounded-full border border-border bg-surface px-3 text-sm text-fg hover:bg-surface-2 disabled:opacity-40";
+    "inline-flex h-9 min-w-9 items-center justify-center rounded-full border border-control bg-surface px-3 text-sm text-fg hover:bg-surface-2 disabled:opacity-40";
 
   return (
     // The pitch is portrait now, so it takes the narrower column and the inputs get the room.
@@ -102,7 +102,7 @@ export function MoveAnimation({ move, locale, t }: { move: Move; locale: Locale;
             {frame < 0 ? t.start : fill(t.step, { n: activeStep + 1 })}
           </span>
 
-          <div role="group" aria-label={t.speed} className="ml-auto inline-flex rounded-full border border-border p-0.5">
+          <div role="group" aria-label={t.speed} className="ml-auto inline-flex rounded-full border border-control p-0.5">
             {SPEEDS.map((s) => (
               <button
                 key={s}

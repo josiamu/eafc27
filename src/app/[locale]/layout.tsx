@@ -5,6 +5,8 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { isLocale, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
+import { pageMetadata } from "@/lib/metadata";
+import { SITE_URL } from "@/lib/site";
 import { themeInitScript } from "@/lib/theme";
 import "../globals.css";
 
@@ -22,8 +24,10 @@ export async function generateMetadata({ params }: LayoutProps<"/[locale]">): Pr
   if (!isLocale(locale)) return {};
   const t = getDictionary(locale);
   return {
+    // The home page's metadata; every other page replaces it with its own.
+    ...pageMetadata(locale, "", { description: t.meta.description }),
+    metadataBase: SITE_URL,
     title: { default: t.meta.title, template: `%s · ${t.meta.title}` },
-    description: t.meta.description,
   };
 }
 
@@ -48,7 +52,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
         <main id="main" className="mx-auto w-full max-w-5xl flex-1 px-4 py-8 sm:px-6">
           {children}
         </main>
-        <SiteFooter t={t} />
+        <SiteFooter locale={locale} t={t} />
       </body>
     </html>
   );

@@ -22,7 +22,7 @@ const PRIMARY_BUTTON =
   "inline-flex h-11 items-center rounded-full bg-accent px-5 text-base font-semibold text-accent-fg transition hover:brightness-110 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2";
 /** Stopping is not what a reader came to do, so it steps back while practice is running. */
 const QUIET_BUTTON =
-  "inline-flex h-11 items-center rounded-full border border-border px-5 text-base font-medium transition hover:border-accent focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2";
+  "inline-flex h-11 items-center rounded-full border border-control px-5 text-base font-medium transition hover:border-accent focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2";
 
 export function MoveTrainer({ move, locale, t }: { move: Move; locale: Locale; t: Dictionary["move"] }) {
   const settings = useControllerSettings();

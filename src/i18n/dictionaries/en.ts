@@ -8,8 +8,9 @@ const en: Dictionary = {
   skipToContent: "Skip to content",
   nav: {
     home: "Home",
-    skills: "Sample moves",
+    skills: "Skill moves",
     settings: "Controller",
+    about: "About the data",
     main: "Main menu",
   },
   header: {
@@ -26,7 +27,7 @@ const en: Dictionary = {
     title: "Learn skill moves with your own controller's buttons",
     lead: "Pick your controller once and every move on the site shows matching buttons — PlayStation, Xbox or Nintendo Switch.",
     ctaSettings: "Pick my controller",
-    ctaSkills: "See sample moves",
+    ctaSkills: "Browse all moves",
     previewTitle: "Buttons for the controller selected now",
     previewNote: "Switch controllers in the menu above and these buttons change instantly.",
     steps: [
@@ -36,8 +37,8 @@ const en: Dictionary = {
     ],
   },
   skills: {
-    title: "Sample moves",
-    lead: "A trial set to test the system before every move is added. Pick a move to see its inputs and animation.",
+    title: "Skill moves",
+    lead: "Every move, grouped by star rating. Pick one to see its inputs, watch it play out, and try it on a real controller.",
     starsGroup: "{n}-star moves",
     filters: {
       search: "Search moves",
@@ -50,7 +51,7 @@ const en: Dictionary = {
     },
   },
   move: {
-    back: "All sample moves",
+    back: "All skill moves",
     stars: "{n} stars",
     watch: "Watch it step by step",
     when: "When to use it",
@@ -182,6 +183,26 @@ const en: Dictionary = {
       STICK_L: { attack: "Move player" },
       STICK_R: { attack: "Skill moves" },
     },
+  },
+  about: {
+    title: "About the data",
+    lead: "Where every move's buttons and star rating come from, how they are checked, and where to report a mistake.",
+    versionTitle: "Which game",
+    versionBody:
+      "The data was first checked against EA FC 26 guides, and some moves against EA FC 27 guides since. Most skill move inputs carry over between games, but moves do get added, removed or moved to another star level. If the game disagrees with this site, trust the game.",
+    checkTitle: "How moves are checked",
+    checkSteps: [
+      "Every move is compared with at least one online guide, listed at the bottom of its page.",
+      "A move is marked \"Checked\" when at least two sources agree on its stars and inputs.",
+      "When sources disagree, the move shows \"Needs checking\" and says where they differ.",
+      "Guides often copy each other, so two matching sources help but don't prove a move is right.",
+    ],
+    sourcesTitle: "Sources used",
+    sourcesCount: "Cited by {n} moves",
+    reportTitle: "Found a mistake?",
+    reportBody: "Open an issue on GitHub. The more detail, the faster it gets fixed.",
+    reportChecklist: ["The move's name", "Your controller", "What you pressed and what happened in game", "A link to a clip or a correct guide, if you have one"],
+    reportCta: "Report on GitHub",
   },
   footer: {
     note: "Fan-made site, not affiliated with EA SPORTS. Details may differ from the game.",

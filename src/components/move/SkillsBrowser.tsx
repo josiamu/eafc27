@@ -67,7 +67,7 @@ export function SkillsBrowser({ moves, locale, t, tMove }: Props) {
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder={t.filters.searchPlaceholder}
-            className="w-full rounded-xl border border-border bg-surface-2 px-3 py-2 text-sm outline-none focus-visible:border-accent"
+            className="w-full rounded-xl border border-control bg-surface-2 px-3 py-2 text-sm"
           />
         </div>
 
@@ -114,7 +114,7 @@ export function SkillsBrowser({ moves, locale, t, tMove }: Props) {
                 setStars([]);
                 setDifficulty([]);
               }}
-              className="rounded-full border border-border px-3 py-1 text-sm text-muted hover:border-accent hover:text-fg"
+              className="rounded-full border border-control px-3 py-1 text-sm text-muted hover:border-accent hover:text-fg"
             >
               {t.filters.clear}
             </button>
@@ -185,7 +185,7 @@ function Chip({
       aria-label={label}
       onClick={onClick}
       className={`inline-flex items-center gap-0.5 rounded-full border px-3 py-1 text-sm transition-colors ${
-        pressed ? "border-accent bg-surface-2 font-medium" : "border-border text-muted hover:border-accent hover:text-fg"
+        pressed ? "border-accent bg-surface-2 font-medium" : "border-control text-muted hover:border-accent hover:text-fg"
       }`}
     >
       {children}

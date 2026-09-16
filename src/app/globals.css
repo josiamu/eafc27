@@ -8,6 +8,8 @@
   --fg: #0f1a14;
   --muted: #4b5b51;
   --border: #d2dccf;
+  /* Edges of form controls and toggles: 3:1 against bg, surface and surface-2 (WCAG 1.4.11). */
+  --control: #788a7e;
   --accent: #1d7440;
   --accent-fg: #ffffff;
   --highlight: #c6ef2f;
@@ -33,13 +35,14 @@
     --fg: #e7efe9;
     --muted: #9cb0a3;
     --border: #25362c;
+  --control: #687c6f;
     --accent: #c6ef2f;
     --accent-fg: #0a110d;
     --pitch: #1b5530;
     --pitch-stripe: #184d2b;
     --glyph-bg: #26352c;
     --glyph-ring: rgb(255 255 255 / 0.14);
-  --star: #c6ef2f;
+    --star: #c6ef2f;
     --warn-bg: #3a2e0c;
     --warn-fg: #ffd978;
   }
@@ -53,6 +56,7 @@
   --fg: #e7efe9;
   --muted: #9cb0a3;
   --border: #25362c;
+  --control: #687c6f;
   --accent: #c6ef2f;
   --accent-fg: #0a110d;
   --pitch: #1b5530;
@@ -71,6 +75,7 @@
   --color-fg: var(--fg);
   --color-muted: var(--muted);
   --color-border: var(--border);
+  --color-control: var(--control);
   --color-accent: var(--accent);
   --color-accent-fg: var(--accent-fg);
   --color-highlight: var(--highlight);
@@ -87,10 +92,21 @@ body {
   font-family: var(--font-sans);
 }
 
+html {
+  /* Keep keyboard-focused elements clear of the sticky header. */
+  scroll-padding-top: 5rem;
+}
+
 :focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+/* Safari draws no outline on focused SVG shapes, so the controller diagram marks focus itself. */
+g[role="button"]:focus-visible :is(circle, rect, path) {
+  stroke: var(--fg);
+  stroke-width: 5px;
 }
 
 @media (prefers-reduced-motion: reduce) {

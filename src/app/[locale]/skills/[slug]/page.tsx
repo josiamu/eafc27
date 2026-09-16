@@ -9,6 +9,7 @@ import { Stars } from "@/components/Stars";
 import { getMove, getMoves } from "@/data/moves";
 import { fill, isLocale, pick } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
+import { pageMetadata } from "@/lib/metadata";
 
 export const dynamicParams = false;
 
@@ -20,7 +21,11 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/skills/[
   const { locale, slug } = await params;
   const move = getMove(slug);
   if (!isLocale(locale) || !move) return {};
-  return { title: pick(move.name, locale), description: pick(move.summary, locale) };
+  return pageMetadata(locale, `skills/${slug}/`, {
+    title: pick(move.name, locale),
+    description: pick(move.summary, locale),
+    image: `${locale}/skills/${slug}/og.png`,
+  });
 }
 
 export default async function MovePage({ params }: PageProps<"/[locale]/skills/[slug]">) {
@@ -42,7 +47,7 @@ export default async function MovePage({ params }: PageProps<"/[locale]/skills/[
       <header className="space-y-3">
         <div className="flex flex-wrap items-center gap-3">
           <Stars count={move.stars} label={fill(t.move.stars, { n: move.stars })} />
-          <DataBadge label={t.dataBadge} />
+          <DataBadge label={t.dataBadge} href={`/${locale}/about/`} />
           {move.verified ? (
             <span className="rounded-full bg-surface-2 px-2.5 py-1 text-xs font-medium">✓ {fill(t.move.verified, { n: sourceCount })}</span>
           ) : (

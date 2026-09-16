@@ -13,7 +13,7 @@ export function PresetQuickSwitch({ locale, label }: { locale: Locale; label: st
       <select
         value={presetId}
         onChange={(event) => setPreset(event.target.value as PresetId)}
-        className="h-9 max-w-[9.5rem] rounded-full border border-border bg-surface px-3 text-sm text-fg"
+        className="h-9 max-w-[9.5rem] rounded-full border border-control bg-surface px-3 text-sm text-fg"
       >
         {PRESET_IDS.map((id) => (
           <option key={id} value={id}>

@@ -26,12 +26,12 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
             </Link>
             <Link
               href={`/${locale}/skills/`}
-              className="inline-flex h-11 items-center rounded-full border border-border bg-surface px-5 font-medium hover:bg-surface-2"
+              className="inline-flex h-11 items-center rounded-full border border-control bg-surface px-5 font-medium hover:bg-surface-2"
             >
               {t.home.ctaSkills}
             </Link>
           </div>
-          <DataBadge label={t.dataBadge} />
+          <DataBadge label={t.dataBadge} href={`/${locale}/about/`} />
         </div>
 
         <div className="rounded-2xl border border-border bg-surface p-5">

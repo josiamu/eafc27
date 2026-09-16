@@ -31,9 +31,9 @@ import { GlyphView } from "./GlyphView";
 type T = Dictionary["settings"];
 
 const PREVIEW: ButtonId[] = ["FACE_BOTTOM", "FACE_RIGHT", "FACE_LEFT", "FACE_TOP", "SHOULDER_R1", "TRIGGER_L2", "STICK_R"];
-const INPUT = "h-9 rounded-lg border border-border bg-bg px-2 text-sm text-fg";
+const INPUT = "h-9 rounded-lg border border-control bg-bg px-2 text-sm text-fg";
 const SMALL_BUTTON =
-  "inline-flex h-9 items-center rounded-full border border-border px-3 text-sm text-fg hover:bg-surface-2 disabled:cursor-not-allowed disabled:opacity-40";
+  "inline-flex h-9 items-center rounded-full border border-control px-3 text-sm text-fg hover:bg-surface-2 disabled:cursor-not-allowed disabled:opacity-40";
 const CARD = "rounded-2xl border border-border bg-surface";
 
 export function SettingsView({
@@ -340,7 +340,7 @@ function ButtonSection({ settings, locale, t }: { settings: ControllerSettings; 
             {t.color}
             <input
               type="color"
-              className="h-9 w-12 cursor-pointer rounded-lg border border-border bg-bg p-1"
+              className="h-9 w-12 cursor-pointer rounded-lg border border-control bg-bg p-1"
               value={glyph.color ?? "#f2f6f3"}
               onChange={(e) => setOverride(selected, { color: e.target.value })}
             />

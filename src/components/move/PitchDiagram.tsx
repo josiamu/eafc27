@@ -59,7 +59,8 @@ export function PitchDiagram({ player, ball, defender, trail, transitionMs, titl
         )}
         {defender && (
           <g style={at(defender)}>
-            <circle r="3.6" fill="var(--defender)" stroke="#000" strokeOpacity="0.4" strokeWidth="0.5" />
+            {/* A white ring: red on green alone is too close in lightness and hard for red-green colour blindness. */}
+            <circle r="3.6" fill="var(--defender)" stroke="#fff" strokeWidth="0.8" />
           </g>
         )}
         <g style={at(player)}>

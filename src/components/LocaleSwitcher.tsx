@@ -17,7 +17,7 @@ export function LocaleSwitcher({ current, label }: { current: Locale; label: str
   const pathname = usePathname() ?? `/${current}/`;
 
   return (
-    <nav aria-label={label} className="inline-flex h-9 items-center rounded-full border border-border bg-surface p-0.5 text-sm">
+    <nav aria-label={label} className="inline-flex h-9 items-center rounded-full border border-control bg-surface p-0.5 text-sm">
       {locales.map((locale) => {
         const active = locale === current;
         return (
