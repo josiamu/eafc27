@@ -172,6 +172,22 @@
 
 ---
 
+## รอ FC 27 early access (ตัดสินใจ 16 ก.ย. 2026)
+
+ย้ายข้อมูลเป็น FC 27 หลัง early access เปิด (18 ก.ย. 2026) ไม่ย้ายตอนนี้ เพราะคู่มือ FC 27 ที่มีตอนนี้เขียนก่อนเกมออกและขัดกันเอง:
+
+- **ท่าใหม่:** fifauteam กับ proclubshq ว่ามี 13 ท่า (Giant Fake Shot, Stop and Go, Drag to Drag, Foot to Foot, Lateral Heel to Heel, Drag Turn, Standing Scoop Turn, Flair Roulette, Four Touch Skill, Skilled Bridge, First Time Spin, Alternate Elastico Chop, Running Fake Drag) · driffle ว่ามี 4 ท่าคนละชุด (Fake Turn, Ball Roll Spin, Stepover Combo, Kneel Header) ยังไม่มีปุ่ม · teamgullit ใช้รายชื่อท่าใหม่ของ FC 26
+- **ท่าที่ถูกตัด:** fifauteam ว่า Advanced Heel Flick, Trickster Rainbow, Toe Drag Stepover ถูกตัด แต่ proclubshq ยังมี Advanced Heel Flick
+- **ปุ่มของท่าเดิมที่ยังขัดกัน:** Simple Rainbow (ย้อนแล้วหน้าครั้งเดียว หรือสองครั้ง), Stutter Feint (ต้องกด □/○ ด้วยหรือไม่), Drag Back Spin (fifauteam ว่าเริ่มสะบัดไปหน้า), Spin (fifplay/driffle ว่าค้าง R2+R1)
+- **EA:** Gameplay Deep Dive (29 ก.ค. 2026) ไม่พูดถึงสกิลมูฟ
+- fifplay กับ driffle ใช้ตารางเดียวกันรวมถึงจุดผิด จึงนับเป็นแหล่งเดียว
+
+**ตอนย้าย:** ยึดรายการท่าในเกม (Skill Games บอกปุ่มและดาว) หรือคู่มือที่อัปเดตหลังเกมออก · เปลี่ยน `game` ใน `src/data/schema.ts` และทุกไฟล์ท่า, `dataBadge`, ข้อความหน้า `/about`, และ skill `add-move` · ตัดสินใจ `advanced-heel-flick` และ Trickster Rainbow · ไล่ตรวจทั้ง 57 ท่าใหม่เทียบแหล่ง FC 27
+
+## robots.txt (ตัดสินใจ 16 ก.ย. 2026)
+
+ไม่ทำ `robots.txt` ใช้วิธีส่ง `https://josiamu.github.io/eafc27/sitemap.xml` ใน Google Search Console แทน เพราะ robots.txt มีผลเฉพาะที่รากโดเมน และ repo `josiamu.github.io` เป็นบล็อกที่ deploy ขึ้น Netlify ไม่ได้ให้บริการ josiamu.github.io (รากโดเมนตอบ 404) · ถ้าไม่มี robots.txt Google ถือว่าเก็บได้ทุกหน้าอยู่แล้ว
+
 ## ข้อควรทราบเรื่องข้อมูล
 
 ข้อมูลชุดตั้งต้นเป็นของ EA FC 26 ที่ยืนยันได้ ไม่ใช่ FC 27 ท่าสกิลมูฟส่วนใหญ่มักไม่เปลี่ยนข้ามภาค เว็บจะขึ้นป้ายบอกผู้อ่านให้ชัดว่าอ้างอิงภาคไหน และโครงสร้างไฟล์ข้อมูลรองรับการอัปเดตเป็น FC 27 ทีหลังโดยไม่ต้องรื้อโค้ด
