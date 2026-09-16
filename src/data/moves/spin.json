@@ -23,10 +23,6 @@
       "inputs": [
         {
           "kind": "hold",
-          "button": "TRIGGER_L2"
-        },
-        {
-          "kind": "hold",
           "button": "SHOULDER_R1"
         },
         {
@@ -34,17 +30,19 @@
           "stick": "STICK_R",
           "path": [
             "down",
-            "down-right",
+            "left",
+            "up",
             "right"
           ]
         }
       ],
       "note": {
-        "th": "แหล่งข้อมูลบอกปุ่มที่ต้องค้างไม่ตรงกัน (ไหล่ขวา, ทริกเกอร์ซ้ายกับไหล่ขวา, หรือทริกเกอร์ขวากับไหล่ขวา) และทิศหมุนต่างกัน ยังไม่ยืนยัน",
-        "en": "Sources disagree on the held buttons (right bumper; left trigger + right bumper; or right trigger + right bumper) and on the rotation; not confirmed."
+        "th": "ค้างปุ่มไหล่ขวาไว้ แล้วหมุนอนาล็อกขวาจากทิศลง 270° ไปจบทางขวา ถ้าจะไปทางซ้ายให้หมุนกลับทิศแล้วไปจบทางซ้าย",
+        "en": "Hold the right bumper, then rotate the right stick 270° from down to finish on the right. For the left side, rotate the other way and finish on the left."
       }
     }
   ],
+  "mirror": true,
   "diagram": {
     "start": {
       "player": [
@@ -99,10 +97,8 @@
   "followUps": [],
   "video": null,
   "sources": [
-    "https://fifauteam.com/fc-26-skill-moves/",
-    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
-    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
-    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+    "https://fifauteam.com/fc-27-skill-moves/",
+    "https://fifauteam.com/fc-26-skill-moves/"
   ],
-  "verified": false
+  "verified": true
 }

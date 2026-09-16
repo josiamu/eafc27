@@ -33,8 +33,8 @@
         }
       ],
       "note": {
-        "th": "ทุกแหล่งเริ่มจากทิศลงแล้วหมุนตามเข็มนาฬิกา แต่บอกระยะหมุนไม่ตรงกัน (90° ถึง 270°)",
-        "en": "All sources start from down and turn clockwise, but disagree on how far (90° to 270°)."
+        "th": "เริ่มจากทิศลงแล้วหมุน 270° ไปจบทางขวา ถ้าจะหมุนไปทางซ้ายให้หมุนกลับทิศแล้วไปจบทางซ้าย",
+        "en": "Start from down and rotate 270° to finish on the right. For the left side, rotate the other way and finish on the left."
       }
     }
   ],
@@ -93,10 +93,8 @@
   "followUps": [],
   "video": null,
   "sources": [
-    "https://fifauteam.com/fc-26-skill-moves/",
-    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
-    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
-    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+    "https://fifauteam.com/fc-27-skill-moves/",
+    "https://fifauteam.com/fc-26-skill-moves/"
   ],
-  "verified": false
+  "verified": true
 }

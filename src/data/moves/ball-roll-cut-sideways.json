@@ -33,8 +33,8 @@
         }
       ],
       "note": {
-        "th": "ค้างอนาล็อกขวาไปขวาและอนาล็อกซ้ายไปซ้ายพร้อมกัน แต่แหล่งข้อมูลครึ่งหนึ่งให้ทิศกลับกัน",
-        "en": "Hold the right stick right and left stick left together. Half the sources give the directions reversed."
+        "th": "ค้างอนาล็อกขวาไปทางขวา แล้วค้างอนาล็อกซ้ายไปทางซ้ายไว้ด้วย อีกฝั่งให้สลับทิศทั้งสองอนาล็อก",
+        "en": "Hold the right stick right, then also hold the left stick left. For the other side, swap both directions."
       }
     }
   ],
@@ -82,10 +82,8 @@
   "followUps": [],
   "video": null,
   "sources": [
-    "https://fifauteam.com/fc-26-skill-moves/",
-    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
-    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
-    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+    "https://fifauteam.com/fc-27-skill-moves/",
+    "https://fifauteam.com/fc-26-skill-moves/"
   ],
-  "verified": false
+  "verified": true
 }

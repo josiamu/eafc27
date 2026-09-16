@@ -37,8 +37,8 @@
         }
       ],
       "note": {
-        "th": "ทุกแหล่งให้ปุ่มเหมือน Heel to Heel ยังไม่ยืนยันว่าเกมเลือกท่าไหน",
-        "en": "Every source gives the same input as Heel to Heel; which move the game picks isn't confirmed."
+        "th": "ปุ่มเหมือน Heel to Heel ทุกประการ ยังไม่รู้ว่าเกมเลือกท่าไหน",
+        "en": "Same input as the Heel to Heel; which move the game picks isn't known."
       }
     }
   ],
@@ -92,10 +92,8 @@
   "followUps": [],
   "video": null,
   "sources": [
-    "https://fifauteam.com/fc-26-skill-moves/",
-    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
-    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
-    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+    "https://fifauteam.com/fc-27-skill-moves/",
+    "https://fifauteam.com/fc-26-skill-moves/"
   ],
-  "verified": false
+  "verified": true
 }

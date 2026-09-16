@@ -34,11 +34,7 @@
           "stick": "STICK_L",
           "direction": "down"
         }
-      ],
-      "note": {
-        "th": "สองแหล่งบอกให้ค้างปุ่มไหล่ทั้งสอง อีกสองแหล่งบอกให้ค้างทริกเกอร์ทั้งสอง ยังไม่ยืนยัน",
-        "en": "Two sources say hold both bumpers, two say hold both triggers; not confirmed."
-      }
+      ]
     }
   ],
   "diagram": {
@@ -84,10 +80,8 @@
   "followUps": [],
   "video": null,
   "sources": [
-    "https://fifauteam.com/fc-26-skill-moves/",
-    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
-    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
-    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+    "https://fifauteam.com/fc-27-skill-moves/",
+    "https://fifauteam.com/fc-26-skill-moves/"
   ],
-  "verified": false
+  "verified": true
 }
