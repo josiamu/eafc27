@@ -1,12 +1,18 @@
 "use client";
 
 import { useEffect, useState, useSyncExternalStore } from "react";
-import { BUTTON_IDS, DIGITAL_BUTTONS, STANDARD_GAMEPAD_INDEX, type ButtonId, type DigitalButtonId } from "@/controller/buttons";
+import {
+  BUTTON_IDS,
+  DIGITAL_BUTTONS,
+  STANDARD_GAMEPAD_INDEX,
+  isDigitalButton,
+  type ButtonId,
+  type DigitalButtonId,
+} from "@/controller/buttons";
 import { GLYPH_SHAPES, PRESETS, PRESET_IDS, type GlyphShape, type PresetId } from "@/controller/presets";
 import {
   appearance,
   guideFor,
-  physicalFor,
   resetOverrides,
   resetRemap,
   setOverride,
@@ -38,8 +44,7 @@ export function SettingsView({ locale, t }: { locale: Locale; t: T }) {
         <p className="max-w-prose text-muted">{t.lead}</p>
       </header>
       <PresetSection settings={settings} locale={locale} t={t} />
-      <CustomizeSection settings={settings} t={t} />
-      <BindSection settings={settings} locale={locale} t={t} />
+      <ButtonSection settings={settings} locale={locale} t={t} />
     </div>
   );
 }
@@ -113,10 +118,86 @@ function actionText(t: T, guide: ButtonId): string {
   return parts.length > 0 ? parts.join(" · ") : t.roles[guide];
 }
 
-function CustomizeSection({ settings, t }: { settings: ControllerSettings; t: T }) {
+function subscribeGamepads(onChange: () => void) {
+  window.addEventListener("gamepadconnected", onChange);
+  window.addEventListener("gamepaddisconnected", onChange);
+  return () => {
+    window.removeEventListener("gamepadconnected", onChange);
+    window.removeEventListener("gamepaddisconnected", onChange);
+  };
+}
+
+function connectedGamepads(): Gamepad[] {
+  if (typeof navigator.getGamepads !== "function") return [];
+  return navigator.getGamepads().filter((pad): pad is Gamepad => pad !== null);
+}
+
+const noSubscription = () => () => {};
+
+function suggestPreset(padId: string): PresetId | null {
+  if (/xbox|xinput|045e/i.test(padId)) return "xbox";
+  if (/playstation|dualsense|dualshock|054c/i.test(padId)) return "playstation";
+  if (/nintendo|switch|pro controller|057e/i.test(padId)) return "switch";
+  return null;
+}
+
+/**
+ * One button at a time: pick it on the controller, then set how it looks and what it does.
+ * Both are properties of the same physical button, so they share a selection.
+ */
+function ButtonSection({ settings, locale, t }: { settings: ControllerSettings; locale: Locale; t: T }) {
   const [selected, setSelected] = useState<ButtonId>("FACE_BOTTOM");
+  const [listening, setListening] = useState(false);
+  const supported = useSyncExternalStore(noSubscription, () => typeof navigator.getGamepads === "function", () => true);
+  const padId = useSyncExternalStore(subscribeGamepads, () => connectedGamepads()[0]?.id ?? "", () => "");
+
   const glyph = appearance(settings, selected);
-  const hasOverrides = Object.keys(settings.overrides).length > 0;
+  // Which action sits here now. Only digital buttons can be rebound; sticks always keep their own.
+  const carries = guideFor(settings, selected);
+  const rebindable = isDigitalButton(selected);
+  const hasEdits = Object.keys(settings.overrides).length > 0 || Object.keys(settings.remap).length > 0;
+  const suggestion = padId ? suggestPreset(padId) : null;
+
+  // Pressing a button on the real controller selects it here, so nobody has to hunt for it on the diagram.
+  useEffect(() => {
+    if (!listening) return;
+
+    // Ignore buttons already held when listening starts; wait for a fresh press.
+    const held = new Set<string>();
+    for (const pad of connectedGamepads()) {
+      pad.buttons.forEach((b, i) => b.pressed && held.add(`${pad.index}:${i}`));
+    }
+
+    let frame = 0;
+    const poll = () => {
+      for (const pad of connectedGamepads()) {
+        for (let i = 0; i < pad.buttons.length; i++) {
+          const key = `${pad.index}:${i}`;
+          if (!pad.buttons[i].pressed) {
+            held.delete(key);
+            continue;
+          }
+          const physical = pad.mapping === "standard" ? STANDARD_GAMEPAD_INDEX[i] : undefined;
+          if (!held.has(key) && physical) {
+            setSelected(physical);
+            setListening(false);
+            return;
+          }
+        }
+      }
+      frame = requestAnimationFrame(poll);
+    };
+    frame = requestAnimationFrame(poll);
+
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setListening(false);
+    const timeout = setTimeout(() => setListening(false), 10_000);
+    window.addEventListener("keydown", onKey);
+    return () => {
+      cancelAnimationFrame(frame);
+      clearTimeout(timeout);
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [listening]);
 
   return (
     <section aria-labelledby="customize-title" className="space-y-4">
@@ -125,7 +206,15 @@ function CustomizeSection({ settings, t }: { settings: ControllerSettings; t: T 
         title={t.customizeTitle}
         lead={t.customizeLead}
         action={
-          <button type="button" className={SMALL_BUTTON} onClick={resetOverrides} disabled={!hasOverrides}>
+          <button
+            type="button"
+            className={SMALL_BUTTON}
+            onClick={() => {
+              resetOverrides();
+              resetRemap();
+            }}
+            disabled={!hasEdits}
+          >
             {t.resetAll}
           </button>
         }
@@ -189,167 +278,65 @@ function CustomizeSection({ settings, t }: { settings: ControllerSettings; t: T 
             {t.reset}
           </button>
         </div>
-      </div>
-    </section>
-  );
-}
 
-function subscribeGamepads(onChange: () => void) {
-  window.addEventListener("gamepadconnected", onChange);
-  window.addEventListener("gamepaddisconnected", onChange);
-  return () => {
-    window.removeEventListener("gamepadconnected", onChange);
-    window.removeEventListener("gamepaddisconnected", onChange);
-  };
-}
-
-function connectedGamepads(): Gamepad[] {
-  if (typeof navigator.getGamepads !== "function") return [];
-  return navigator.getGamepads().filter((pad): pad is Gamepad => pad !== null);
-}
-
-const noSubscription = () => () => {};
-
-function suggestPreset(padId: string): PresetId | null {
-  if (/xbox|xinput|045e/i.test(padId)) return "xbox";
-  if (/playstation|dualsense|dualshock|054c/i.test(padId)) return "playstation";
-  if (/nintendo|switch|pro controller|057e/i.test(padId)) return "switch";
-  return null;
-}
-
-function BindSection({ settings, locale, t }: { settings: ControllerSettings; locale: Locale; t: T }) {
-  const supported = useSyncExternalStore(noSubscription, () => typeof navigator.getGamepads === "function", () => true);
-  const padId = useSyncExternalStore(subscribeGamepads, () => connectedGamepads()[0]?.id ?? "", () => "");
-  const [listening, setListening] = useState<DigitalButtonId | null>(null);
-
-  useEffect(() => {
-    if (!listening) return;
-
-    // Ignore buttons already held when listening starts; wait for a fresh press.
-    const held = new Set<string>();
-    for (const pad of connectedGamepads()) {
-      pad.buttons.forEach((b, i) => b.pressed && held.add(`${pad.index}:${i}`));
-    }
-
-    let frame = 0;
-    const poll = () => {
-      for (const pad of connectedGamepads()) {
-        for (let i = 0; i < pad.buttons.length; i++) {
-          const key = `${pad.index}:${i}`;
-          if (!pad.buttons[i].pressed) {
-            held.delete(key);
-            continue;
-          }
-          const physical = pad.mapping === "standard" ? STANDARD_GAMEPAD_INDEX[i] : undefined;
-          if (!held.has(key) && physical) {
-            setRemap(listening, physical);
-            setListening(null);
-            return;
-          }
-        }
-      }
-      frame = requestAnimationFrame(poll);
-    };
-    frame = requestAnimationFrame(poll);
-
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setListening(null);
-    const timeout = setTimeout(() => setListening(null), 10_000);
-    window.addEventListener("keydown", onKey);
-    return () => {
-      cancelAnimationFrame(frame);
-      clearTimeout(timeout);
-      window.removeEventListener("keydown", onKey);
-    };
-  }, [listening]);
-
-  const suggestion = padId ? suggestPreset(padId) : null;
-  const hasRemap = Object.keys(settings.remap).length > 0;
-
-  return (
-    <section aria-labelledby="bind-title" className="space-y-4">
-      <SectionHeading
-        id="bind-title"
-        title={t.bindTitle}
-        lead={t.bindLead}
-        action={
-          <button type="button" className={SMALL_BUTTON} onClick={resetRemap} disabled={!hasRemap}>
-            {t.resetAll}
-          </button>
-        }
-      />
-
-      <div className={`space-y-2 p-3 text-sm ${CARD}`}>
-        <p role="status" className="break-words text-muted">
-          {!supported ? t.bindUnsupported : padId ? fill(t.padFound, { id: padId }) : t.padNone}
-        </p>
-        {suggestion && suggestion !== settings.presetId && (
-          <p className="flex flex-wrap items-center gap-2">
-            {fill(t.suggest, { name: PRESETS[suggestion].name[locale] })}
-            <button type="button" className={SMALL_BUTTON} onClick={() => setPreset(suggestion)}>
-              {t.usePreset}
-            </button>
-          </p>
-        )}
-        {listening && (
-          <p aria-live="assertive" className="rounded-lg bg-warn-bg px-2 py-1 font-medium text-warn-fg">
-            {t.bindListening}
-          </p>
-        )}
-      </div>
-
-      <ul className={`divide-y divide-border ${CARD}`}>
-        <li aria-hidden className="hidden gap-3 px-3 py-2 text-xs text-muted sm:flex">
-          <span className="w-52">{t.bindGuide}</span>
-          <span>{t.bindActual}</span>
-        </li>
-        {DIGITAL_BUTTONS.map((guide) => {
-          const guideGlyph = appearance(settings, guide);
-          const physical = physicalFor(settings, guide) as DigitalButtonId;
-          const actualGlyph = appearance(settings, physical);
-          const isListening = listening === guide;
-          return (
-            <li key={guide} className="flex flex-wrap items-center gap-3 p-3">
-              <div className="flex w-52 items-center gap-2">
-                <GlyphView glyph={guideGlyph} title={guideGlyph.name} />
-                <span className="text-sm">{actionText(t, guide)}</span>
-              </div>
-              <span aria-hidden className="text-muted">
-                →
-              </span>
-              <GlyphView glyph={actualGlyph} active={isListening || physical !== guide} title={actualGlyph.name} />
-              <label className="sr-only" htmlFor={`bind-${guide}`}>
-                {t.bindActual}: {actionText(t, guide)}
-              </label>
+        {rebindable && (
+          <div className="flex flex-wrap items-end gap-3 border-t border-border pt-4">
+            <label className="flex min-w-64 flex-1 flex-col gap-1 text-xs text-muted">
+              {t.actionLabel}
+              {/* Choosing an action moves it here; setRemap swaps it with whatever sat on this button. */}
               <select
-                id={`bind-${guide}`}
-                className={`${INPUT} max-w-52`}
-                value={physical}
-                onChange={(e) => setRemap(guide, e.target.value as DigitalButtonId)}
+                className={INPUT}
+                value={carries}
+                onChange={(e) => setRemap(e.target.value as DigitalButtonId, selected as DigitalButtonId)}
               >
-                {DIGITAL_BUTTONS.map((button) => (
-                  <option key={button} value={button}>
-                    {appearance(settings, button).label} · {t.roles[button]}
+                {DIGITAL_BUTTONS.map((guide) => (
+                  <option key={guide} value={guide}>
+                    {actionText(t, guide)}
                   </option>
                 ))}
               </select>
-              <div className="ml-auto flex gap-2">
-                <button
-                  type="button"
-                  className={SMALL_BUTTON}
-                  disabled={!supported}
-                  aria-pressed={isListening}
-                  onClick={() => setListening(isListening ? null : guide)}
-                >
-                  {t.bindPress}
-                </button>
-                <button type="button" className={SMALL_BUTTON} disabled={physical === guide} onClick={() => setRemap(guide, undefined)}>
-                  {t.reset}
-                </button>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
+            </label>
+            <button
+              type="button"
+              className={SMALL_BUTTON}
+              disabled={carries === selected}
+              onClick={() => setRemap(carries as DigitalButtonId, undefined)}
+            >
+              {t.reset}
+            </button>
+          </div>
+        )}
+
+        <div className="space-y-2 border-t border-border pt-4 text-sm">
+          <div className="flex flex-wrap items-center gap-3">
+            <button
+              type="button"
+              className={SMALL_BUTTON}
+              disabled={!supported}
+              aria-pressed={listening}
+              onClick={() => setListening(!listening)}
+            >
+              {t.bindPress}
+            </button>
+            <p role="status" className="break-words text-muted">
+              {!supported ? t.bindUnsupported : padId ? fill(t.padFound, { id: padId }) : t.padNone}
+            </p>
+          </div>
+          {suggestion && suggestion !== settings.presetId && (
+            <p className="flex flex-wrap items-center gap-2">
+              {fill(t.suggest, { name: PRESETS[suggestion].name[locale] })}
+              <button type="button" className={SMALL_BUTTON} onClick={() => setPreset(suggestion)}>
+                {t.usePreset}
+              </button>
+            </p>
+          )}
+          {listening && (
+            <p aria-live="assertive" className="rounded-lg bg-warn-bg px-2 py-1 font-medium text-warn-fg">
+              {t.bindListening}
+            </p>
+          )}
+        </div>
+      </div>
     </section>
   );
 }
