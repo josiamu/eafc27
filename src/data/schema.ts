@@ -3,7 +3,10 @@ import { DIGITAL_BUTTONS, DIRECTIONS, STICKS } from "@/controller/buttons";
 
 const localized = z.object({ th: z.string().min(1), en: z.string().min(1) }).strict();
 
-/** Pitch coordinates: x 0–160 toward the opponent's goal on the right, y 0–100 top to bottom. */
+/**
+ * Pitch coordinates in the move's own frame: x 0–160 toward the opponent's goal, y 0–100 across.
+ * Which way that is drawn on screen is PitchDiagram's business, not the data's.
+ */
 const point = z.tuple([z.number().min(0).max(160), z.number().min(0).max(100)]);
 
 const button = z.enum(DIGITAL_BUTTONS);

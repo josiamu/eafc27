@@ -54,7 +54,8 @@ export function MoveAnimation({ move, locale, t }: { move: Move; locale: Locale;
     "inline-flex h-9 min-w-9 items-center justify-center rounded-full border border-border bg-surface px-3 text-sm text-fg hover:bg-surface-2 disabled:opacity-40";
 
   return (
-    <div className="grid overflow-hidden rounded-2xl border border-border bg-surface lg:grid-cols-[3fr_2fr]">
+    // The pitch is portrait now, so it takes the narrower column and the inputs get the room.
+    <div className="grid overflow-hidden rounded-2xl border border-border bg-surface lg:grid-cols-[2fr_3fr]">
       <div className="relative self-start">
         <PitchDiagram
           player={current.player}
@@ -65,7 +66,7 @@ export function MoveAnimation({ move, locale, t }: { move: Move; locale: Locale;
           title={t.pitchTitle}
         />
         <span className="absolute left-2 top-2 rounded-full bg-black/55 px-2 py-0.5 text-xs text-white">
-          {t.attackDirection} →
+          {t.attackDirection} ↑
         </span>
       </div>
 
