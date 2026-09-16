@@ -103,6 +103,16 @@ export function physicalFor(settings: ControllerSettings, id: ButtonId): ButtonI
   return isDigitalButton(id) ? (settings.remap[id] ?? id) : id;
 }
 
+/**
+ * Which guide button's action a physical button carries — the inverse of `physicalFor`.
+ * Well defined because `setRemap` keeps the mapping a permutation; the fallback only
+ * matters for settings stored before that was enforced.
+ */
+export function guideFor(settings: ControllerSettings, physical: ButtonId): ButtonId {
+  if (!isDigitalButton(physical)) return physical;
+  return DIGITAL_BUTTONS.find((guide) => (settings.remap[guide] ?? guide) === physical) ?? physical;
+}
+
 export function useGlyph(id: ButtonId): Glyph {
   const settings = useControllerSettings();
   return appearance(settings, physicalFor(settings, id));

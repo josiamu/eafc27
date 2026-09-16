@@ -5,6 +5,7 @@ import { BUTTON_IDS, DIGITAL_BUTTONS, STANDARD_GAMEPAD_INDEX, type ButtonId, typ
 import { GLYPH_SHAPES, PRESETS, PRESET_IDS, type GlyphShape, type PresetId } from "@/controller/presets";
 import {
   appearance,
+  guideFor,
   physicalFor,
   resetOverrides,
   resetRemap,
@@ -94,17 +95,22 @@ function PresetSection({ settings, locale, t }: { settings: ControllerSettings; 
 
 type ActionPair = { attack?: string; defend?: string };
 
+/** Takes a guide button, not a physical one: an action belongs to the guide that carries it. */
+function actionPair(t: T, guide: ButtonId): ActionPair | undefined {
+  return (t.actions as Partial<Record<ButtonId, ActionPair>>)[guide];
+}
+
 /**
  * What the button does in game, as "บุก: จ่ายบอลเรียด · รับ: ประกบ".
  * Falls back to the physical name for buttons no source covers, such as Menu and the D-pad.
  */
-function actionText(t: T, id: ButtonId): string {
-  const action = (t.actions as Partial<Record<ButtonId, ActionPair>>)[id];
+function actionText(t: T, guide: ButtonId): string {
+  const action = actionPair(t, guide);
   const parts = [
     action?.attack && `${t.attackLabel}: ${action.attack}`,
     action?.defend && `${t.defendLabel}: ${action.defend}`,
   ].filter((part) => typeof part === "string");
-  return parts.length > 0 ? parts.join(" · ") : t.roles[id];
+  return parts.length > 0 ? parts.join(" · ") : t.roles[guide];
 }
 
 function CustomizeSection({ settings, t }: { settings: ControllerSettings; t: T }) {
@@ -130,7 +136,7 @@ function CustomizeSection({ settings, t }: { settings: ControllerSettings; t: T 
           presetId={settings.presetId}
           glyphFor={(id) => appearance(settings, id)}
           roles={t.roles}
-          actions={t.actions}
+          actionFor={(id) => actionPair(t, guideFor(settings, id))}
           labels={{ attack: t.attackLabel, defend: t.defendLabel }}
           selected={selected}
           onSelect={setSelected}
@@ -146,7 +152,7 @@ function CustomizeSection({ settings, t }: { settings: ControllerSettings; t: T 
               <select className={INPUT} value={selected} onChange={(e) => setSelected(e.target.value as ButtonId)}>
                 {BUTTON_IDS.map((id) => (
                   <option key={id} value={id}>
-                    {actionText(t, id)} · {appearance(settings, id).name}
+                    {actionText(t, guideFor(settings, id))} · {appearance(settings, id).name}
                   </option>
                 ))}
               </select>

@@ -67,8 +67,11 @@ type Props = {
   presetId: PresetId;
   glyphFor: (id: ButtonId) => Glyph;
   roles: Record<ButtonId, string>;
-  /** What each button does in game. Buttons with no entry fall back to their `roles` name. */
-  actions: Partial<Record<ButtonId, { attack?: string; defend?: string }>>;
+  /**
+   * What the button at this position does in game, or undefined when no source covers it.
+   * Takes a physical button, so the caller resolves any remap before answering.
+   */
+  actionFor: (id: ButtonId) => { attack?: string; defend?: string } | undefined;
   labels: { attack: string; defend: string };
   selected: ButtonId;
   onSelect: (id: ButtonId) => void;
@@ -90,7 +93,7 @@ export function ControllerDiagram(props: Props) {
   );
 }
 
-function Controller({ presetId, glyphFor, roles, actions, labels, selected, onSelect, callouts }: Props & { callouts: boolean }) {
+function Controller({ presetId, glyphFor, roles, actionFor, labels, selected, onSelect, callouts }: Props & { callouts: boolean }) {
   const positions = LAYOUTS[presetId];
 
   const pressable = (id: ButtonId) => ({
@@ -124,7 +127,7 @@ function Controller({ presetId, glyphFor, roles, actions, labels, selected, onSe
             const elbow = isLeft ? edge + 26 : edge - 26;
             const active = selected === id;
             const glyph = glyphFor(id);
-            const action = actions[id];
+            const action = actionFor(id);
             return (
               <g key={id}>
                 <polyline
