@@ -151,6 +151,16 @@ function ButtonSection({ settings, locale, t }: { settings: ControllerSettings; 
   const supported = useSyncExternalStore(noSubscription, () => typeof navigator.getGamepads === "function", () => true);
   const padId = useSyncExternalStore(subscribeGamepads, () => connectedGamepads()[0]?.id ?? "", () => "");
 
+  /**
+   * Picking a button is itself the intent to change it, so selecting one starts listening
+   * for a gamepad press. Nothing can move before a deliberate choice, which is why the
+   * listener is never armed on first load.
+   */
+  const chooseButton = (id: ButtonId) => {
+    setSelected(id);
+    setListening(supported && isDigitalButton(id));
+  };
+
   const glyph = appearance(settings, selected);
   // Which action sits here now. Only digital buttons can be rebound; sticks always keep their own.
   const carries = guideFor(settings, selected);
@@ -158,7 +168,8 @@ function ButtonSection({ settings, locale, t }: { settings: ControllerSettings; 
   const hasEdits = Object.keys(settings.overrides).length > 0 || Object.keys(settings.remap).length > 0;
   const suggestion = padId ? suggestPreset(padId) : null;
 
-  // Pressing a button on the real controller selects it here, so nobody has to hunt for it on the diagram.
+  // Pressing a button on the real controller moves the selected button's action onto it,
+  // the same gesture EA FC's own remap screen uses.
   useEffect(() => {
     if (!listening) return;
 
@@ -179,6 +190,8 @@ function ButtonSection({ settings, locale, t }: { settings: ControllerSettings; 
           }
           const physical = pad.mapping === "standard" ? STANDARD_GAMEPAD_INDEX[i] : undefined;
           if (!held.has(key) && physical) {
+            if (isDigitalButton(selected)) setRemap(guideFor(settings, selected) as DigitalButtonId, physical);
+            // Follow the action to its new home so it is obvious where it landed.
             setSelected(physical);
             setListening(false);
             return;
@@ -190,14 +203,14 @@ function ButtonSection({ settings, locale, t }: { settings: ControllerSettings; 
     frame = requestAnimationFrame(poll);
 
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setListening(false);
-    const timeout = setTimeout(() => setListening(false), 10_000);
+    const timeout = setTimeout(() => setListening(false), 15_000);
     window.addEventListener("keydown", onKey);
     return () => {
       cancelAnimationFrame(frame);
       clearTimeout(timeout);
       window.removeEventListener("keydown", onKey);
     };
-  }, [listening]);
+  }, [listening, selected, settings]);
 
   return (
     <section aria-labelledby="customize-title" className="space-y-4">
@@ -228,25 +241,61 @@ function ButtonSection({ settings, locale, t }: { settings: ControllerSettings; 
           actionFor={(id) => actionPair(t, guideFor(settings, id))}
           labels={{ attack: t.attackLabel, defend: t.defendLabel }}
           selected={selected}
-          onSelect={setSelected}
+          onSelect={chooseButton}
           label={t.customizeTitle}
         />
         <p className="text-center text-xs text-muted">{t.diagramHint}</p>
 
-        <div className="flex flex-wrap items-end gap-3 border-t border-border pt-4">
-          <div className="flex min-w-48 flex-1 items-center gap-3 self-center" aria-live="polite">
-            <GlyphView glyph={glyph} size="lg" direction={glyph.shape === "stick" ? "up" : undefined} title={glyph.name} />
-            <label className="flex flex-col gap-1 text-xs text-muted">
-              {t.editing}
-              <select className={INPUT} value={selected} onChange={(e) => setSelected(e.target.value as ButtonId)}>
-                {BUTTON_IDS.map((id) => (
-                  <option key={id} value={id}>
-                    {actionText(t, guideFor(settings, id))} · {appearance(settings, id).name}
+        {/* Which button, then what it does, then how it looks. */}
+        <div className="flex flex-wrap items-center gap-3 border-t border-border pt-4" aria-live="polite">
+          <GlyphView glyph={glyph} size="lg" direction={glyph.shape === "stick" ? "up" : undefined} title={glyph.name} />
+          <label className="flex min-w-48 flex-1 flex-col gap-1 text-xs text-muted">
+            {t.editing}
+            {/* Named by position, not by action: this picks which physical button to edit. */}
+            <select className={INPUT} value={selected} onChange={(e) => chooseButton(e.target.value as ButtonId)}>
+              {BUTTON_IDS.map((id) => (
+                <option key={id} value={id}>
+                  {appearance(settings, id).name} · {t.roles[id]}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+
+        {rebindable && (
+          <div className="flex flex-wrap items-end gap-3 border-t border-border pt-4">
+            <label className="flex min-w-64 flex-1 flex-col gap-1 text-xs text-muted">
+              {t.actionLabel}
+              <select
+                className={INPUT}
+                value={carries}
+                onChange={(e) => setRemap(e.target.value as DigitalButtonId, selected as DigitalButtonId)}
+              >
+                {DIGITAL_BUTTONS.map((guide) => (
+                  <option key={guide} value={guide}>
+                    {actionText(t, guide)}
                   </option>
                 ))}
               </select>
             </label>
+            <button
+              type="button"
+              className={SMALL_BUTTON}
+              disabled={carries === selected}
+              onClick={() => setRemap(carries as DigitalButtonId, undefined)}
+            >
+              {t.reset}
+            </button>
+            <p
+              aria-live="polite"
+              className={`basis-full text-xs ${listening ? "rounded-lg bg-warn-bg px-2 py-1 font-medium text-warn-fg" : "text-muted"}`}
+            >
+              {!supported ? t.bindUnsupported : listening ? t.bindListening : t.bindIdle}
+            </p>
           </div>
+        )}
+
+        <div className="flex flex-wrap items-end gap-3 border-t border-border pt-4">
           <label className="flex flex-col gap-1 text-xs text-muted">
             {t.label}
             <input className={`${INPUT} w-20`} value={glyph.label} maxLength={12} onChange={(e) => setOverride(selected, { label: e.target.value })} />
@@ -279,60 +328,16 @@ function ButtonSection({ settings, locale, t }: { settings: ControllerSettings; 
           </button>
         </div>
 
-        {rebindable && (
-          <div className="flex flex-wrap items-end gap-3 border-t border-border pt-4">
-            <label className="flex min-w-64 flex-1 flex-col gap-1 text-xs text-muted">
-              {t.actionLabel}
-              {/* Choosing an action moves it here; setRemap swaps it with whatever sat on this button. */}
-              <select
-                className={INPUT}
-                value={carries}
-                onChange={(e) => setRemap(e.target.value as DigitalButtonId, selected as DigitalButtonId)}
-              >
-                {DIGITAL_BUTTONS.map((guide) => (
-                  <option key={guide} value={guide}>
-                    {actionText(t, guide)}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <button
-              type="button"
-              className={SMALL_BUTTON}
-              disabled={carries === selected}
-              onClick={() => setRemap(carries as DigitalButtonId, undefined)}
-            >
-              {t.reset}
-            </button>
-          </div>
-        )}
-
         <div className="space-y-2 border-t border-border pt-4 text-sm">
-          <div className="flex flex-wrap items-center gap-3">
-            <button
-              type="button"
-              className={SMALL_BUTTON}
-              disabled={!supported}
-              aria-pressed={listening}
-              onClick={() => setListening(!listening)}
-            >
-              {t.bindPress}
-            </button>
-            <p role="status" className="break-words text-muted">
-              {!supported ? t.bindUnsupported : padId ? fill(t.padFound, { id: padId }) : t.padNone}
-            </p>
-          </div>
+          <p role="status" className="break-words text-muted">
+            {!supported ? t.bindUnsupported : padId ? fill(t.padFound, { id: padId }) : t.padNone}
+          </p>
           {suggestion && suggestion !== settings.presetId && (
             <p className="flex flex-wrap items-center gap-2">
               {fill(t.suggest, { name: PRESETS[suggestion].name[locale] })}
               <button type="button" className={SMALL_BUTTON} onClick={() => setPreset(suggestion)}>
                 {t.usePreset}
               </button>
-            </p>
-          )}
-          {listening && (
-            <p aria-live="assertive" className="rounded-lg bg-warn-bg px-2 py-1 font-medium text-warn-fg">
-              {t.bindListening}
             </p>
           )}
         </div>
