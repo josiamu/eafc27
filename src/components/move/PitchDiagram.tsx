@@ -15,9 +15,12 @@ type Props = {
  * way on screen as it does on the pad: up is forward for both.
  *
  * Coordinates stay in the move's own frame — x toward the opponent's goal, y across the pitch —
- * and this rotation is the only place that knows which way the frame is drawn. Every move's
- * action falls inside x 46..95, y 38..69, so the view is cropped to that plus the goal above it
- * rather than showing a full pitch of empty grass.
+ * and this rotation is the only place that knows which way the frame is drawn.
+ *
+ * Every move's action falls inside x 46..95, y 38..69. Skill moves happen around the middle of
+ * the pitch, so framing the goal as well would mean carrying about forty units of empty grass
+ * between the two, most of the picture. The goal is left out: which way is forward is already
+ * carried by the attacking badge and by the marker on the player's own facing.
  */
 export function PitchDiagram({ player, ball, defender, trail, transitionMs, title }: Props) {
   const at = (p: Point) => ({
@@ -26,9 +29,9 @@ export function PitchDiagram({ player, ball, defender, trail, transitionMs, titl
   });
 
   return (
-    <svg viewBox="0 -8 100 132" role="img" aria-label={title} className="block h-auto w-full">
-      {/* Keeping the full width and trimming only the length gives the shortest frame that
-          still holds the goal: cropping the sides would make it taller relative to its width. */}
+    <svg viewBox="0 45 100 82" role="img" aria-label={title} className="block h-auto w-full">
+      {/* Full width, trimmed length. The width is set by the container either way, so cropping
+          the sides would only make the frame taller relative to it. */}
       <g transform="translate(0 160) rotate(-90)">
         <rect width="160" height="100" fill="var(--pitch)" />
         {[0, 40, 80, 120].map((x) => (
