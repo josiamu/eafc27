@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DataBadge } from "@/components/DataBadge";
 import { MoveAnimation } from "@/components/move/MoveAnimation";
+import { MoveTrainer } from "@/components/move/MoveTrainer";
 import { VideoSlot } from "@/components/move/VideoSlot";
 import { Stars } from "@/components/Stars";
 import { getMove, getMoves } from "@/data/moves";
@@ -58,6 +59,8 @@ export default async function MovePage({ params }: PageProps<"/[locale]/skills/[
         <MoveAnimation move={move} locale={locale} t={t.move} />
         <p className="text-xs text-muted">{t.move.stickNote}</p>
       </section>
+
+      <MoveTrainer sequence={move.sequence} locale={locale} t={t.move} />
 
       <div className="grid gap-4 md:grid-cols-2">
         <section className="space-y-2 rounded-2xl border border-border bg-surface p-4">
