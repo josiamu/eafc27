@@ -57,11 +57,35 @@ export function resetOverrides() {
   update((s) => ({ ...s, overrides: {} }));
 }
 
+type Remap = ControllerSettings["remap"];
+
+/** Which physical button a guide button's action sits on. Buttons with no entry keep their own. */
+function heldBy(remap: Remap, guide: DigitalButtonId): DigitalButtonId {
+  return remap[guide] ?? guide;
+}
+
+/**
+ * Moves an action onto a physical button, handing whoever held it the button being vacated.
+ * The mapping stays a permutation, so one physical button can never serve two actions —
+ * a state no real controller can be in. Passing no button means taking back the guide's own.
+ */
 export function setRemap(guide: DigitalButtonId, physical: DigitalButtonId | undefined) {
+  const target = physical ?? guide;
   update((s) => {
-    const remap = { ...s.remap };
-    if (!physical || physical === guide) delete remap[guide];
-    else remap[guide] = physical;
+    const remap: Remap = { ...s.remap };
+    const vacated = heldBy(remap, guide);
+    if (vacated === target) return s;
+
+    // The holder usually has no entry of its own, so every button has to be checked, not just keys.
+    const holder = DIGITAL_BUTTONS.find((id) => heldBy(remap, id) === target);
+
+    const assign = (id: DigitalButtonId, to: DigitalButtonId) => {
+      if (to === id) delete remap[id];
+      else remap[id] = to;
+    };
+    assign(guide, target);
+    if (holder && holder !== guide) assign(holder, vacated);
+
     return { ...s, remap };
   });
 }
