@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
+import { ButtonGlyph } from "@/components/controller/ButtonGlyph";
+import type { DigitalButtonId } from "@/controller/buttons";
 import { sampleGamepad } from "@/controller/input-sample";
 import { begin, feed, isSupported, resolveSequence, type Progress, type ResolvedStep } from "@/controller/recognizer";
 import { physicalFor, useControllerSettings } from "@/controller/store";
@@ -16,6 +18,10 @@ const noSubscription = () => () => {};
 type View = { stepIndex: number; status: Progress["status"] };
 
 const START: View = { stepIndex: 0, status: "waiting" };
+
+function firstPad(): Gamepad | undefined {
+  return navigator.getGamepads().find((candidate): candidate is Gamepad => candidate !== null);
+}
 
 /** The one control the section exists for, so it carries more weight than anything around it. */
 const PRIMARY_BUTTON =
@@ -44,13 +50,43 @@ export function MoveTrainer({ move, locale, t }: { move: Move; locale: Locale; t
   const progress = useRef<Progress[]>([]);
   const [attempt, setAttempt] = useState(0);
 
+  /** Starts practice, or begins a fresh attempt if it is already running. */
+  const startOrRetry = () => {
+    setView(START);
+    if (active) setAttempt((n) => n + 1);
+    else setActive(true);
+  };
+  const startOrRetryRef = useRef(startOrRetry);
+  useEffect(() => {
+    startOrRetryRef.current = startOrRetry;
+  });
+
+  // The menu button starts or retries from the controller, so the player never has to reach for the mouse.
+  // It listens all the time, not only while practising, and fires on the press, not while held.
+  const menuButton = physicalFor(settings, "MENU") as DigitalButtonId;
+  useEffect(() => {
+    if (!practisable || !readable) return;
+    let wasDown: boolean | null = null;
+    let frame = 0;
+    const poll = () => {
+      const pad = firstPad();
+      const down = pad ? (sampleGamepad(pad, performance.now())?.pressed.includes(menuButton) ?? false) : false;
+      // The first frame only records the state, so a button already held on arrival doesn't fire.
+      if (wasDown === false && down) startOrRetryRef.current();
+      wasDown = down;
+      frame = requestAnimationFrame(poll);
+    };
+    frame = requestAnimationFrame(poll);
+    return () => cancelAnimationFrame(frame);
+  }, [practisable, readable, menuButton]);
+
   useEffect(() => {
     if (!active) return;
 
     progress.current = variants.map(begin);
     let frame = 0;
     const poll = () => {
-      const pad = navigator.getGamepads().find((candidate): candidate is Gamepad => candidate !== null);
+      const pad = firstPad();
       const sample = pad ? sampleGamepad(pad, performance.now()) : null;
       if (sample && progress.current.length > 0) {
         progress.current = progress.current.map((current, i) => feed(current, sample, variants[i]));
@@ -89,6 +125,7 @@ export function MoveTrainer({ move, locale, t }: { move: Move; locale: Locale; t
   }
 
   const won = view.status === "success";
+  const [hintBefore, hintAfter] = t.practiceMenuHint.split("{button}");
 
   return (
     <section className="space-y-3">
@@ -109,10 +146,7 @@ export function MoveTrainer({ move, locale, t }: { move: Move; locale: Locale; t
           {won && (
             <button
               type="button"
-              onClick={() => {
-                setView(START);
-                setAttempt((n) => n + 1);
-              }}
+              onClick={startOrRetry}
               className={PRIMARY_BUTTON}
             >
               {t.practiceAgain}
@@ -122,6 +156,12 @@ export function MoveTrainer({ move, locale, t }: { move: Move; locale: Locale; t
             {!active ? t.practiceIdle : won ? t.practiceSuccess : t.practiceWaiting}
           </p>
         </div>
+
+        <p className="flex flex-wrap items-center gap-1.5 text-xs text-muted">
+          {hintBefore}
+          <ButtonGlyph id="MENU" size="sm" />
+          {hintAfter}
+        </p>
 
         {move.mirror && <p className="text-xs text-muted">{t.practiceEitherSide}</p>}
 

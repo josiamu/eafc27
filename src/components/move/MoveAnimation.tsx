@@ -9,7 +9,6 @@ import { InputSequence } from "./InputSequence";
 import { PitchDiagram } from "./PitchDiagram";
 
 const REDUCED_MOTION = "(prefers-reduced-motion: reduce)";
-const SPEEDS = [1, 0.5, 0.25] as const;
 
 function subscribeReducedMotion(onChange: () => void) {
   const query = window.matchMedia(REDUCED_MOTION);
@@ -27,7 +26,6 @@ export function MoveAnimation({ move, locale, t }: { move: Move; locale: Locale;
   const [userPlaying, setUserPlaying] = useState<boolean | null>(null);
   const playing = userPlaying ?? !reducedMotion;
   const [frame, setFrame] = useState(-1);
-  const [speed, setSpeed] = useState<number>(1);
 
   const { start, defender, keyframes } = move.diagram;
   const last = keyframes.length - 1;
@@ -36,10 +34,10 @@ export function MoveAnimation({ move, locale, t }: { move: Move; locale: Locale;
 
   useEffect(() => {
     if (!playing) return;
-    const delay = (frame === last ? 1500 : frame === -1 ? 700 : 950) / speed;
+    const delay = frame === last ? 1500 : frame === -1 ? 700 : 950;
     const timer = setTimeout(() => setFrame((f) => (f >= last ? -1 : f + 1)), delay);
     return () => clearTimeout(timer);
-  }, [playing, frame, last, speed]);
+  }, [playing, frame, last]);
 
   const current = frame < 0 ? start : keyframes[frame];
   const activeStep = frame < 0 ? -1 : keyframes[frame].step;
@@ -62,7 +60,7 @@ export function MoveAnimation({ move, locale, t }: { move: Move; locale: Locale;
           ball={current.ball}
           defender={defender}
           trail={trail}
-          transitionMs={reducedMotion ? 0 : 650 / speed}
+          transitionMs={reducedMotion ? 0 : 650}
           title={t.pitchTitle}
         />
         <span className="absolute left-2 top-2 rounded-full bg-black/55 px-2 py-0.5 text-xs text-white">
@@ -101,20 +99,6 @@ export function MoveAnimation({ move, locale, t }: { move: Move; locale: Locale;
           <span aria-live="polite" className="text-sm text-muted">
             {frame < 0 ? t.start : fill(t.step, { n: activeStep + 1 })}
           </span>
-
-          <div role="group" aria-label={t.speed} className="ml-auto inline-flex rounded-full border border-control p-0.5">
-            {SPEEDS.map((s) => (
-              <button
-                key={s}
-                type="button"
-                aria-pressed={speed === s}
-                onClick={() => setSpeed(s)}
-                className={`rounded-full px-2.5 py-1 text-xs ${speed === s ? "bg-fg text-bg" : "text-muted hover:text-fg"}`}
-              >
-                {s}×
-              </button>
-            ))}
-          </div>
         </div>
       </div>
     </div>

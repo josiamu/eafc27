@@ -93,8 +93,21 @@ body {
 }
 
 html {
-  /* Keep keyboard-focused elements clear of the sticky header. */
-  scroll-padding-top: 5rem;
+  /* Keep keyboard-focused elements clear of the sticky header, which wraps to more rows on narrow
+     screens (measured: 133px at 360px wide, 97px at 768px, 57px on desktop). */
+  scroll-padding-top: 9.5rem;
+}
+
+@media (min-width: 48rem) {
+  html {
+    scroll-padding-top: 7.5rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  html {
+    scroll-padding-top: 5rem;
+  }
 }
 
 :focus-visible {

@@ -33,7 +33,7 @@ const en: Dictionary = {
     steps: [
       { title: "Pick a controller", body: "Set it once. Your browser remembers it, no account needed." },
       { title: "Watch step by step", body: "Buttons light up in time while the player moves on the pitch." },
-      { title: "Slow down or step through", body: "Watch slowly until the rhythm sticks, then try it in game." },
+      { title: "Step through, then try it", body: "Pause on each beat until it sticks, then try it on a real controller on the move page." },
     ],
   },
   skills: {
@@ -72,6 +72,7 @@ const en: Dictionary = {
     practiceStart: "Start",
     practiceStop: "Stop",
     practiceAgain: "Again",
+    practiceMenuHint: "Press {button} on the controller to start or try again without putting it down.",
     practiceIdle: "Press start, then perform the inputs below on your controller.",
     practiceWaiting: "Waiting… perform the highlighted step.",
     practiceSuccess: "That's it.",
@@ -84,7 +85,6 @@ const en: Dictionary = {
     prev: "Previous step",
     next: "Next step",
     restart: "Restart",
-    speed: "Speed",
     attackDirection: "Attacking",
     pitchTitle: "Pitch diagram: your player in yellow, the ball in white, the defender in red",
     kinds: {
