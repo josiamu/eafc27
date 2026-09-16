@@ -17,6 +17,8 @@ export const TIMINGS = {
   flickMax: 350,
   /** How long a stick must stay put before it counts as held. */
   holdStickMin: 150,
+  /** How long a whole rotation may take, measured from the stick leaving centre. */
+  rotateMax: 900,
   /** Idle time before an unfinished attempt starts over. */
   restartAfter: 2000,
 } as const;
@@ -26,13 +28,27 @@ export type Expected =
   | { kind: "tap"; button: ButtonId }
   | { kind: "hold"; button: ButtonId }
   | { kind: "flick"; stick: StickId; direction: Direction }
-  | { kind: "hold-stick"; stick: StickId; direction: Direction };
+  | { kind: "hold-stick"; stick: StickId; direction: Direction }
+  | { kind: "rotate"; stick: StickId; path: readonly Direction[] };
 
 export type ResolvedStep = { inputs: Expected[] };
 
-/** Rotations are not recognised yet, so moves containing one cannot be practised. */
+const HANDLED = new Set(["tap", "hold", "flick", "hold-stick", "rotate"]);
+
+/** Guards against a move using an input kind added to the schema but not taught here. */
 export function isSupported(sequence: MoveStep[]): boolean {
-  return sequence.every((step) => step.inputs.every((input) => input.kind !== "rotate"));
+  return sequence.every((step) => step.inputs.every((input) => HANDLED.has(input.kind)));
+}
+
+/** Every direction of `path`, in order, somewhere in `trail`; sweeping through others is fine. */
+function isSubsequence(path: readonly Direction[], trail: readonly Direction[]): boolean {
+  if (path.length === 0) return true;
+  let next = 0;
+  for (const direction of trail) {
+    if (direction === path[next]) next += 1;
+    if (next === path.length) return true;
+  }
+  return false;
 }
 
 /**
@@ -41,17 +57,27 @@ export function isSupported(sequence: MoveStep[]): boolean {
  */
 export function resolveSequence(sequence: MoveStep[], physical: (id: ButtonId) => ButtonId): ResolvedStep[] {
   return sequence.map((step) => ({
-    inputs: step.inputs.flatMap((input): Expected[] => {
-      if (input.kind === "rotate") return [];
+    // A map, not a flatMap: nothing may be dropped, or a move could be passed unperformed.
+    inputs: step.inputs.map((input): Expected => {
       if (input.kind === "tap" || input.kind === "hold") {
-        return [{ kind: input.kind, button: physical(input.button) }];
+        return { kind: input.kind, button: physical(input.button) };
       }
-      return [{ kind: input.kind, stick: input.stick, direction: input.direction }];
+      if (input.kind === "rotate") {
+        return { kind: "rotate", stick: input.stick, path: input.path };
+      }
+      return { kind: input.kind, stick: input.stick, direction: input.direction };
     }),
   }));
 }
 
-type StickMemory = { direction: Direction | null; since: number; leftCentreAt: number | null };
+type StickMemory = {
+  direction: Direction | null;
+  since: number;
+  /** When the stick last left centre, and so when the current sweep began. */
+  leftCentreAt: number | null;
+  /** Distinct directions swept since leaving centre. Cleared on returning to centre. */
+  trail: Direction[];
+};
 
 export type Progress = {
   stepIndex: number;
@@ -100,11 +126,17 @@ export function feed(progress: Progress, sample: InputSample, steps: ResolvedSte
   for (const [stick, reading] of Object.entries(sample.sticks) as [StickId, InputSample["sticks"][StickId]][]) {
     const before = progress.sticks[stick];
     const changed = !before || before.direction !== reading.direction;
+    const previousTrail = before?.trail ?? [];
     sticks[stick] = {
       direction: reading.direction,
       since: changed ? sample.at : before.since,
-      leftCentreAt:
-        reading.direction === null ? null : (before?.leftCentreAt ?? sample.at),
+      leftCentreAt: reading.direction === null ? null : (before?.leftCentreAt ?? sample.at),
+      trail:
+        reading.direction === null
+          ? []
+          : previousTrail[previousTrail.length - 1] === reading.direction
+            ? previousTrail
+            : [...previousTrail, reading.direction],
     };
   }
 
@@ -149,6 +181,18 @@ export function feed(progress: Progress, sample: InputSample, steps: ResolvedSte
         if (done[index]) break;
         const memory = sticks[input.stick];
         if (memory?.direction === input.direction && sample.at - memory.since >= TIMINGS.holdStickMin) {
+          done[index] = true;
+          changedSomething = true;
+        }
+        break;
+      }
+      case "rotate": {
+        if (done[index]) break;
+        const memory = sticks[input.stick];
+        // One continuous sweep: centring the stick clears the trail and starts over.
+        if (memory?.leftCentreAt == null) break;
+        if (sample.at - memory.leftCentreAt > TIMINGS.rotateMax) break;
+        if (isSubsequence(input.path, memory.trail)) {
           done[index] = true;
           changedSomething = true;
         }
