@@ -17,6 +17,13 @@ type View = { stepIndex: number; status: Progress["status"] };
 
 const START: View = { stepIndex: 0, status: "waiting" };
 
+/** The one control the section exists for, so it carries more weight than anything around it. */
+const PRIMARY_BUTTON =
+  "inline-flex h-11 items-center rounded-full bg-accent px-5 text-base font-semibold text-accent-fg transition hover:brightness-110 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2";
+/** Stopping is not what a reader came to do, so it steps back while practice is running. */
+const QUIET_BUTTON =
+  "inline-flex h-11 items-center rounded-full border border-border px-5 text-base font-medium transition hover:border-accent focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2";
+
 export function MoveTrainer({ move, locale, t }: { move: Move; locale: Locale; t: Dictionary["move"] }) {
   const settings = useControllerSettings();
   const practisable = isSupported(move.sequence);
@@ -95,7 +102,7 @@ export function MoveTrainer({ move, locale, t }: { move: Move; locale: Locale; t
               setView(START);
             }}
             aria-pressed={active}
-            className="inline-flex h-9 items-center rounded-full border border-border px-3 text-sm hover:border-accent"
+            className={active ? QUIET_BUTTON : PRIMARY_BUTTON}
           >
             {active ? t.practiceStop : t.practiceStart}
           </button>
@@ -106,7 +113,7 @@ export function MoveTrainer({ move, locale, t }: { move: Move; locale: Locale; t
                 setView(START);
                 setAttempt((n) => n + 1);
               }}
-              className="inline-flex h-9 items-center rounded-full border border-accent px-3 text-sm"
+              className={PRIMARY_BUTTON}
             >
               {t.practiceAgain}
             </button>
