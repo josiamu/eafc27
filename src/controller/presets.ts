@@ -13,14 +13,12 @@ export type Glyph = {
   color?: string;
 };
 
-export const PRESET_IDS = ["playstation", "xbox", "switch", "keyboard"] as const;
+export const PRESET_IDS = ["playstation", "xbox", "switch"] as const;
 export type PresetId = (typeof PRESET_IDS)[number];
 
 export type Preset = {
   id: PresetId;
   name: Localized;
-  /** True when the in-game defaults are not confirmed and players may need to adjust. */
-  approximate?: boolean;
   buttons: Record<ButtonId, Glyph>;
 };
 
@@ -98,31 +96,6 @@ export const PRESETS: Record<PresetId, Preset> = {
       VIEW: g("round", "−", "Minus"),
       ...dpad,
       ...sticks,
-    },
-  },
-  keyboard: {
-    id: "keyboard",
-    name: { th: "คีย์บอร์ด PC", en: "PC keyboard" },
-    approximate: true,
-    buttons: {
-      FACE_BOTTOM: g("key", "S", "S"),
-      FACE_RIGHT: g("key", "D", "D"),
-      FACE_LEFT: g("key", "A", "A"),
-      FACE_TOP: g("key", "W", "W"),
-      SHOULDER_L1: g("key", "Q", "Q"),
-      SHOULDER_R1: g("key", "C", "C"),
-      TRIGGER_L2: g("key", "Shift", "Shift"),
-      TRIGGER_R2: g("key", "E", "E"),
-      STICK_L_PRESS: g("key", "Z", "Z"),
-      STICK_R_PRESS: g("key", "X", "X"),
-      DPAD_UP: g("key", "1", "1"),
-      DPAD_DOWN: g("key", "2", "2"),
-      DPAD_LEFT: g("key", "3", "3"),
-      DPAD_RIGHT: g("key", "4", "4"),
-      MENU: g("key", "Esc", "Escape"),
-      VIEW: g("key", "Tab", "Tab"),
-      STICK_L: g("stick", "←→", "Arrow keys"),
-      STICK_R: g("stick", "Num", "Numpad"),
     },
   },
 };

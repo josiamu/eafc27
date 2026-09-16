@@ -56,7 +56,7 @@
 เป้าหมาย: ตั้งค่าปุ่มครั้งเดียว แล้วทุกหน้าที่แสดงปุ่มเปลี่ยนตาม
 
 - [x] นิยาม type ของชื่อปุ่มกลางให้ครบ เช่น `SHOULDER_R1`, `TRIGGER_L2`, `FACE_BOTTOM`, `STICK_R_FLICK`
-- [x] เขียน preset สี่ชุด PlayStation, Xbox, Nintendo Switch, คีย์บอร์ด PC
+- [x] เขียน preset สามชุด PlayStation, Xbox, Nintendo Switch
 - [x] ทำคอมโพเนนต์ `ButtonGlyph` ที่รับชื่อกลางแล้วแสดงไอคอนตาม preset ปัจจุบัน
 - [x] ทำ context หรือ store เก็บ mapping ปัจจุบัน
 - [x] เขียนตัวอ่านและเขียน localStorage ที่ทนกรณีไม่มีค่าเดิม

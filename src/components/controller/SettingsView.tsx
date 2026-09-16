@@ -84,11 +84,6 @@ function PresetSection({ settings, locale, t }: { settings: ControllerSettings; 
                   <GlyphView key={button} glyph={preset.buttons[button]} size="sm" direction={button === "STICK_R" ? "up" : undefined} />
                 ))}
               </span>
-              {preset.approximate && (
-                <span className="mt-3 block rounded-lg bg-warn-bg px-2 py-1 text-xs text-warn-fg">
-                  {t.approximate}: {t.approximateNote}
-                </span>
-              )}
             </button>
           );
         })}
@@ -124,10 +119,7 @@ function CustomizeSection({ settings, t }: { settings: ControllerSettings; t: T 
           onSelect={setSelected}
           label={t.customizeTitle}
         />
-        <p className="text-center text-xs text-muted">
-          {t.diagramHint}
-          {settings.presetId === "keyboard" && ` ${t.diagramKeyboardNote}`}
-        </p>
+        <p className="text-center text-xs text-muted">{t.diagramHint}</p>
 
         <div className="flex flex-wrap items-end gap-3 border-t border-border pt-4">
           <div className="flex min-w-48 flex-1 items-center gap-3 self-center" aria-live="polite">

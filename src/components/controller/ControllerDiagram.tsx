@@ -51,12 +51,10 @@ const OFFSET: Record<ButtonId, Pt> = {
   STICK_R_PRESS: [580, 397],
 };
 
-// The keyboard preset stands in for controller positions, so it uses a controller layout too.
 const LAYOUTS: Record<PresetId, Record<ButtonId, Pt>> = {
   playstation: SYMMETRIC,
   xbox: OFFSET,
   switch: OFFSET,
-  keyboard: OFFSET,
 };
 
 const LEFT_SIDE: ButtonId[] = ["TRIGGER_L2", "SHOULDER_L1", "VIEW", "STICK_L", "STICK_L_PRESS", "DPAD_UP", "DPAD_LEFT", "DPAD_RIGHT", "DPAD_DOWN"];
