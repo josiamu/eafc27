@@ -1,17 +1,14 @@
 import type { Metadata } from "next";
-import { Kanit, Noto_Sans_Thai } from "next/font/google";
 import { notFound } from "next/navigation";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { isLocale, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
+import { bodyFont, headingFont } from "@/lib/fonts";
 import { pageMetadata } from "@/lib/metadata";
 import { SITE_URL } from "@/lib/site";
 import { themeInitScript } from "@/lib/theme";
 import "../globals.css";
-
-const bodyFont = Noto_Sans_Thai({ subsets: ["thai", "latin"], variable: "--font-body", display: "swap" });
-const headingFont = Kanit({ subsets: ["thai", "latin"], weight: ["500", "700"], variable: "--font-heading", display: "swap" });
 
 export const dynamicParams = false;
 

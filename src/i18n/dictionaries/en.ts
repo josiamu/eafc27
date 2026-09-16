@@ -204,6 +204,12 @@ const en: Dictionary = {
     reportChecklist: ["The move's name", "Your controller", "What you pressed and what happened in game", "A link to a clip or a correct guide, if you have one"],
     reportCta: "Report on GitHub",
   },
+  notFound: {
+    title: "Page not found",
+    body: "The link may be mistyped, or the move may have been moved or removed. Try finding it in the list of skill moves.",
+    toSkills: "Browse all skill moves",
+    toHome: "Back to home",
+  },
   footer: {
     note: "Fan-made site, not affiliated with EA SPORTS. Details may differ from the game.",
     report: "Report a mistake",

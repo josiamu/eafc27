@@ -21,6 +21,7 @@ Deploys to https://josiamu.github.io/eafc27/ via `.github/workflows/deploy.yml` 
 - A move may be `"verified": true` only when at least two sources agree on stars and inputs. Otherwise `false`, and the site shows a "needs checking" badge.
 - Static export: every dynamic route needs `generateStaticParams` and `dynamicParams = false`. No redirects, cookies, or server actions.
 - Page metadata goes through `pageMetadata` (`src/lib/metadata.ts`). Share images are `og.png` route handlers, not `opengraph-image` files, which export without an extension.
+- New pages must be added to `src/app/sitemap.ts`. The 404 page is `src/app/global-not-found.tsx` (one static file for both languages; a script picks the language).
 - Form controls and toggles use `border-control`, not `border-border`, to keep 3:1 contrast.
 - Every UI string goes in both `src/i18n/dictionaries/th.ts` and `en.ts` (en is type-checked against th).
 - Don't use console makers' logos or button artwork; glyphs are text characters.

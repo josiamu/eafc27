@@ -18,6 +18,8 @@ const nextConfig: NextConfig = {
   images: { unoptimized: true },
   env: { NEXT_PUBLIC_BASE_PATH: basePath },
   allowedDevOrigins: lanAddresses,
+  // The site has two root layouts (the bare redirect and [locale]), so the 404 page needs its own document.
+  experimental: { globalNotFound: true },
 };
 
 export default nextConfig;
