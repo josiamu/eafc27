@@ -54,11 +54,12 @@
         }
       ],
       "note": {
-        "th": "กดจ่ายเพื่อยกเลิก แล้วค้างอนาล็อกซ้ายไปขวา ทำอีกฝั่งค้างไปซ้าย",
-        "en": "Press pass to cancel and hold the left stick right. Hold left for the other side."
+        "th": "กดจ่ายเพื่อยกเลิก แล้วค้างอนาล็อกซ้ายไปขวา",
+        "en": "Press pass to cancel and hold the left stick right."
       }
     }
   ],
+  "mirror": true,
   "diagram": {
     "start": {
       "player": [

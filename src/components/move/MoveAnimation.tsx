@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState, useSyncExternalStore } from "react";
+import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
+import { mirrorSteps } from "@/data/mirror";
 import type { Move } from "@/data/schema";
 import { fill, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/th";
@@ -30,6 +31,8 @@ export function MoveAnimation({ move, locale, t }: { move: Move; locale: Locale;
 
   const { start, defender, keyframes } = move.diagram;
   const last = keyframes.length - 1;
+  // Derived, not stored, so it can never contradict the move it belongs to.
+  const twin = useMemo(() => (move.mirror ? mirrorSteps(move.sequence) : null), [move]);
 
   useEffect(() => {
     if (!playing) return;
@@ -68,6 +71,13 @@ export function MoveAnimation({ move, locale, t }: { move: Move; locale: Locale;
 
       <div className="space-y-3 p-3 sm:p-4">
         <InputSequence sequence={move.sequence} activeStep={activeStep} locale={locale} t={t} />
+
+        {twin && (
+          <div className="space-y-1.5 border-t border-border pt-3">
+            <p className="text-xs text-muted">{t.mirrorLabel}</p>
+            <InputSequence sequence={twin} locale={locale} t={t} compact />
+          </div>
+        )}
 
         <div className="flex flex-wrap items-center gap-2">
           <button type="button" className={control} onClick={() => goTo(Math.max(-1, frame - 1))} disabled={frame < 0} aria-label={t.prev}>

@@ -36,6 +36,11 @@ export const moveSchema = z
     contexts: z.array(z.enum(MOVE_CONTEXTS)),
     situations: z.array(localized).min(1),
     sequence: z.array(step).min(1),
+    /**
+     * True when the move has an opposite-side twin performed with left and right swapped.
+     * The twin is derived, never stored, so the two cannot drift apart.
+     */
+    mirror: z.boolean().default(false),
     diagram: z
       .object({
         start: z.object({ player: point, ball: point }).strict(),

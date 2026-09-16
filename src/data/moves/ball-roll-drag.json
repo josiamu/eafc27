@@ -43,13 +43,10 @@
           "stick": "STICK_R",
           "direction": "right"
         }
-      ],
-      "note": {
-        "th": "ปัดซ้ายเพื่อลากไปอีกฝั่ง",
-        "en": "Flick left to drag the other way."
-      }
+      ]
     }
   ],
+  "mirror": true,
   "diagram": {
     "start": {
       "player": [

@@ -45,11 +45,12 @@
         }
       ],
       "note": {
-        "th": "ปัดซ้ายเพื่อทำอีกฝั่ง มีหนึ่งแหล่งให้ปัดขึ้นในขั้นแรก",
-        "en": "Flick left for the other side. One source says flick up in the first step."
+        "th": "มีหนึ่งแหล่งให้ปัดขึ้นในขั้นแรก",
+        "en": "One source says flick up in the first step."
       }
     }
   ],
+  "mirror": true,
   "diagram": {
     "start": {
       "player": [

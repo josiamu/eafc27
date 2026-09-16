@@ -60,7 +60,7 @@ export default async function MovePage({ params }: PageProps<"/[locale]/skills/[
         <p className="text-xs text-muted">{t.move.stickNote}</p>
       </section>
 
-      <MoveTrainer sequence={move.sequence} locale={locale} t={t.move} />
+      <MoveTrainer move={move} locale={locale} t={t.move} />
 
       <div className="grid gap-4 md:grid-cols-2">
         <section className="space-y-2 rounded-2xl border border-border bg-surface p-4">

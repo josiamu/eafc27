@@ -26,13 +26,10 @@
           "stick": "STICK_R",
           "direction": "right"
         }
-      ],
-      "note": {
-        "th": "ปัดซ้ายเพื่อหลอกอีกฝั่ง",
-        "en": "Flick left to feint the other way."
-      }
+      ]
     }
   ],
+  "mirror": true,
   "diagram": {
     "start": {
       "player": [

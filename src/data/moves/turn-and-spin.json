@@ -37,11 +37,12 @@
         }
       ],
       "note": {
-        "th": "แหล่งข้อมูลให้ปุ่มเดียวกับ Stop and Turn (4 ดาว) ปัดซ้ายเพื่อหมุนอีกฝั่ง",
-        "en": "Sources give the same input as the 4-star Stop and Turn. Flick left for the other side."
+        "th": "แหล่งข้อมูลให้ปุ่มเดียวกับ Stop and Turn (4 ดาว)",
+        "en": "Sources give the same input as the 4-star Stop and Turn."
       }
     }
   ],
+  "mirror": true,
   "diagram": {
     "start": {
       "player": [

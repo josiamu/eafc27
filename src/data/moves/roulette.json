@@ -33,11 +33,12 @@
         }
       ],
       "note": {
-        "th": "ทุกแหล่งเริ่มจากทิศลงแล้วหมุนตามเข็มนาฬิกา แต่บอกระยะหมุนไม่ตรงกัน (90° ถึง 270°) ทำอีกฝั่งให้หมุนทวนเข็ม",
-        "en": "All sources start from down and turn clockwise, but disagree on how far (90° to 270°). Turn anticlockwise for the other side."
+        "th": "ทุกแหล่งเริ่มจากทิศลงแล้วหมุนตามเข็มนาฬิกา แต่บอกระยะหมุนไม่ตรงกัน (90° ถึง 270°)",
+        "en": "All sources start from down and turn clockwise, but disagree on how far (90° to 270°)."
       }
     }
   ],
+  "mirror": true,
   "diagram": {
     "start": {
       "player": [

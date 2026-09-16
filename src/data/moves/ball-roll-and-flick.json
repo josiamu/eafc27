@@ -28,11 +28,7 @@
           "stick": "STICK_R",
           "direction": "right"
         }
-      ],
-      "note": {
-        "th": "ค้างซ้ายแล้วปัดขึ้นเพื่อทำอีกฝั่ง",
-        "en": "Hold left then flick up for the other side."
-      }
+      ]
     },
     {
       "inputs": [
@@ -44,6 +40,7 @@
       ]
     }
   ],
+  "mirror": true,
   "diagram": {
     "start": {
       "player": [

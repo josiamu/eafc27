@@ -33,11 +33,12 @@
         }
       ],
       "note": {
-        "th": "ค้างอนาล็อกขวาไปขวาและอนาล็อกซ้ายไปซ้ายพร้อมกัน สลับทิศเพื่อทำอีกฝั่ง แต่แหล่งข้อมูลครึ่งหนึ่งให้ทิศกลับกัน",
-        "en": "Hold the right stick right and left stick left together; swap for the other side. Half the sources give the directions reversed."
+        "th": "ค้างอนาล็อกขวาไปขวาและอนาล็อกซ้ายไปซ้ายพร้อมกัน แต่แหล่งข้อมูลครึ่งหนึ่งให้ทิศกลับกัน",
+        "en": "Hold the right stick right and left stick left together. Half the sources give the directions reversed."
       }
     }
   ],
+  "mirror": true,
   "diagram": {
     "start": {
       "player": [

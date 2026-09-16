@@ -43,13 +43,10 @@
           "stick": "STICK_R",
           "direction": "right"
         }
-      ],
-      "note": {
-        "th": "ปัดซ้ายเพื่อหมุนอีกฝั่ง",
-        "en": "Flick left to spin the other way."
-      }
+      ]
     }
   ],
+  "mirror": true,
   "diagram": {
     "start": {
       "player": [

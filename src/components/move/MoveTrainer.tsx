@@ -2,9 +2,10 @@
 
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { sampleGamepad } from "@/controller/input-sample";
-import { begin, feed, isSupported, resolveSequence, type Progress } from "@/controller/recognizer";
+import { begin, feed, isSupported, resolveSequence, type Progress, type ResolvedStep } from "@/controller/recognizer";
 import { physicalFor, useControllerSettings } from "@/controller/store";
-import type { MoveStep } from "@/data/schema";
+import { mirrorSteps } from "@/data/mirror";
+import type { Move } from "@/data/schema";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/th";
 import { InputSequence } from "./InputSequence";
@@ -16,41 +17,49 @@ type View = { stepIndex: number; status: Progress["status"] };
 
 const START: View = { stepIndex: 0, status: "waiting" };
 
-export function MoveTrainer({ sequence, locale, t }: { sequence: MoveStep[]; locale: Locale; t: Dictionary["move"] }) {
+export function MoveTrainer({ move, locale, t }: { move: Move; locale: Locale; t: Dictionary["move"] }) {
   const settings = useControllerSettings();
-  const practisable = isSupported(sequence);
+  const practisable = isSupported(move.sequence);
   const readable = useSyncExternalStore(noSubscription, () => typeof navigator.getGamepads === "function", () => true);
 
-  // Follows the player's own bindings: the recogniser never learns about them itself.
-  const steps = useMemo(() => resolveSequence(sequence, (id) => physicalFor(settings, id)), [sequence, settings]);
+  /**
+   * One variant per side. Inputs resolve through physicalFor, so practice follows whatever
+   * bindings the player set, and a move with a twin passes performed either way round.
+   */
+  const variants: ResolvedStep[][] = useMemo(() => {
+    const physical = (id: Parameters<typeof physicalFor>[1]) => physicalFor(settings, id);
+    const sides = move.mirror ? [move.sequence, mirrorSteps(move.sequence)] : [move.sequence];
+    return sides.map((side) => resolveSequence(side, physical));
+  }, [move, settings]);
 
   const [active, setActive] = useState(false);
   const [view, setView] = useState<View>(START);
-  const progress = useRef<Progress | null>(null);
+  const progress = useRef<Progress[]>([]);
   const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     if (!active) return;
 
-    progress.current = begin(steps);
+    progress.current = variants.map(begin);
     let frame = 0;
     const poll = () => {
       const pad = navigator.getGamepads().find((candidate): candidate is Gamepad => candidate !== null);
       const sample = pad ? sampleGamepad(pad, performance.now()) : null;
-      if (sample && progress.current) {
-        const next = feed(progress.current, sample, steps);
-        progress.current = next;
-        setView((current) =>
-          current.stepIndex === next.stepIndex && current.status === next.status
-            ? current
-            : { stepIndex: next.stepIndex, status: next.status },
+      if (sample && progress.current.length > 0) {
+        progress.current = progress.current.map((current, i) => feed(current, sample, variants[i]));
+        const won = progress.current.some((p) => p.status === "success");
+        // Follow whichever side the player is further into, so the highlight tracks them.
+        const lead = progress.current.reduce((best, p) => (p.stepIndex > best.stepIndex ? p : best));
+        const next: View = { stepIndex: lead.stepIndex, status: won ? "success" : lead.status };
+        setView((shown) =>
+          shown.stepIndex === next.stepIndex && shown.status === next.status ? shown : next,
         );
       }
       frame = requestAnimationFrame(poll);
     };
     frame = requestAnimationFrame(poll);
     return () => cancelAnimationFrame(frame);
-  }, [active, steps, attempt]);
+  }, [active, variants, attempt]);
 
   const heading = <h2 className="font-display text-xl font-bold">{t.practiceTitle}</h2>;
 
@@ -58,7 +67,7 @@ export function MoveTrainer({ sequence, locale, t }: { sequence: MoveStep[]; loc
     return (
       <section className="space-y-2">
         {heading}
-        <p className="max-w-prose rounded-xl bg-surface-2 px-3 py-2 text-sm text-muted">{t.practiceRotateSoon}</p>
+        <p className="max-w-prose rounded-xl bg-surface-2 px-3 py-2 text-sm text-muted">{t.practiceUnsupported}</p>
       </section>
     );
   }
@@ -107,8 +116,10 @@ export function MoveTrainer({ sequence, locale, t }: { sequence: MoveStep[]; loc
           </p>
         </div>
 
-        {/* The step being waited for lights up, reusing the same strip the move page already shows. */}
-        <InputSequence sequence={sequence} activeStep={active && !won ? view.stepIndex : -1} locale={locale} t={t} />
+        {move.mirror && <p className="text-xs text-muted">{t.practiceEitherSide}</p>}
+
+        {/* The step being waited for lights up, reusing the strip the move page already shows. */}
+        <InputSequence sequence={move.sequence} activeStep={active && !won ? view.stepIndex : -1} locale={locale} t={t} />
       </div>
     </section>
   );

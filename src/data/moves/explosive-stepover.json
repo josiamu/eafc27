@@ -39,11 +39,12 @@
         }
       ],
       "note": {
-        "th": "ดันอนาล็อกซ้ายไปทิศที่จะออกตัว หมุนไปซ้ายเพื่อทำอีกฝั่ง",
-        "en": "Push the left stick toward your exit. Roll to the left for the other side."
+        "th": "ดันอนาล็อกซ้ายไปทิศที่จะออกตัว",
+        "en": "Push the left stick toward your exit."
       }
     }
   ],
+  "mirror": true,
   "diagram": {
     "start": {
       "player": [

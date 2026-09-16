@@ -37,11 +37,12 @@
         }
       ],
       "note": {
-        "th": "ทำอีกฝั่งค้างซ้ายแล้วปัดขวา มีหนึ่งแหล่งให้ทิศปัดต่างออกไป",
-        "en": "For the other side hold left, then flick right. One source gives a different flick."
+        "th": "มีหนึ่งแหล่งให้ทิศปัดต่างออกไป",
+        "en": "One source gives a different flick."
       }
     }
   ],
+  "mirror": true,
   "diagram": {
     "start": {
       "player": [

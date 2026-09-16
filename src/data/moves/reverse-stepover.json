@@ -30,13 +30,10 @@
             "up"
           ]
         }
-      ],
-      "note": {
-        "th": "หมุนจากซ้ายขึ้นบนเพื่อทำอีกฝั่ง",
-        "en": "Roll from left to up for the other side."
-      }
+      ]
     }
   ],
+  "mirror": true,
   "diagram": {
     "start": {
       "player": [

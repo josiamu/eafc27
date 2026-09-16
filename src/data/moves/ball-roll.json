@@ -32,11 +32,12 @@
         }
       ],
       "note": {
-        "th": "ค้างไว้นานเท่าไร นักเตะก็ลากบอลต่อไปเท่านั้น ค้างซ้ายเพื่อลากไปอีกฝั่ง",
-        "en": "The player keeps rolling as long as you hold. Hold left to roll the other way."
+        "th": "ค้างไว้นานเท่าไร นักเตะก็ลากบอลต่อไปเท่านั้น",
+        "en": "The player keeps rolling as long as you hold."
       }
     }
   ],
+  "mirror": true,
   "diagram": {
     "start": {
       "player": [

@@ -30,13 +30,10 @@
           "stick": "STICK_R",
           "direction": "right"
         }
-      ],
-      "note": {
-        "th": "ค้างซ้ายเพื่อเปลี่ยนไปอีกฝั่ง",
-        "en": "Hold left to switch the other way."
-      }
+      ]
     }
   ],
+  "mirror": true,
   "diagram": {
     "start": {
       "player": [

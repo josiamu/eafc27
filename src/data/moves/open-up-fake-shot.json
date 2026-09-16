@@ -52,11 +52,12 @@
         }
       ],
       "note": {
-        "th": "กดจ่ายเพื่อยกเลิก แล้วดันอนาล็อกซ้ายไปขวาบน ทำอีกฝั่งดันไปซ้ายบน",
-        "en": "Press pass to cancel, pushing the left stick up-right. Use up-left for the other side."
+        "th": "กดจ่ายเพื่อยกเลิก แล้วดันอนาล็อกซ้ายไปขวาบน",
+        "en": "Press pass to cancel, pushing the left stick up-right."
       }
     }
   ],
+  "mirror": true,
   "diagram": {
     "start": {
       "player": [

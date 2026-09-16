@@ -42,11 +42,12 @@
         }
       ],
       "note": {
-        "th": "หมุนจากขวาไปซ้ายเพื่อทำอีกฝั่ง มีหนึ่งแหล่งให้ปุ่มต่างออกไป",
-        "en": "Roll right to left for the other side. One source gives a different input."
+        "th": "มีหนึ่งแหล่งให้ปุ่มต่างออกไป",
+        "en": "One source gives a different input."
       }
     }
   ],
+  "mirror": true,
   "diagram": {
     "start": {
       "player": [
