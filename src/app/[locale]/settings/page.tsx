@@ -14,5 +14,7 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/settings
 export default async function SettingsPage({ params }: PageProps<"/[locale]/settings">) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
-  return <SettingsView locale={locale} t={getDictionary(locale).settings} />;
+  const t = getDictionary(locale);
+  // Direction names live under `move`; the inspector needs them to name what the sticks report.
+  return <SettingsView locale={locale} t={t.settings} directions={t.move.directions} />;
 }

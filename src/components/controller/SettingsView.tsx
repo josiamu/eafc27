@@ -8,6 +8,7 @@ import {
   isDigitalButton,
   type ButtonId,
   type DigitalButtonId,
+  type Direction,
 } from "@/controller/buttons";
 import { GLYPH_SHAPES, PRESETS, PRESET_IDS, type GlyphShape, type PresetId } from "@/controller/presets";
 import {
@@ -24,6 +25,7 @@ import {
 import { fill, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/th";
 import { ControllerDiagram } from "./ControllerDiagram";
+import { GamepadInspector } from "./GamepadInspector";
 import { GlyphView } from "./GlyphView";
 
 type T = Dictionary["settings"];
@@ -34,7 +36,15 @@ const SMALL_BUTTON =
   "inline-flex h-9 items-center rounded-full border border-border px-3 text-sm text-fg hover:bg-surface-2 disabled:cursor-not-allowed disabled:opacity-40";
 const CARD = "rounded-2xl border border-border bg-surface";
 
-export function SettingsView({ locale, t }: { locale: Locale; t: T }) {
+export function SettingsView({
+  locale,
+  t,
+  directions,
+}: {
+  locale: Locale;
+  t: T;
+  directions: Record<Direction, string>;
+}) {
   const settings = useControllerSettings();
 
   return (
@@ -45,7 +55,29 @@ export function SettingsView({ locale, t }: { locale: Locale; t: T }) {
       </header>
       <PresetSection settings={settings} locale={locale} t={t} />
       <ButtonSection settings={settings} locale={locale} t={t} />
+      <InspectorSection t={t} directions={directions} />
     </div>
+  );
+}
+
+/** Diagnostics, closed by default: useful when a controller misbehaves, noise otherwise. */
+function InspectorSection({ t, directions }: { t: T; directions: Record<Direction, string> }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <section aria-labelledby="inspect-title" className="space-y-4">
+      <SectionHeading
+        id="inspect-title"
+        title={t.inspectTitle}
+        lead={t.inspectLead}
+        action={
+          <button type="button" className={SMALL_BUTTON} aria-expanded={open} onClick={() => setOpen(!open)}>
+            {open ? t.inspectHide : t.inspectShow}
+          </button>
+        }
+      />
+      {open && <GamepadInspector t={t} directions={directions} />}
+    </section>
   );
 }
 
