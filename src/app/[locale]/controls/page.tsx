@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ControlGroupNav } from "@/components/controls/ControlGroupNav";
 import { DataBadge } from "@/components/DataBadge";
 import { InputSequence } from "@/components/move/InputSequence";
 import { getControlGroups } from "@/data/controls";
@@ -19,6 +20,7 @@ export default async function ControlsPage({ params }: PageProps<"/[locale]/cont
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const t = getDictionary(locale);
+  const groups = getControlGroups();
 
   return (
     <div className="space-y-8">
@@ -32,10 +34,11 @@ export default async function ControlsPage({ params }: PageProps<"/[locale]/cont
             {t.controls.remapLink}
           </Link>
         </p>
+        <ControlGroupNav groups={groups} locale={locale} label={t.controls.groups} />
       </header>
 
       <ul className="grid gap-3 md:grid-cols-2">
-        {getControlGroups().map((group) => (
+        {groups.map((group) => (
           <li key={group.slug}>
             <Link
               href={`/${locale}/controls/${group.slug}/`}

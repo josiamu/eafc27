@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ControlGroupNav } from "@/components/controls/ControlGroupNav";
 import { ControlList } from "@/components/controls/ControlList";
 import { DataBadge } from "@/components/DataBadge";
 import { getControlGroup, getControlGroups } from "@/data/controls";
@@ -54,6 +55,7 @@ export default async function ControlGroupPage({ params }: PageProps<"/[locale]/
         <h1 className="font-display text-3xl font-bold sm:text-4xl">{pick(group.title, locale)}</h1>
         <p className="max-w-prose text-lg text-muted">{pick(group.summary, locale)}</p>
         <p className="max-w-prose text-sm text-muted">{t.controls.classicNote}</p>
+        <ControlGroupNav groups={groups} current={group.slug} locale={locale} label={t.controls.groups} />
       </header>
 
       <ControlList controls={group.controls} locale={locale} t={t} />

@@ -123,6 +123,7 @@ const en: Dictionary = {
     prev: "Previous",
     next: "Next",
     others: "Other sections",
+    groups: "Control sections",
     count: "{n} commands",
     or: "or",
     sources: "Sources",
