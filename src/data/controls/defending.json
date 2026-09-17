@@ -28,6 +28,7 @@
           }
         ]
       ],
+      "featured": true,
       "verified": true
     },
     {
@@ -89,6 +90,7 @@
           }
         ]
       ],
+      "featured": true,
       "verified": true
     },
     {
@@ -261,6 +263,7 @@
         "th": "ในโหมดป้องกันแบบ Technical และ Legacy",
         "en": "With Technical or Legacy defending."
       },
+      "featured": true,
       "verified": true
     },
     {

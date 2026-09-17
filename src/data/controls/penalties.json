@@ -47,6 +47,7 @@
           }
         ]
       ],
+      "featured": true,
       "verified": true
     },
     {
@@ -70,6 +71,7 @@
           }
         ]
       ],
+      "featured": true,
       "verified": true
     },
     {
@@ -154,6 +156,7 @@
         "th": "ดันอนาล็อกขวาไปทิศที่จะพุ่ง",
         "en": "Push the right stick the way to dive."
       },
+      "featured": true,
       "verified": true
     },
     {

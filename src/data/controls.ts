@@ -48,3 +48,7 @@ export function getControlGroups(): ControlGroup[] {
   if (process.env.NODE_ENV !== "production") return loadControlGroups();
   return (cache ??= loadControlGroups());
 }
+
+export function getControlGroup(slug: string): ControlGroup | undefined {
+  return getControlGroups().find((group) => group.slug === slug);
+}

@@ -20,6 +20,8 @@ const control = z
     /** Each entry is one way to do it, a sequence of steps; the page joins them with "or". */
     ways: z.array(z.array(step).min(1)).min(1),
     note: localized.optional(),
+    /** Shown on the group's card on the /controls hub. */
+    featured: z.literal(true).optional(),
     verified: z.boolean(),
   })
   .strict();
@@ -44,7 +46,14 @@ export const controlGroupSchema = z
       if (!c.verified && !c.note) {
         ctx.addIssue({ code: "custom", path: ["controls", i, "note"], message: "an unverified control must say where the sources differ" });
       }
+      if (c.featured && !c.verified) {
+        ctx.addIssue({ code: "custom", path: ["controls", i, "featured"], message: "only verified controls can be featured" });
+      }
     });
+    const featured = group.controls.filter((c) => c.featured).length;
+    if (featured < 1 || featured > 3) {
+      ctx.addIssue({ code: "custom", path: ["controls"], message: `feature 1 to 3 controls, not ${featured}` });
+    }
     const names = group.controls.map((c) => c.name.en);
     names.forEach((name, i) => {
       if (names.indexOf(name) !== i) ctx.addIssue({ code: "custom", path: ["controls", i, "name"], message: `duplicate control "${name}"` });

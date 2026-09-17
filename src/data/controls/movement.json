@@ -51,6 +51,7 @@
           }
         ]
       ],
+      "featured": true,
       "verified": true
     },
     {
@@ -78,6 +79,7 @@
         "th": "มีบอลคือบังบอล ไม่มีบอลคือยืนกั้นคู่แข่ง",
         "en": "With the ball you shield; without it you jockey."
       },
+      "featured": true,
       "verified": true
     },
     {
@@ -276,6 +278,7 @@
         "th": "ดูทุกท่าได้ในหน้าสกิลมูฟ",
         "en": "Every move is on the Skill Moves page."
       },
+      "featured": true,
       "verified": true
     }
   ],
