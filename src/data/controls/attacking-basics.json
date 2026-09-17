@@ -1,0 +1,655 @@
+{
+  "slug": "attacking-basics",
+  "game": "FC27",
+  "order": 2,
+  "title": {
+    "th": "จ่ายบอลและยิงประตู",
+    "en": "Passing and shooting"
+  },
+  "summary": {
+    "th": "จ่าย โยน ทะลุช่อง ยิง และลูกหลอก",
+    "en": "Passes, crosses, through balls, shots and fakes."
+  },
+  "controls": [
+    {
+      "name": {
+        "th": "จ่ายบอลเรียด / โหม่ง",
+        "en": "Ground pass / header"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_BOTTOM"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "โยนบอล / ครอส / โหม่ง",
+        "en": "Lob pass / cross / header"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_LEFT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "จ่ายทะลุช่อง",
+        "en": "Through pass"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_TOP"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ยิง / วอลเลย์ / โหม่ง",
+        "en": "Shoot / volley / header"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ยิงเรียดพุ่ง",
+        "en": "Low driven shot"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          }
+        ]
+      ],
+      "note": {
+        "th": "กดยิงซ้ำระหว่างชาร์จพลัง",
+        "en": "Press shoot again while powering up."
+      },
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ชิพ",
+        "en": "Chip shot"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_L1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ยิงโค้ง",
+        "en": "Finesse shot"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ยิงโค้งเรียด",
+        "en": "Low driven finesse shot"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          }
+        ]
+      ],
+      "note": {
+        "th": "กดยิงซ้ำระหว่างชาร์จพลัง",
+        "en": "Press shoot again while powering up."
+      },
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ยิงเต็มแรง",
+        "en": "Power shot"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_L1"
+              },
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ยิงเต็มแรงเรียด",
+        "en": "Low driven power shot"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_L1"
+              },
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_L1"
+              },
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          }
+        ]
+      ],
+      "note": {
+        "th": "กดยิงซ้ำระหว่างชาร์จพลัง",
+        "en": "Press shoot again while powering up."
+      },
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "หลอกยิง",
+        "en": "Fake shot"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_BOTTOM"
+              },
+              {
+                "kind": "move",
+                "stick": "STICK_L"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "หลอกโยน",
+        "en": "Fake pass"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_LEFT"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_BOTTOM"
+              },
+              {
+                "kind": "move",
+                "stick": "STICK_L"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "หลอกยิงแล้วยิงจริง",
+        "en": "Fake shot to shot"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_LEFT"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_BOTTOM"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "neutral",
+                "stick": "STICK_L"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_BOTTOM"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "neutral",
+                "stick": "STICK_L"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "จ่ายทะลุช่องแบบพุ่ง",
+        "en": "Driven through pass"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_L1"
+              },
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_TOP"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "จ่ายเรียดแบบพุ่ง",
+        "en": "Driven ground pass"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_BOTTOM"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "จ่ายเรียดแบบลอย",
+        "en": "Lofted ground pass"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_BOTTOM"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_BOTTOM"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ทะลุช่องแบบลอย",
+        "en": "Lofted through pass"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_TOP"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_TOP"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ทะลุช่องแบบโด่งข้ามหัว",
+        "en": "Lobbed through pass"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_L1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_TOP"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "โยน / ครอสแบบพุ่ง",
+        "en": "Driven lob pass / cross"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_L1"
+              },
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_LEFT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "โยนโด่ง",
+        "en": "High lob / cross"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_L1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_LEFT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ครอสเรียด",
+        "en": "Ground cross"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_LEFT"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_LEFT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ครอสเรียดแบบพุ่ง",
+        "en": "Driven ground cross"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_L1"
+              },
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_LEFT"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_L1"
+              },
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_LEFT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    }
+  ],
+  "sources": [
+    "https://www.fifplay.com/fc-27-controls/",
+    "https://fifauteam.com/fc-27-controls/"
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "slug": "alternate-elastico-chop",
+  "game": "FC27",
+  "name": {
+    "th": "อีลาสติโกสับแบบใหม่",
+    "en": "Alternate Elastico Chop"
+  },
+  "summary": {
+    "th": "ท่าใหม่ใน FC 27 อีลาสติโกสับอีกแบบ ใช้การปัดแทนการหมุน",
+    "en": "New in FC 27: an elastico chop done with flicks instead of a rotation."
+  },
+  "stars": 5,
+  "difficulty": 3,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "กองหลังเข้าปะทะจากด้านหน้า",
+      "en": "A defender commits from the front"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_L2"
+        },
+        {
+          "kind": "hold",
+          "button": "SHOULDER_R1"
+        },
+        {
+          "kind": "flick",
+          "stick": "STICK_R",
+          "direction": "down"
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_L2"
+        },
+        {
+          "kind": "hold",
+          "button": "SHOULDER_R1"
+        },
+        {
+          "kind": "flick",
+          "stick": "STICK_R",
+          "direction": "right"
+        }
+      ],
+      "note": {
+        "th": "ปัดซ้ายสำหรับอีกฝั่ง",
+        "en": "Flick left for the other side."
+      }
+    }
+  ],
+  "mirror": true,
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      76,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          63,
+          48
+        ],
+        "ball": [
+          66,
+          46
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          64,
+          53
+        ],
+        "ball": [
+          68,
+          57
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          70,
+          58
+        ],
+        "ball": [
+          74,
+          60
+        ]
+      }
+    ]
+  },
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-27-skill-moves/",
+    "https://proclubshq.com/blog/fc27-skill-moves/"
+  ],
+  "verified": true
+}

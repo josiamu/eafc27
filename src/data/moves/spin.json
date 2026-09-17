@@ -1,6 +1,6 @@
 {
   "slug": "spin",
-  "game": "FC26",
+  "game": "FC27",
   "name": {
     "th": "หมุนตัว",
     "en": "Spin"
@@ -98,7 +98,7 @@
   "video": null,
   "sources": [
     "https://fifauteam.com/fc-27-skill-moves/",
-    "https://fifauteam.com/fc-26-skill-moves/"
+    "https://www.thespike.gg/fifa/ea-fc-27/all-skills"
   ],
   "verified": true
 }

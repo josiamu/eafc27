@@ -1,0 +1,213 @@
+{
+  "slug": "penalties",
+  "game": "FC27",
+  "order": 9,
+  "title": {
+    "th": "จุดโทษ",
+    "en": "Penalties"
+  },
+  "summary": {
+    "th": "ยิงจุดโทษ และเซฟจุดโทษ",
+    "en": "Taking a penalty and saving one."
+  },
+  "controls": [
+    {
+      "name": {
+        "th": "เล็งทิศ",
+        "en": "Aim"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "move",
+                "stick": "STICK_L"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ยิง",
+        "en": "Shoot"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ยิงโค้ง",
+        "en": "Finesse shot"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ชิพ",
+        "en": "Chip shot"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_L1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "เลือกคนยิง",
+        "en": "Select kick taker"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "TRIGGER_R2"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ผู้รักษาประตูขยับซ้ายขวา",
+        "en": "Goalkeeper move side to side"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "move",
+                "stick": "STICK_L"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ผู้รักษาประตูพุ่ง",
+        "en": "Goalkeeper dive"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "move",
+                "stick": "STICK_R"
+              }
+            ]
+          }
+        ]
+      ],
+      "note": {
+        "th": "ดันอนาล็อกขวาไปทิศที่จะพุ่ง",
+        "en": "Push the right stick the way to dive."
+      },
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ผู้รักษาประตูทำท่ากวน",
+        "en": "Goalkeeper gestures"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_BOTTOM"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_LEFT"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_TOP"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    }
+  ],
+  "sources": [
+    "https://www.fifplay.com/fc-27-controls/",
+    "https://fifauteam.com/fc-27-controls/"
+  ]
+}

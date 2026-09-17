@@ -1,6 +1,6 @@
 {
   "slug": "ball-roll-cut-sideways",
-  "game": "FC26",
+  "game": "FC27",
   "name": {
     "th": "ลากบอลแล้วตัดข้าง",
     "en": "Ball Roll Cut (Left/Right)"
@@ -83,7 +83,9 @@
   "video": null,
   "sources": [
     "https://fifauteam.com/fc-27-skill-moves/",
-    "https://fifauteam.com/fc-26-skill-moves/"
+    "https://www.fifplay.com/fc-27-skill-moves/",
+    "https://proclubshq.com/blog/fc27-skill-moves/",
+    "https://www.thespike.gg/fifa/ea-fc-27/all-skills"
   ],
   "verified": true
 }

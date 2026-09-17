@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { DataBadge } from "@/components/DataBadge";
+import { getControlGroups } from "@/data/controls";
 import { getMoves } from "@/data/moves";
 import { fill, isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
@@ -14,14 +15,19 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/about">)
   return pageMetadata(locale, "about/", { title: t.about.title, description: t.about.lead });
 }
 
-/** Each site the move data cites, with how many moves cite it, most-cited first. */
+const hostOf = (url: string) => new URL(url).hostname.replace(/^www\./, "");
+
+/** Each site the data cites: how many moves cite it and whether the controls page does, most-cited first. */
 function sourceSites() {
   const counts = new Map<string, number>();
   for (const move of getMoves()) {
-    const hosts = new Set(move.sources.map((url) => new URL(url).hostname.replace(/^www\./, "")));
-    for (const host of hosts) counts.set(host, (counts.get(host) ?? 0) + 1);
+    for (const host of new Set(move.sources.map(hostOf))) counts.set(host, (counts.get(host) ?? 0) + 1);
   }
-  return [...counts].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+  const controlHosts = new Set(getControlGroups().flatMap((group) => group.sources.map(hostOf)));
+  for (const host of controlHosts) if (!counts.has(host)) counts.set(host, 0);
+  return [...counts]
+    .map(([host, moves]) => ({ host, moves, controls: controlHosts.has(host) }))
+    .sort((a, b) => b.moves - a.moves || a.host.localeCompare(b.host));
 }
 
 export default async function AboutPage({ params }: PageProps<"/[locale]/about">) {
@@ -55,10 +61,12 @@ export default async function AboutPage({ params }: PageProps<"/[locale]/about">
       <section className="space-y-3">
         <h2 className="font-display text-xl font-bold">{t.sourcesTitle}</h2>
         <ul className="divide-y divide-border rounded-2xl border border-border bg-surface">
-          {sourceSites().map(([host, count]) => (
+          {sourceSites().map(({ host, moves, controls }) => (
             <li key={host} className="flex flex-wrap items-baseline justify-between gap-x-4 px-4 py-2.5">
               <span className="font-medium">{host}</span>
-              <span className="text-sm text-muted tabular-nums">{fill(t.sourcesCount, { n: count })}</span>
+              <span className="text-sm text-muted tabular-nums">
+                {[moves > 0 && fill(t.sourcesCount, { n: moves }), controls && t.sourcesControls].filter(Boolean).join(" · ")}
+              </span>
             </li>
           ))}
         </ul>

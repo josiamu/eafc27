@@ -1,0 +1,109 @@
+{
+  "slug": "stop-and-go",
+  "game": "FC27",
+  "name": {
+    "th": "หยุดแล้วไป",
+    "en": "Stop and Go"
+  },
+  "summary": {
+    "th": "ท่าใหม่ใน FC 27 เหยียบบอลหยุดแล้วดันต่อไปข้างหน้าทันที",
+    "en": "New in FC 27: stop the ball dead, then push straight on."
+  },
+  "stars": 2,
+  "difficulty": 2,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "กองหลังวิ่งประกบข้างตัวด้วยความเร็วเท่ากัน",
+      "en": "A defender is running alongside at the same speed"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_L2"
+        },
+        {
+          "kind": "flick",
+          "stick": "STICK_R",
+          "direction": "down"
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_L2"
+        },
+        {
+          "kind": "flick",
+          "stick": "STICK_R",
+          "direction": "up"
+        }
+      ]
+    }
+  ],
+  "mirror": false,
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      70,
+      57
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          65,
+          50
+        ],
+        "ball": [
+          67,
+          50
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          70,
+          50
+        ],
+        "ball": [
+          74,
+          50
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          76,
+          50
+        ],
+        "ball": [
+          80,
+          50
+        ]
+      }
+    ]
+  },
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-27-skill-moves/",
+    "https://proclubshq.com/blog/fc27-skill-moves/",
+    "https://www.thespike.gg/fifa/ea-fc-27/all-skills"
+  ],
+  "verified": true
+}

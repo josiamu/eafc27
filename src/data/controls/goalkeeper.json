@@ -1,0 +1,193 @@
+{
+  "slug": "goalkeeper",
+  "game": "FC27",
+  "order": 5,
+  "title": {
+    "th": "ผู้รักษาประตู",
+    "en": "Goalkeeper"
+  },
+  "summary": {
+    "th": "เปิดบอล ขว้าง และขยับตำแหน่งผู้รักษาประตู",
+    "en": "Kicking, throwing and positioning your keeper."
+  },
+  "controls": [
+    {
+      "name": {
+        "th": "เตะจากมือ",
+        "en": "Drop kick"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_LEFT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ขว้าง / จ่าย",
+        "en": "Throw / pass"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_BOTTOM"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "วางบอลลงพื้น",
+        "en": "Drop ball"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_TOP"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "หยิบบอลขึ้นมือ",
+        "en": "Pick up ball"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "SHOULDER_R1"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ขว้างแบบพุ่ง",
+        "en": "Driven throw"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_BOTTOM"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "เตะแบบพุ่ง",
+        "en": "Driven kick"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_LEFT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ขยับผู้รักษาประตู",
+        "en": "Move goalkeeper"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "STICK_R_PRESS"
+              },
+              {
+                "kind": "move",
+                "stick": "STICK_R"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ปิดเสาไกล",
+        "en": "Cover far post"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "STICK_R_PRESS"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    }
+  ],
+  "sources": [
+    "https://www.fifplay.com/fc-27-controls/",
+    "https://fifauteam.com/fc-27-controls/"
+  ]
+}

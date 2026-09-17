@@ -1,0 +1,544 @@
+{
+  "slug": "tactics",
+  "game": "FC27",
+  "order": 6,
+  "title": {
+    "th": "แท็กติกระหว่างเกม",
+    "en": "In-game tactics"
+  },
+  "summary": {
+    "th": "ปุ่มลูกศรเปิดเมนูแท็กติก กดครั้งแรกเลือกเมนู ครั้งที่สองเลือกคำสั่ง",
+    "en": "The d-pad opens a tactics menu: the first press picks the menu, the second the command."
+  },
+  "controls": [
+    {
+      "name": {
+        "th": "แท็กติกด่วน",
+        "en": "Quick tactics"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_UP"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ล้ำหน้า",
+        "en": "Offside trap"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_UP"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_UP"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "เพรสทั้งทีม",
+        "en": "Team press"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_UP"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_LEFT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "เพิ่มกองหน้า",
+        "en": "Extra striker"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_UP"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_RIGHT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "บุกเข้ากรอบเขตโทษ",
+        "en": "Get in the box"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_UP"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_DOWN"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "เน้นแท็กติก",
+        "en": "Tactical focus"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_RIGHT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "สมดุล",
+        "en": "Default"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_RIGHT"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_UP"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "เน้นรับ",
+        "en": "Defending"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_RIGHT"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_LEFT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "เน้นบุก",
+        "en": "Attacking"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_RIGHT"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_RIGHT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "แท็กติกของฉัน",
+        "en": "My tactics"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_LEFT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "แท็กติกที่ตั้งไว้ 1",
+        "en": "Custom tactic 1"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_LEFT"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_UP"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "แท็กติกที่ตั้งไว้ 2",
+        "en": "Custom tactic 2"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_LEFT"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_LEFT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "แท็กติกที่ตั้งไว้ 3",
+        "en": "Custom tactic 3"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_LEFT"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_RIGHT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "แท็กติกที่ตั้งไว้ 4",
+        "en": "Custom tactic 4"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_LEFT"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_DOWN"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "คำแนะนำแท็กติก",
+        "en": "Tactical suggestions"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_DOWN"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "คำแนะนำที่ 1",
+        "en": "Tactic suggestion 1"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_DOWN"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_UP"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "คำแนะนำที่ 2",
+        "en": "Tactic suggestion 2"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_DOWN"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_RIGHT"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_DOWN"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_LEFT"
+              }
+            ]
+          }
+        ]
+      ],
+      "note": {
+        "th": "แหล่งข้อมูลสลับกันระหว่างข้อนี้กับคำแนะนำแท็กติก / โฟกัส แหล่งหนึ่งให้ขวา อีกแหล่งให้ซ้าย",
+        "en": "Sources swap this with Tactic / focus suggestion: one says right, the other left."
+      },
+      "verified": false
+    },
+    {
+      "name": {
+        "th": "คำแนะนำแท็กติก / โฟกัส",
+        "en": "Tactic / focus suggestion"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_DOWN"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_LEFT"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_DOWN"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_RIGHT"
+              }
+            ]
+          }
+        ]
+      ],
+      "note": {
+        "th": "แหล่งข้อมูลสลับกันระหว่างข้อนี้กับคำแนะนำที่ 2 แหล่งหนึ่งให้ซ้าย อีกแหล่งให้ขวา",
+        "en": "Sources swap this with Tactic suggestion 2: one says left, the other right."
+      },
+      "verified": false
+    },
+    {
+      "name": {
+        "th": "เปลี่ยนตัว",
+        "en": "Substitution"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_DOWN"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_DOWN"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    }
+  ],
+  "sources": [
+    "https://www.fifplay.com/fc-27-controls/",
+    "https://fifauteam.com/fc-27-controls/"
+  ]
+}

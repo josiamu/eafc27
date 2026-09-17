@@ -1,0 +1,515 @@
+{
+  "slug": "defending",
+  "game": "FC27",
+  "order": 4,
+  "title": {
+    "th": "เกมรับ",
+    "en": "Defending"
+  },
+  "summary": {
+    "th": "สลับตัว แย่งบอล และสั่งผู้รักษาประตูออก",
+    "en": "Switching, tackling and rushing the keeper."
+  },
+  "controls": [
+    {
+      "name": {
+        "th": "สลับตัวผู้เล่น",
+        "en": "Change player"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "SHOULDER_L1"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "สลับตัวเลือกเอง",
+        "en": "Change player (manual)"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "move",
+                "stick": "STICK_R"
+              }
+            ]
+          }
+        ]
+      ],
+      "note": {
+        "th": "ดันอนาล็อกขวาไปทางผู้เล่นที่อยากคุม",
+        "en": "Push the right stick towards the player you want."
+      },
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "สลับตัวไอคอน",
+        "en": "Icon switching"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "STICK_R_PRESS"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "แย่งบอล / ดึงหรือดันตอนไล่",
+        "en": "Tackle / push or pull"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "แย่งบอลแรง",
+        "en": "Hard tackle"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ฟาวล์ตัดเกม",
+        "en": "Professional foul"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_BOTTOM"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "สไลด์",
+        "en": "Slide tackle"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_LEFT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "สไลด์แรง",
+        "en": "Hard slide tackle"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_LEFT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "สกัดบอลออก",
+        "en": "Clearance"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "สกัดบอลแบบคุมทิศ",
+        "en": "Technical clearance"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ชนไหล่ / บังคู่แข่งออก",
+        "en": "Shoulder challenge / seal out"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ประกบ",
+        "en": "Contain"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "FACE_BOTTOM"
+              }
+            ]
+          }
+        ]
+      ],
+      "note": {
+        "th": "ในโหมดป้องกันแบบ Technical และ Legacy",
+        "en": "With Technical or Legacy defending."
+      },
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ปะทะแย่งบอล",
+        "en": "Physical tackle"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "FACE_BOTTOM"
+              }
+            ]
+          }
+        ]
+      ],
+      "note": {
+        "th": "เฉพาะโหมดป้องกันแบบ Advanced",
+        "en": "Advanced defending only."
+      },
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ให้เพื่อนเข้าประกบ",
+        "en": "Teammate contain"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "เพรสบางส่วน",
+        "en": "Partial team press"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "SHOULDER_R1"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "SHOULDER_R1"
+              }
+            ]
+          }
+        ]
+      ],
+      "note": {
+        "th": "แหล่งหนึ่งให้ค้างปุ่มไหล่ขวา อีกแหล่งให้กดสองครั้ง",
+        "en": "One source holds the right bumper, the other presses it twice."
+      },
+      "verified": false
+    },
+    {
+      "name": {
+        "th": "ยืนกั้นแบบวิ่ง",
+        "en": "Sprint jockey"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "TRIGGER_L2"
+              },
+              {
+                "kind": "hold",
+                "button": "TRIGGER_R2"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ลุกเร็วหลังสไลด์",
+        "en": "Quick get up"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_LEFT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "เข้าปะทะคนที่บังบอล",
+        "en": "Engage shielding opponent"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "TRIGGER_L2"
+              },
+              {
+                "kind": "move",
+                "stick": "STICK_L"
+              }
+            ]
+          }
+        ]
+      ],
+      "note": {
+        "th": "ดันอนาล็อกซ้ายเข้าหาคนที่บังบอลอยู่",
+        "en": "Push the left stick towards the dribbler."
+      },
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ผู้รักษาประตูพุ่งออก",
+        "en": "Rush goalkeeper out"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "FACE_TOP"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ผู้รักษาประตูออกมาประกบ",
+        "en": "Goalkeeper rush to contain"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_TOP"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "FACE_TOP"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ผู้รักษาประตูกลับกลางประตู",
+        "en": "Goalkeeper rush to centre"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_TOP"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_TOP"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ยกเลิกกลับกลางประตู",
+        "en": "Cancel rush to centre"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_TOP"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    }
+  ],
+  "sources": [
+    "https://www.fifplay.com/fc-27-controls/",
+    "https://fifauteam.com/fc-27-controls/"
+  ]
+}

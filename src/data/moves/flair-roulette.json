@@ -1,0 +1,104 @@
+{
+  "slug": "flair-roulette",
+  "game": "FC27",
+  "name": {
+    "th": "รูเล็ตสไตล์โชว์",
+    "en": "Flair Roulette"
+  },
+  "summary": {
+    "th": "ท่าใหม่ใน FC 27 รูเล็ตแบบลีลา หมุนตัวพาบอลหลบคู่แข่ง",
+    "en": "New in FC 27: a flair version of the roulette."
+  },
+  "stars": 4,
+  "difficulty": 3,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "คู่แข่งพุ่งเข้าจากด้านหน้า",
+      "en": "An opponent charges in from the front"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "SHOULDER_L1"
+        },
+        {
+          "kind": "rotate",
+          "stick": "STICK_R",
+          "path": [
+            "down",
+            "left",
+            "up",
+            "right"
+          ]
+        }
+      ],
+      "note": {
+        "th": "แหล่งข้อมูลไม่ได้บอกว่าหมุนกี่องศา ตัวอย่างนี้หมุน 270° แบบ Roulette หมุนกลับทิศสำหรับอีกฝั่ง",
+        "en": "Sources don't say how far to rotate; this follows the Roulette's 270°. Rotate the other way for the other side."
+      }
+    }
+  ],
+  "mirror": true,
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      76,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          64,
+          54
+        ],
+        "ball": [
+          67,
+          56
+        ]
+      },
+      {
+        "step": 0,
+        "player": [
+          70,
+          58
+        ],
+        "ball": [
+          74,
+          57
+        ]
+      },
+      {
+        "step": 0,
+        "player": [
+          80,
+          54
+        ],
+        "ball": [
+          84,
+          52
+        ]
+      }
+    ]
+  },
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-27-skill-moves/",
+    "https://proclubshq.com/blog/fc27-skill-moves/"
+  ],
+  "verified": true
+}

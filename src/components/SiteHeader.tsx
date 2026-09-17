@@ -9,6 +9,7 @@ export function SiteHeader({ locale, t }: { locale: Locale; t: Dictionary }) {
   const links = [
     { href: `/${locale}/`, label: t.nav.home },
     { href: `/${locale}/skills/`, label: t.nav.skills },
+    { href: `/${locale}/controls/`, label: t.nav.controls },
     { href: `/${locale}/settings/`, label: t.nav.settings },
   ];
 

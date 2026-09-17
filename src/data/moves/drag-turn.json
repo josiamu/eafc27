@@ -1,0 +1,104 @@
+{
+  "slug": "drag-turn",
+  "game": "FC27",
+  "name": {
+    "th": "ลากบอลหมุนตัว",
+    "en": "Drag Turn"
+  },
+  "summary": {
+    "th": "ท่าใหม่ใน FC 27 ลากบอลถอยแล้วหมุนตัวออกด้านข้าง",
+    "en": "New in FC 27: drag the ball back and turn out to the side."
+  },
+  "stars": 4,
+  "difficulty": 2,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "ถูกบีบจากด้านหน้าและต้องเปลี่ยนทิศ",
+      "en": "Pressed from the front and needing to change direction"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "flick",
+          "stick": "STICK_R",
+          "direction": "down"
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "kind": "flick",
+          "stick": "STICK_R",
+          "direction": "right"
+        }
+      ],
+      "note": {
+        "th": "ปัดซ้ายสำหรับอีกฝั่ง แหล่งข้อมูลให้ปุ่มเดียวกับ Drag Back Spin ยังไม่ยืนยันว่าเกมเลือกท่าอย่างไร",
+        "en": "Flick left for the other side. Sources give the same input as the Drag Back Spin; how the game picks isn't confirmed."
+      }
+    }
+  ],
+  "mirror": true,
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      76,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          62,
+          50
+        ],
+        "ball": [
+          63,
+          50
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          63,
+          55
+        ],
+        "ball": [
+          65,
+          59
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          65,
+          60
+        ],
+        "ball": [
+          67,
+          64
+        ]
+      }
+    ]
+  },
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-27-skill-moves/",
+    "https://proclubshq.com/blog/fc27-skill-moves/"
+  ],
+  "verified": true
+}

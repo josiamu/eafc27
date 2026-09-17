@@ -1,6 +1,6 @@
 {
   "slug": "simple-rainbow",
-  "game": "FC26",
+  "game": "FC27",
   "name": {
     "th": "เรนโบว์ (แบบง่าย)",
     "en": "Simple Rainbow"
@@ -37,8 +37,8 @@
         }
       ],
       "note": {
-        "th": "แหล่งข้อมูลส่วนใหญ่ให้ลงแล้วขึ้น มีหนึ่งแหล่งให้ต่างออกไป",
-        "en": "Most sources give down then up; one differs."
+        "th": "แหล่งข้อมูลแบ่งเป็นสองฝั่ง ครึ่งหนึ่งให้ปัดขึ้นครั้งเดียว อีกครึ่งให้ปัดขึ้นสองครั้ง",
+        "en": "Sources split evenly: half say flick up once, half say twice."
       }
     }
   ],
@@ -96,10 +96,10 @@
   "followUps": [],
   "video": null,
   "sources": [
-    "https://fifauteam.com/fc-26-skill-moves/",
-    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
-    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
-    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+    "https://fifauteam.com/fc-27-skill-moves/",
+    "https://proclubshq.com/blog/fc27-skill-moves/",
+    "https://www.fifplay.com/fc-27-skill-moves/",
+    "https://www.thespike.gg/fifa/ea-fc-27/all-skills"
   ],
-  "verified": true
+  "verified": false
 }

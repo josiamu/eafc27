@@ -1,6 +1,6 @@
 {
   "slug": "heel-fake",
-  "game": "FC26",
+  "game": "FC27",
   "name": {
     "th": "หลอกด้วยส้นเท้า",
     "en": "Heel Fake"
@@ -32,8 +32,8 @@
         }
       ],
       "note": {
-        "th": "หรือปัดซ้ายก่อนแล้วขวา แหล่งข้อมูลให้ปุ่มคล้าย Stutter Feint (3 ดาว)",
-        "en": "Or left then right. Sources list a very similar input for the 3-star Stutter Feint."
+        "th": "หรือปัดซ้ายก่อนแล้วขวา ปุ่มคล้าย Stutter Feint (3 ดาว) ที่กดปุ่มยิงหรือโยนบอลก่อน",
+        "en": "Or left then right. Close to the 3-star Stutter Feint, which adds a shot or cross press first."
       }
     },
     {
@@ -104,10 +104,10 @@
   "followUps": [],
   "video": null,
   "sources": [
-    "https://fifauteam.com/fc-26-skill-moves/",
-    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
-    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
-    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+    "https://fifauteam.com/fc-27-skill-moves/",
+    "https://www.fifplay.com/fc-27-skill-moves/",
+    "https://proclubshq.com/blog/fc27-skill-moves/",
+    "https://www.thespike.gg/fifa/ea-fc-27/all-skills"
   ],
   "verified": true
 }

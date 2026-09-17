@@ -2,13 +2,14 @@
 
 import { Fragment } from "react";
 import { useGlyph } from "@/controller/store";
+import type { ControlInput, ControlStep } from "@/data/control-schema";
 import type { MoveInput, MoveStep } from "@/data/schema";
 import { fill, pick, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/th";
 import { GlyphView } from "../controller/GlyphView";
 
 type Props = {
-  sequence: MoveStep[];
+  sequence: (MoveStep | ControlStep)[];
   /** Index of the step being animated, or -1 for none. */
   activeStep?: number;
   locale: Locale;
@@ -47,7 +48,7 @@ export function InputSequence({ sequence, activeStep = -1, locale, t, compact = 
                   </Fragment>
                 ))}
               </div>
-              {!compact && step.note && <p className="mt-1.5 max-w-xs text-xs text-muted">{pick(step.note, locale)}</p>}
+              {!compact && "note" in step && step.note && <p className="mt-1.5 max-w-xs text-xs text-muted">{pick(step.note, locale)}</p>}
             </div>
           </li>
         );
@@ -56,7 +57,7 @@ export function InputSequence({ sequence, activeStep = -1, locale, t, compact = 
   );
 }
 
-function InputChip({ input, t, size }: { input: MoveInput; t: Dictionary["move"]; size: "sm" | "md" }) {
+function InputChip({ input, t, size }: { input: MoveInput | ControlInput; t: Dictionary["move"]; size: "sm" | "md" }) {
   const glyph = useGlyph("button" in input ? input.button : input.stick);
   const direction = input.kind === "flick" || input.kind === "hold-stick" ? input.direction : undefined;
   const path = input.kind === "rotate" ? input.path : undefined;

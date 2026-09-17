@@ -1,6 +1,6 @@
 {
   "slug": "ball-roll",
-  "game": "FC26",
+  "game": "FC27",
   "name": {
     "th": "ลากบอลด้านข้าง",
     "en": "Ball Roll"
@@ -81,11 +81,10 @@
   "followUps": [],
   "video": null,
   "sources": [
-    "https://fifauteam.com/fc-26-skill-moves/",
-    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
-    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
-    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide",
-    "https://eafczone.com/ea-fc-skill-moves/"
+    "https://fifauteam.com/fc-27-skill-moves/",
+    "https://www.fifplay.com/fc-27-skill-moves/",
+    "https://proclubshq.com/blog/fc27-skill-moves/",
+    "https://www.thespike.gg/fifa/ea-fc-27/all-skills"
   ],
   "verified": true
 }

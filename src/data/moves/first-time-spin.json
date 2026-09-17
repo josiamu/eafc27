@@ -1,0 +1,98 @@
+{
+  "slug": "first-time-spin",
+  "game": "FC27",
+  "name": {
+    "th": "หมุนตัวรับบอลจังหวะแรก",
+    "en": "First Time Spin"
+  },
+  "summary": {
+    "th": "ท่าใหม่ใน FC 27 หมุนตัวพาบอลไปทันทีที่รับบอล",
+    "en": "New in FC 27: spin away with your first touch."
+  },
+  "stars": 5,
+  "difficulty": 3,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "รับบอลโดยมีคู่แข่งประกบหลัง",
+      "en": "Receiving the ball with an opponent tight behind"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "SHOULDER_L1"
+        },
+        {
+          "kind": "tap",
+          "button": "SHOULDER_R1"
+        }
+      ],
+      "note": {
+        "th": "ทำตอนบอลกำลังมาถึงตัว First Time Feint Turn (1 ดาว) กดแบบเดียวกันแต่ปัดอนาล็อกซ้ายลงด้วย",
+        "en": "Do it as the ball arrives. The 1-star First Time Feint Turn adds the left stick down."
+      }
+    }
+  ],
+  "mirror": false,
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        56,
+        50
+      ]
+    },
+    "defender": [
+      58,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          62,
+          50
+        ],
+        "ball": [
+          61,
+          50
+        ]
+      },
+      {
+        "step": 0,
+        "player": [
+          63,
+          54
+        ],
+        "ball": [
+          66,
+          55
+        ]
+      },
+      {
+        "step": 0,
+        "player": [
+          68,
+          54
+        ],
+        "ball": [
+          72,
+          54
+        ]
+      }
+    ]
+  },
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-27-skill-moves/",
+    "https://proclubshq.com/blog/fc27-skill-moves/"
+  ],
+  "verified": true
+}

@@ -1,6 +1,6 @@
 {
   "slug": "flair-nutmegs",
-  "game": "FC26",
+  "game": "FC27",
   "name": {
     "th": "ลอดขาแบบโชว์",
     "en": "Flair Nutmegs"
@@ -84,8 +84,9 @@
   "followUps": [],
   "video": null,
   "sources": [
-    "https://fifauteam.com/fc-26-skill-moves/",
-    "https://www.sportsdunia.com/esports/ea-fc-26-skills"
+    "https://fifauteam.com/fc-27-skill-moves/",
+    "https://proclubshq.com/blog/fc27-skill-moves/",
+    "https://www.thespike.gg/fifa/ea-fc-27/all-skills"
   ],
   "verified": true
 }

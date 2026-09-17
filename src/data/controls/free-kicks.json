@@ -1,0 +1,447 @@
+{
+  "slug": "free-kicks",
+  "game": "FC27",
+  "order": 7,
+  "title": {
+    "th": "ฟรีคิก",
+    "en": "Free kicks"
+  },
+  "summary": {
+    "th": "เล็ง ยิง เรียกคนเตะคนที่สองและสาม และจัดกำแพง",
+    "en": "Aiming, extra kick takers and setting the wall."
+  },
+  "controls": [
+    {
+      "name": {
+        "th": "เล็งทิศ",
+        "en": "Aim"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "move",
+                "stick": "STICK_L"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "เล็งด้วยเป้า",
+        "en": "Reticle aim"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "move",
+                "stick": "STICK_R"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "จ่ายเรียด",
+        "en": "Ground pass"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_BOTTOM"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "โยน / ครอส",
+        "en": "Lob pass / cross"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_LEFT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "กำแพงกระโดด",
+        "en": "Wall jump"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_TOP"
+              }
+            ]
+          }
+        ]
+      ],
+      "note": {
+        "th": "ฝั่งป้องกัน",
+        "en": "When defending."
+      },
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "กำแพงพุ่งออก",
+        "en": "Wall charge"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_BOTTOM"
+              }
+            ]
+          }
+        ]
+      ],
+      "note": {
+        "th": "ฝั่งป้องกัน",
+        "en": "When defending."
+      },
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ขยับกำแพง",
+        "en": "Move wall"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "TRIGGER_L2"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "TRIGGER_R2"
+              }
+            ]
+          }
+        ]
+      ],
+      "note": {
+        "th": "ฝั่งป้องกัน",
+        "en": "When defending."
+      },
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ขยับผู้รักษาประตู",
+        "en": "Move goalkeeper"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_LEFT"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          }
+        ]
+      ],
+      "note": {
+        "th": "ฝั่งป้องกัน",
+        "en": "When defending."
+      },
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "เลือกคนเตะ",
+        "en": "Select kick taker"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "TRIGGER_R2"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "เพิ่มคนเตะ",
+        "en": "Add kick taker"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "SHOULDER_R1"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "TRIGGER_L2"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "เรียกคนเตะคนที่สอง",
+        "en": "Call 2nd kick taker"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "TRIGGER_L2"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "คนที่สองจ่ายสั้น",
+        "en": "2nd kick taker layoff pass"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "TRIGGER_L2"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_BOTTOM"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "คนที่สองโยน",
+        "en": "2nd kick taker lob"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "TRIGGER_L2"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_LEFT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "คนที่สองยิง",
+        "en": "2nd kick taker shot"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "TRIGGER_L2"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "คนที่สองวิ่งข้ามบอล",
+        "en": "2nd kick taker run over ball"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "TRIGGER_L2"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_BOTTOM"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "เรียกคนเตะคนที่สาม",
+        "en": "Call 3rd kick taker"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "SHOULDER_R1"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "คนที่สามยิง",
+        "en": "3rd kick taker shot"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "คนที่สามวิ่งข้ามบอล",
+        "en": "3rd kick taker run over ball"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_BOTTOM"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    }
+  ],
+  "sources": [
+    "https://www.fifplay.com/fc-27-controls/",
+    "https://fifauteam.com/fc-27-controls/"
+  ]
+}

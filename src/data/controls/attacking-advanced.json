@@ -1,0 +1,624 @@
+{
+  "slug": "attacking-advanced",
+  "game": "FC27",
+  "order": 3,
+  "title": {
+    "th": "เกมรุกขั้นสูง",
+    "en": "Advanced attacking"
+  },
+  "summary": {
+    "th": "สั่งเพื่อนวิ่ง จ่ายแบบลีลา และจ่ายแม่นยำ",
+    "en": "Runs, flair passes and precision passing."
+  },
+  "controls": [
+    {
+      "name": {
+        "th": "คุมบอลไว้กับตัว",
+        "en": "Protect ball"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "TRIGGER_L2"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "สั่งเพื่อนวิ่งทะลุ",
+        "en": "Trigger run"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "SHOULDER_L1"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "เรียกเพื่อนมาช่วย",
+        "en": "Call for support"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "SHOULDER_R1"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "เรียกเพื่อนมาช่วยสองคน",
+        "en": "Double teammate support"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "SHOULDER_R1"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "SHOULDER_R1"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ปล่อยบอลผ่านขา",
+        "en": "Dummy a pass"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "neutral",
+                "stick": "STICK_L"
+              },
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              }
+            ]
+          }
+        ]
+      ],
+      "note": {
+        "th": "ปล่อยอนาล็อกซ้ายไว้ตรงกลาง แล้วค้างปุ่มไหล่ขวาตอนบอลกำลังมา",
+        "en": "Leave the left stick centred and hold the right bumper as the ball arrives."
+      },
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "จ่ายแบบลีลา",
+        "en": "Flair pass"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "TRIGGER_L2"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_BOTTOM"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ยิงแบบลีลา",
+        "en": "Flair shot"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "TRIGGER_L2"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_RIGHT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "โยน / ครอสแบบลีลา",
+        "en": "Flair lob / cross"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "TRIGGER_L2"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_LEFT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ทะลุช่องแบบลีลา",
+        "en": "Flair through pass"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "TRIGGER_L2"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_TOP"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ปล่อยบอลวิ่งผ่าน",
+        "en": "Let ball run"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "move",
+                "stick": "STICK_L"
+              }
+            ]
+          }
+        ]
+      ],
+      "note": {
+        "th": "ดันอนาล็อกซ้ายออกจากทิศที่บอลมา",
+        "en": "Push the left stick away from the ball."
+      },
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "เขี่ยบอลขึ้น",
+        "en": "Flick up"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "STICK_R_PRESS"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "แตะบอลแรกหลอก",
+        "en": "Disguised first touch"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "move",
+                "stick": "STICK_L"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_L1"
+              },
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "move",
+                "stick": "STICK_L"
+              }
+            ]
+          }
+        ]
+      ],
+      "note": {
+        "th": "ดันอนาล็อกซ้ายเข้าหาบอล แหล่งหนึ่งให้ค้างแค่ปุ่มไหล่ขวา อีกแหล่งให้ค้างปุ่มไหล่ทั้งสองข้าง",
+        "en": "Push the left stick towards the ball. One source holds only the right bumper, the other holds both bumpers."
+      },
+      "verified": false
+    },
+    {
+      "name": {
+        "th": "จ่ายแล้ววิ่งต่อ",
+        "en": "Pass and go"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_L1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_BOTTOM"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "จ่ายแล้วสั่งเพื่อนวิ่ง",
+        "en": "Pass and move"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_BOTTOM"
+              },
+              {
+                "kind": "move",
+                "stick": "STICK_R"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_TOP"
+              },
+              {
+                "kind": "move",
+                "stick": "STICK_R"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_LEFT"
+              },
+              {
+                "kind": "move",
+                "stick": "STICK_R"
+              }
+            ]
+          }
+        ]
+      ],
+      "note": {
+        "th": "ดันอนาล็อกขวาไปทิศที่อยากให้คนจ่ายวิ่งต่อ",
+        "en": "Push the right stick where the passer should run."
+      },
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "สั่งเพื่อนวิ่งตามทิศ",
+        "en": "Directional runs"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "SHOULDER_L1"
+              },
+              {
+                "kind": "flick-any",
+                "stick": "STICK_R"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "flick-any",
+                "stick": "STICK_R"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ล็อกตัวผู้เล่น",
+        "en": "Player lock"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "STICK_L_PRESS"
+              },
+              {
+                "kind": "tap",
+                "button": "STICK_R_PRESS"
+              }
+            ]
+          }
+        ]
+      ],
+      "note": {
+        "th": "กดอนาล็อกทั้งสองข้างลงพร้อมกัน",
+        "en": "Click both sticks in together."
+      },
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "สลับตัวขณะล็อก",
+        "en": "Switch while locked"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "flick-any",
+                "stick": "STICK_R"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ยกเลิกทุกคำสั่ง",
+        "en": "Hard super cancel"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_L1"
+              },
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "hold",
+                "button": "TRIGGER_L2"
+              },
+              {
+                "kind": "hold",
+                "button": "TRIGGER_R2"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ยกเลิกได้เปรียบหลังฟาวล์",
+        "en": "Cancel foul advantage"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "TRIGGER_L2"
+              },
+              {
+                "kind": "hold",
+                "button": "TRIGGER_R2"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "เบียดเข้า / ดันกลับ",
+        "en": "Shield step in / push back"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "TRIGGER_L2"
+              }
+            ]
+          }
+        ]
+      ],
+      "note": {
+        "th": "ปุ่มเดียวกับคุมบอลไว้กับตัว",
+        "en": "Same button as Protect ball."
+      },
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "จ่ายแม่นยำ",
+        "en": "Precision pass"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_TOP"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "จ่ายเรียดโค้งแม่นยำ",
+        "en": "Precision swerve ground pass"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "TRIGGER_L2"
+              },
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_TOP"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "โยนแม่นยำ",
+        "en": "Precision lob pass"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "tap",
+                "button": "FACE_LEFT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    }
+  ],
+  "sources": [
+    "https://www.fifplay.com/fc-27-controls/",
+    "https://fifauteam.com/fc-27-controls/"
+  ]
+}

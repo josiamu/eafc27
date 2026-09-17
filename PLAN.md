@@ -1,10 +1,10 @@
 # แผนงาน EAFC Skill Hub
 
-เว็บสอนสกิลมูฟ EA FC สองภาษา ผู้อ่านตั้งค่าปุ่มจอยครั้งเดียว แล้วทั้งเว็บแสดงปุ่มตามจอยที่เขาถืออยู่จริง
+เว็บสอนสกิลมูฟและปุ่มควบคุม EA FC 27 สองภาษา ผู้อ่านตั้งค่าปุ่มจอยครั้งเดียว แล้วทั้งเว็บแสดงปุ่มตามจอยที่เขาถืออยู่จริง
 
 - แผนฉบับหน้าเว็บ: https://claude.ai/code/artifact/68cf09c6-5c0b-499d-abc3-1faacdeb6be8
 - สร้างเมื่อ: 10 กันยายน 2026
-- สถานะ (16 ก.ย. 2026): ระยะ 1–5 เสร็จ (สกิลมูฟ 57 ท่า ยืนยันครบ) · ตัดเพลย์สไตล์ออกจากขอบเขต · โหมดฝึกกดจากจอยจริงเสร็จและผ่านการลองกับจอยจริงแล้ว · ระยะ 6 เสร็จ · ทุกระยะในแผนเสร็จแล้ว
+- สถานะ (17 ก.ย. 2026): ระยะ 1–6 และโหมดฝึกเสร็จ · ย้ายข้อมูลเป็น FC 27 แล้ว (สกิลมูฟ 67 ท่า รอตรวจ 1 ท่า) · ระยะ 7 หน้าปุ่มควบคุม `/controls` ทำแล้ว 141 คำสั่ง รอลองบนมือถือจริง
 
 ---
 
@@ -16,13 +16,13 @@
 | ภาษา | ไทยเป็นค่าตั้งต้น สลับอังกฤษได้ทุกหน้า |
 | ปลายทาง | GitHub Pages ไม่มีหลังบ้าน |
 | อุปกรณ์ | มือถือและคอมพิวเตอร์เท่ากัน responsive เต็ม |
-| ขอบเขต | Skill Moves เท่านั้น (ตัด PlayStyles ออกเมื่อ 16 ก.ย. 2026) |
-| ข้อมูลตั้งต้น | อ้างอิง EA FC 26 พร้อมป้ายเตือนในเว็บ |
+| ขอบเขต | Skill Moves และปุ่มควบคุม (เพิ่ม `/controls` เมื่อ 17 ก.ย. 2026) · ตัด PlayStyles ออกเมื่อ 16 ก.ย. 2026 |
+| ข้อมูล | อ้างอิง EA FC 27 (ย้ายจาก FC 26 เมื่อ 17 ก.ย. 2026) พร้อมป้ายในเว็บ |
 | วิดีโอ | เว้นช่องไว้ทุกท่า เติมลิงก์ทีหลังได้ |
 | URL | `josiamu.github.io/eafc27` (repo `eafc27`, basePath `/eafc27`) |
-| แหล่งข้อมูล | ค้นเว็บเทียบหลายแหล่ง ทุกท่ามีช่อง `sources` และธง `verified` |
+| แหล่งข้อมูล | ค้นเว็บเทียบหลายแหล่ง ทุกท่ามีช่อง `sources` และธง `verified` · ไม่ใช้ driffle (ลอกตาราง fifplay) |
 | ธีม | ตามระบบ พร้อมปุ่มสลับสว่าง/มืดที่จำค่าไว้ |
-| งานถัดไป | ไม่มีงานค้างในแผน ดูหัวข้อ "ตัดสินใจที่พักไว้" สำหรับงานรอบหน้า |
+| งานถัดไป | ลองหน้า `/controls` บนมือถือจริง · เทียบข้อมูลกับเกมจริงหลัง early access (18 ก.ย. 2026) |
 
 ---
 
@@ -167,22 +167,34 @@
 ## ตัดสินใจที่พักไว้
 
 - **ฟิลด์ `twin`** — มี 12 ท่าที่ฝั่งตรงข้ามของมันเป็นท่าอื่นในคลังอยู่แล้ว เช่น `hocus-pocus ↔ triple-elastico`, `spin-flick ↔ tornado-spin`, `elastico ↔ reverse-elastico` ท่าพวกนี้ไม่ได้ติดธง `mirror` เพราะจะกลายเป็นวาดซ้ำกับหน้าที่มีอยู่ ถ้าจะทำให้ถูกต้องควรลิงก์หากัน ไม่ใช่คำนวณ
-- **`advanced-heel-flick`** — มีฝั่งตรงข้ามจริงตามเรขาคณิต แต่ไม่มีแหล่งไหนพูดถึง จึงคง `mirror: false` ตามกฎสองแหล่ง (`spin` ได้ `mirror: true` แล้วจากแหล่ง FC 27)
 - **ทิศอิสระ** — `directional-nutmeg` โน้ตบอกว่าปัดทางไหนก็ได้ แต่โหมดฝึกบังคับตามทิศในข้อมูล ถ้าจะแก้ให้ถูกต้องต้องเพิ่มฟิลด์บอกว่าทิศนั้นเป็นตัวอย่างไม่ใช่ข้อบังคับ
 
 ---
 
-## รอ FC 27 early access (ตัดสินใจ 16 ก.ย. 2026)
+## ย้ายข้อมูลเป็น FC 27 (17 ก.ย. 2026)
 
-ย้ายข้อมูลเป็น FC 27 หลัง early access เปิด (18 ก.ย. 2026) ไม่ย้ายตอนนี้ เพราะคู่มือ FC 27 ที่มีตอนนี้เขียนก่อนเกมออกและขัดกันเอง:
+เดิมตั้งใจรอ early access (18 ก.ย.) เจ้าของโปรเจกต์ตัดสินใจย้ายเลยโดยยึดคู่มือ FC 27 สี่แหล่ง: [fifauteam](https://fifauteam.com/fc-27-skill-moves/), [proclubshq](https://proclubshq.com/blog/fc27-skill-moves/) (อัปเดต 16 ก.ย.), [thespike](https://www.thespike.gg/fifa/ea-fc-27/all-skills) (1 ก.ย.), [fifplay](https://www.fifplay.com/fc-27-skill-moves/) · ไม่ใช้ driffle เพราะลอกตาราง fifplay มาทั้งชุด · แหล่ง FC 26 เดิมเอาออกจาก `sources` ทั้งหมด แต่ละท่าเหลือเฉพาะแหล่ง FC 27 ที่ตรงกับข้อมูล
 
-- **ท่าใหม่:** fifauteam กับ proclubshq ว่ามี 13 ท่า (Giant Fake Shot, Stop and Go, Drag to Drag, Foot to Foot, Lateral Heel to Heel, Drag Turn, Standing Scoop Turn, Flair Roulette, Four Touch Skill, Skilled Bridge, First Time Spin, Alternate Elastico Chop, Running Fake Drag) · driffle ว่ามี 4 ท่าคนละชุด (Fake Turn, Ball Roll Spin, Stepover Combo, Kneel Header) ยังไม่มีปุ่ม · teamgullit ใช้รายชื่อท่าใหม่ของ FC 26
-- **ท่าที่ถูกตัด:** fifauteam ว่า Advanced Heel Flick, Trickster Rainbow, Toe Drag Stepover ถูกตัด แต่ proclubshq ยังมี Advanced Heel Flick
-- **ปุ่มของท่าเดิมที่ยังขัดกัน:** Simple Rainbow (ย้อนแล้วหน้าครั้งเดียว หรือสองครั้ง), Stutter Feint (ต้องกด □/○ ด้วยหรือไม่), Drag Back Spin (fifauteam ว่าเริ่มสะบัดไปหน้า), Spin (fifplay/driffle ว่าค้าง R2+R1)
-- **EA:** Gameplay Deep Dive (29 ก.ค. 2026) ไม่พูดถึงสกิลมูฟ
-- fifplay กับ driffle ใช้ตารางเดียวกันรวมถึงจุดผิด จึงนับเป็นแหล่งเดียว
+- **เพิ่ม 13 ท่า** ตามรายชื่อของ fifauteam กับ proclubshq: `giant-fake-shot` `stop-and-go` `drag-to-drag` `foot-to-foot` `lateral-heel-to-heel` `drag-turn` `standing-scoop-turn` `flair-roulette` `four-touch-skill` `skilled-bridge` `first-time-spin` `alternate-elastico-chop` `running-fake-drag` ยืนยันครบ (สองแหล่งขึ้นไป ห้าท่าแรกมี thespike เป็นแหล่งที่สาม) · ท่าใหม่หลายท่าปุ่มซ้ำกับท่าเดิม เขียนไว้ในโน้ตแล้ว (Drag Turn = Drag Back Spin, Foot to Foot = Running Fake Drag) · `flair-roulette` ไม่มีแหล่งบอกองศา ใช้ 270° แบบ Roulette · `standing-scoop-turn` ทิศในข้อมูลเป็นตัวอย่าง (ดูหัวข้อทิศอิสระ)
+- **เอาออก 3 ท่า:** `advanced-heel-flick` (fifauteam ว่าถูกตัด มีแค่ proclubshq ที่ยังมี), `explosive-stepover` กับ `elastico-variation` (ไม่มีในคู่มือ FC 27 เล่มไหนเลย) · Trickster Rainbow ไม่ใส่ (fifauteam ว่าถูกตัด)
+- **แก้ปุ่ม:** `stutter-feint` เพิ่มกดปุ่มยิงก่อนปัด (fifplay, proclubshq, thespike ตรงกัน มีแค่ fifauteam ที่ไม่มี)
+- **รอตรวจ:** `simple-rainbow` แหล่งแบ่งสองต่อสอง ปัดขึ้นครั้งเดียว (fifauteam, proclubshq) หรือสองครั้ง (fifplay, thespike) คงข้อมูลเดิมไว้
+- **fifplay ผิดหลายจุด** (Drag Back ค้าง L2+R2, Spin ค้าง R2+R1, Elastico Chop, Spin Flick, Tornado Spin, Flair Rainbow, Heel Flick Turn, Ball Roll Fake) จึงไม่นับเป็นแหล่งของท่าพวกนั้น
+- **ยังไม่ได้ทำ:** ท่าเดาะบอลกลางอากาศ (juggling tricks) ทั้งเก้าท่า มีครบในสามแหล่งแล้ว ใส่ได้ถ้าจะขยาย
 
-**ตอนย้าย:** ยึดรายการท่าในเกม (Skill Games บอกปุ่มและดาว) หรือคู่มือที่อัปเดตหลังเกมออก · เปลี่ยน `game` ใน `src/data/schema.ts` และทุกไฟล์ท่า, `dataBadge`, ข้อความหน้า `/about`, และ skill `add-move` · ตัดสินใจ `advanced-heel-flick` และ Trickster Rainbow · ไล่ตรวจทั้ง 57 ท่าใหม่เทียบแหล่ง FC 27
+**หลัง early access:** เทียบกับ Skill Games ในเกม โดยเฉพาะ `simple-rainbow` ท่าที่ปุ่มซ้ำกัน และสามท่าที่เอาออก
+
+## ระยะที่ 7 — หน้าปุ่มควบคุม (17 ก.ย. 2026)
+
+เพิ่มตามที่เจ้าของโปรเจกต์ขยายขอบเขต หน้า `/controls` ชื่อ "ปุ่มควบคุม" ปุ่มทุกคำสั่งในเกมแสดงตามจอยและการผูกปุ่มของผู้อ่าน ต่างจากคู่มือทั่วไปที่เป็นตารางภาพนิ่ง PS/Xbox
+
+- [x] `src/data/control-schema.ts` ใช้อินพุตชุดเดียวกับท่า เพิ่ม `move` (ดันทิศที่ต้องการ), `flick-any`, `neutral` (ปล่อยอนาล็อกตรงกลาง) · แต่ละคำสั่งมีได้หลายวิธี (`ways`) หน้าเว็บคั่นด้วย "หรือ" · `verified: false` ต้องมีโน้ตบอกว่าแหล่งต่างกันตรงไหน
+- [x] `src/data/controls/*.json` 9 หมวด 141 คำสั่ง อิงคอนฟิก Classic จาก [fifplay](https://www.fifplay.com/fc-27-controls/) กับ [fifauteam](https://fifauteam.com/fc-27-controls/) · ตาราง fifauteam เป็นรูปปุ่ม จึงอ่านจาก HTML ตรง ๆ (ตัวสรุปหน้าเว็บอ่านรูปผิด)
+- [x] รอตรวจ 5 คำสั่งที่สองแหล่งไม่ตรงกัน: Disguised First Touch, Partial Team Press, Tactic Suggestion 2 กับ Tactic/Focus Suggestion (สลับซ้ายขวากัน), เมนูแท็กติกเตะมุม (ลูกศรลงหรือขึ้น คำสั่งย่อยคนละชุด จึงไม่ใส่คำสั่งย่อย)
+- [x] ไม่ใส่: Be a Pro ทั้งสามหมวด, Switch Camera (ปุ่ม touchpad ไม่มีในชื่อปุ่มกลาง), Rewind (แหล่งไม่ตรงกัน ใช้แค่ kick-off), Co-op change set piece user (ไม่ชัดว่ากดอนาล็อกหรือขยับ), คำสั่งที่มีแหล่งเดียว (Low Shot, Driven Lobbed Through Pass, Whipped Cross)
+- [x] ลิงก์ในเมนูบน, `sitemap.ts`, หน้า `/about` นับแหล่งของหน้าปุ่มควบคุมด้วย · คอมเมนต์ `settings.actions` ชี้ไปแหล่ง FC 27 (หน้าที่ปุ่มตรงกับ FC 26)
+- [ ] ลองบนมือถือจริง แถวที่มีหลายวิธี (เช่น Pass and Move) ต้องตัดบรรทัดไม่ล้นจอ
+- [ ] เทียบกับหน้า Controller Settings ในเกมหลัง early access
 
 ## robots.txt (ตัดสินใจ 16 ก.ย. 2026)
 
@@ -190,8 +202,8 @@
 
 ## ข้อควรทราบเรื่องข้อมูล
 
-ข้อมูลชุดตั้งต้นเป็นของ EA FC 26 ที่ยืนยันได้ ไม่ใช่ FC 27 ท่าสกิลมูฟส่วนใหญ่มักไม่เปลี่ยนข้ามภาค เว็บจะขึ้นป้ายบอกผู้อ่านให้ชัดว่าอ้างอิงภาคไหน และโครงสร้างไฟล์ข้อมูลรองรับการอัปเดตเป็น FC 27 ทีหลังโดยไม่ต้องรื้อโค้ด
+ข้อมูลอ้างอิงคู่มือ EA FC 27 ที่เขียนก่อนหรือช่วงเกมออก ยังไม่ได้เทียบกับเกมจริง เว็บขึ้นป้ายบอกผู้อ่านว่าอ้างอิงภาคไหน · ภาคหน้าเปลี่ยน `GAME` ใน `src/data/schema.ts` ที่เดียว แล้ว build จะบังคับให้ไฟล์ท่าและปุ่มควบคุมทุกไฟล์เปลี่ยนตาม
 
 ## ลำดับที่ต้องเรียงกัน
 
-ระยะ 1 → 2 → 3 ทำตามลำดับแล้ว ระยะ 4 แทรกคู่ขนานกับระยะ 3 ระยะ 5 ทำได้เพราะ 3 กับ 4 เสร็จ ระยะเพิ่มต่อยอดจากระยะ 2 และ 3 ยืนยันกับอุปกรณ์จริงแล้ว ที่เหลือคือระยะ 6
+ระยะ 1 → 2 → 3 ทำตามลำดับแล้ว ระยะ 4 แทรกคู่ขนานกับระยะ 3 ระยะ 5 ทำได้เพราะ 3 กับ 4 เสร็จ ระยะเพิ่มต่อยอดจากระยะ 2 และ 3 ยืนยันกับอุปกรณ์จริงแล้ว ระยะ 6 เสร็จ ระยะ 7 ต่อยอดจากระยะ 2 (ชื่อปุ่มกลาง) และ 3 (`InputSequence`)

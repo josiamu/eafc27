@@ -1,0 +1,286 @@
+{
+  "slug": "movement",
+  "game": "FC27",
+  "order": 1,
+  "title": {
+    "th": "การเคลื่อนที่",
+    "en": "Movement"
+  },
+  "summary": {
+    "th": "วิ่ง บังบอล และจังหวะแตะบอลแรก",
+    "en": "Running, shielding and your first touch."
+  },
+  "controls": [
+    {
+      "name": {
+        "th": "บังคับทิศนักเตะ",
+        "en": "Move player"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "move",
+                "stick": "STICK_L"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "วิ่งเร็ว",
+        "en": "Sprint"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "TRIGGER_R2"
+              },
+              {
+                "kind": "move",
+                "stick": "STICK_L"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "บังบอล / ยืนกั้น",
+        "en": "Shield / jockey"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "TRIGGER_L2"
+              },
+              {
+                "kind": "move",
+                "stick": "STICK_L"
+              }
+            ]
+          }
+        ]
+      ],
+      "note": {
+        "th": "มีบอลคือบังบอล ไม่มีบอลคือยืนกั้นคู่แข่ง",
+        "en": "With the ball you shield; without it you jockey."
+      },
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "แตะบอลแรกแล้วเขี่ยไปข้างหน้า",
+        "en": "Knock-on first touch"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "TRIGGER_R2"
+              },
+              {
+                "kind": "move",
+                "stick": "STICK_R"
+              }
+            ]
+          }
+        ]
+      ],
+      "note": {
+        "th": "ดันอนาล็อกขวาไปทิศที่จะเขี่ยบอลไป",
+        "en": "Push the right stick where you want to knock the ball."
+      },
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "แตะบอลแรกแบบคุมจังหวะ",
+        "en": "Controlled first touch / effort touch"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              },
+              {
+                "kind": "flick-any",
+                "stick": "STICK_R"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "inputs": [
+              {
+                "kind": "move",
+                "stick": "STICK_R"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "หยุดแล้วหันหน้าเข้าประตู",
+        "en": "Stop and face goal"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "neutral",
+                "stick": "STICK_L"
+              },
+              {
+                "kind": "tap",
+                "button": "SHOULDER_L1"
+              }
+            ]
+          }
+        ]
+      ],
+      "note": {
+        "th": "ปล่อยอนาล็อกซ้ายให้อยู่ตรงกลาง แล้วกดปุ่มไหล่ซ้าย",
+        "en": "Leave the left stick centred, then press the left bumper."
+      },
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "เลี้ยงบอลสไลด์ข้าง",
+        "en": "Strafe dribble"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_L1"
+              },
+              {
+                "kind": "move",
+                "stick": "STICK_L"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "วิ่งแบบคุมบอล",
+        "en": "Controlled sprint"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "SHOULDER_R1"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "หยุดบอล",
+        "en": "Stop ball"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "neutral",
+                "stick": "STICK_L"
+              },
+              {
+                "kind": "tap",
+                "button": "TRIGGER_R2"
+              }
+            ]
+          }
+        ]
+      ],
+      "note": {
+        "th": "ปล่อยอนาล็อกซ้ายให้อยู่ตรงกลาง แล้วกดทริกเกอร์ขวา",
+        "en": "Leave the left stick centred, then press the right trigger."
+      },
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "เบียดแย่งบอลกลางอากาศ",
+        "en": "Jostle (ball in the air)"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "TRIGGER_L2"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "สกิลมูฟ",
+        "en": "Skill moves"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "move",
+                "stick": "STICK_R"
+              }
+            ]
+          }
+        ]
+      ],
+      "note": {
+        "th": "ดูทุกท่าได้ในหน้าสกิลมูฟ",
+        "en": "Every move is on the Skill Moves page."
+      },
+      "verified": true
+    }
+  ],
+  "sources": [
+    "https://www.fifplay.com/fc-27-controls/",
+    "https://fifauteam.com/fc-27-controls/"
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "slug": "drag-to-drag",
+  "game": "FC27",
+  "name": {
+    "th": "ลากบอลสองจังหวะ",
+    "en": "Drag to Drag"
+  },
+  "summary": {
+    "th": "ท่าใหม่ใน FC 27 หลอกยิงแล้วลากบอลถอยหลังต่อ",
+    "en": "New in FC 27: fake a shot, then drag the ball back."
+  },
+  "stars": 2,
+  "difficulty": 2,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "กองหลังพุ่งเข้าบล็อกลูกยิงจากด้านหน้า",
+      "en": "A defender lunges in to block a shot from the front"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_L2"
+        },
+        {
+          "kind": "tap",
+          "button": "FACE_RIGHT"
+        }
+      ],
+      "note": {
+        "th": "กดปุ่มยิง หรือปุ่มโยนบอลแทนก็ได้",
+        "en": "Press shoot; the cross button works too."
+      }
+    },
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_L2"
+        },
+        {
+          "kind": "tap",
+          "button": "FACE_BOTTOM"
+        }
+      ],
+      "note": {
+        "th": "กดจ่ายเพื่อยกเลิก",
+        "en": "Press pass to cancel."
+      }
+    },
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_L2"
+        },
+        {
+          "kind": "hold-stick",
+          "stick": "STICK_R",
+          "direction": "down"
+        }
+      ],
+      "note": {
+        "th": "มีหนึ่งแหล่งเขียนให้อ่านได้ว่าหลอกยิงหรือค้างอนาล็อกขวาลงอย่างใดอย่างหนึ่ง",
+        "en": "One source reads as either the fake shot or holding the right stick back, not both."
+      }
+    }
+  ],
+  "mirror": false,
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      76,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          63,
+          50
+        ],
+        "ball": [
+          66,
+          50
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          63,
+          50
+        ],
+        "ball": [
+          66,
+          50
+        ]
+      },
+      {
+        "step": 2,
+        "player": [
+          60,
+          50
+        ],
+        "ball": [
+          63,
+          50
+        ]
+      },
+      {
+        "step": 2,
+        "player": [
+          57,
+          50
+        ],
+        "ball": [
+          60,
+          50
+        ]
+      }
+    ]
+  },
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-27-skill-moves/",
+    "https://proclubshq.com/blog/fc27-skill-moves/",
+    "https://www.thespike.gg/fifa/ea-fc-27/all-skills"
+  ],
+  "verified": true
+}

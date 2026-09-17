@@ -1,6 +1,6 @@
 # EAFC Skill Hub
 
-เว็บสอนสกิลมูฟ EA FC สองภาษา (ไทย/อังกฤษ) เลือกจอยที่ใช้ครั้งเดียว แล้วทุกท่าในเว็บจะแสดงปุ่มตามจอยนั้น
+เว็บสอนสกิลมูฟและปุ่มควบคุม EA FC 27 สองภาษา (ไทย/อังกฤษ) เลือกจอยที่ใช้ครั้งเดียว แล้วทุกท่าในเว็บจะแสดงปุ่มตามจอยนั้น
 
 **เว็บจริง:** https://josiamu.github.io/eafc27/
 
@@ -18,7 +18,7 @@ CI ใช้ Node.js 24 เครื่องที่พัฒนาควร�
 ```bash
 npm ci
 npm run dev     # http://localhost:3000/eafc27/  (มี /eafc27 ตอน dev ด้วย)
-npm run build   # static export ลง out/ และตรวจข้อมูลทุกท่า
+npm run build   # static export ลง out/ และตรวจข้อมูลทุกท่ากับปุ่มควบคุม
 npm run lint
 ```
 
@@ -30,6 +30,7 @@ npm run lint
 |---|---|
 | `src/data/moves/*.json` | ข้อมูลท่า หนึ่งไฟล์ต่อหนึ่งท่า |
 | `src/data/schema.ts` | schema ของท่า ถ้าข้อมูลผิด build จะไม่ผ่าน |
+| `src/data/controls/*.json` | ปุ่มควบคุมในหน้า `/controls` หนึ่งไฟล์ต่อหนึ่งหมวด ตรวจด้วย `src/data/control-schema.ts` |
 | `src/controller/` | ชื่อปุ่มกลาง preset จอย การอ่านจอย และตัวตรวจท่าในโหมดฝึก |
 | `src/components/move/` | แถบลำดับปุ่ม สนาม ภาพเคลื่อนไหว และโหมดฝึก |
 | `src/i18n/dictionaries/` | ข้อความบนเว็บ `th.ts` เป็นต้นแบบ ส่วน `en.ts` ถูกตรวจ type ให้ครบตาม |

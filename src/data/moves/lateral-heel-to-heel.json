@@ -1,0 +1,113 @@
+{
+  "slug": "lateral-heel-to-heel",
+  "game": "FC27",
+  "name": {
+    "th": "ส้นเท้าสลับด้านข้าง",
+    "en": "Lateral Heel to Heel"
+  },
+  "summary": {
+    "th": "ท่าใหม่ใน FC 27 เขี่ยบอลด้วยส้นเท้าไปด้านข้างแล้วเขี่ยกลับ",
+    "en": "New in FC 27: heel the ball sideways and back again."
+  },
+  "stars": 3,
+  "difficulty": 2,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "กองหลังยืนขวางตรงหน้าและเอนตัวไปข้างหนึ่ง",
+      "en": "A defender stands in front, leaning to one side"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "SHOULDER_L1"
+        },
+        {
+          "kind": "flick",
+          "stick": "STICK_R",
+          "direction": "left"
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "SHOULDER_L1"
+        },
+        {
+          "kind": "flick",
+          "stick": "STICK_R",
+          "direction": "right"
+        }
+      ],
+      "note": {
+        "th": "ปัดขวาก่อนแล้วซ้ายสำหรับอีกฝั่ง",
+        "en": "Flick right then left for the other side."
+      }
+    }
+  ],
+  "mirror": true,
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      76,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          63,
+          47
+        ],
+        "ball": [
+          66,
+          45
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          64,
+          52
+        ],
+        "ball": [
+          68,
+          56
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          67,
+          55
+        ],
+        "ball": [
+          71,
+          57
+        ]
+      }
+    ]
+  },
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-27-skill-moves/",
+    "https://proclubshq.com/blog/fc27-skill-moves/",
+    "https://www.thespike.gg/fifa/ea-fc-27/all-skills"
+  ],
+  "verified": true
+}

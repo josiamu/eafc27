@@ -1,0 +1,123 @@
+{
+  "slug": "four-touch-skill",
+  "game": "FC27",
+  "name": {
+    "th": "สี่แตะ",
+    "en": "Four Touch Skill"
+  },
+  "summary": {
+    "th": "ท่าใหม่ใน FC 27 แตะบอลสี่จังหวะติดกันเพื่อเปลี่ยนจังหวะ",
+    "en": "New in FC 27: four quick touches to change the rhythm."
+  },
+  "stars": 4,
+  "difficulty": 2,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "กองหลังยืนรอและยังไม่เข้าปะทะ",
+      "en": "A defender is holding off, not committing"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_L2"
+        },
+        {
+          "kind": "flick",
+          "stick": "STICK_R",
+          "direction": "down"
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_L2"
+        },
+        {
+          "kind": "flick",
+          "stick": "STICK_R",
+          "direction": "down"
+        }
+      ],
+      "note": {
+        "th": "Three Touch Roulette ขึ้นต้นแบบเดียวกัน แต่ปัดครั้งที่สองไปด้านข้าง",
+        "en": "The Three Touch Roulette starts the same way but flicks sideways second."
+      }
+    }
+  ],
+  "mirror": false,
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      78,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          62,
+          48
+        ],
+        "ball": [
+          65,
+          47
+        ]
+      },
+      {
+        "step": 0,
+        "player": [
+          62,
+          52
+        ],
+        "ball": [
+          65,
+          53
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          63,
+          48
+        ],
+        "ball": [
+          66,
+          47
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          64,
+          51
+        ],
+        "ball": [
+          68,
+          50
+        ]
+      }
+    ]
+  },
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-27-skill-moves/",
+    "https://proclubshq.com/blog/fc27-skill-moves/"
+  ],
+  "verified": true
+}

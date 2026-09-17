@@ -9,6 +9,7 @@ const en: Dictionary = {
   nav: {
     home: "Home",
     skills: "Skill moves",
+    controls: "Controls",
     settings: "Controller",
     about: "About the data",
     main: "Main menu",
@@ -21,7 +22,7 @@ const en: Dictionary = {
     themeDark: "Dark",
     controller: "Controller in use",
   },
-  dataBadge: "Data based on EA FC 26",
+  dataBadge: "Data based on EA FC 27",
   home: {
     eyebrow: "EA FC skill moves",
     title: "Learn skill moves with your own controller's buttons",
@@ -93,6 +94,9 @@ const en: Dictionary = {
       flick: "flick",
       "hold-stick": "hold",
       rotate: "rotate",
+      move: "push",
+      "flick-any": "flick any way",
+      neutral: "centred",
     },
     directions: {
       up: "up",
@@ -109,6 +113,16 @@ const en: Dictionary = {
       jogging: "Jogging",
       running: "Running",
     },
+  },
+  controls: {
+    title: "Controls",
+    lead: "The buttons for every command in the game, from passing to penalties, shown for the controller you picked.",
+    classicNote: "Based on the Classic controller configuration, the game’s default. If you switch to another configuration in game, these buttons won’t match.",
+    remapLink: "Remapped buttons yourself? Set them to match on the Controller page.",
+    jump: "Sections",
+    count: "{n} commands",
+    or: "or",
+    sources: "Sources",
   },
   settings: {
     title: "Controller settings",
@@ -186,10 +200,10 @@ const en: Dictionary = {
   },
   about: {
     title: "About the data",
-    lead: "Where every move's buttons and star rating come from, how they are checked, and where to report a mistake.",
+    lead: "Where the controls and every move's buttons and star rating come from, how they are checked, and where to report a mistake.",
     versionTitle: "Which game",
     versionBody:
-      "The data was first checked against EA FC 26 guides, and some moves against EA FC 27 guides since. Most skill move inputs carry over between games, but moves do get added, removed or moved to another star level. If the game disagrees with this site, trust the game.",
+      "Every move is checked against EA FC 27 guides, most of them written just before or around the game’s release. Moves new in FC 27 are on the site, and moves the FC 27 guides no longer list have been taken off. If the game disagrees with this site, trust the game.",
     checkTitle: "How moves are checked",
     checkSteps: [
       "Every move is compared with at least one online guide, listed at the bottom of its page.",
@@ -199,6 +213,7 @@ const en: Dictionary = {
     ],
     sourcesTitle: "Sources used",
     sourcesCount: "Cited by {n} moves",
+    sourcesControls: "Used for the Controls page",
     reportTitle: "Found a mistake?",
     reportBody: "Open an issue on GitHub. The more detail, the faster it gets fixed.",
     reportChecklist: ["The move's name", "Your controller", "What you pressed and what happened in game", "A link to a clip or a correct guide, if you have one"],

@@ -1,0 +1,120 @@
+{
+  "slug": "foot-to-foot",
+  "game": "FC27",
+  "name": {
+    "th": "สลับเท้าพาบอล",
+    "en": "Foot to Foot"
+  },
+  "summary": {
+    "th": "ท่าใหม่ใน FC 27 หลอกยิงแล้วเขี่ยบอลสลับเท้าพาไปข้างหน้า",
+    "en": "New in FC 27: fake a shot and shift the ball foot to foot going forward."
+  },
+  "stars": 3,
+  "difficulty": 2,
+  "contexts": [],
+  "situations": [
+    {
+      "th": "กองหลังถอยรอหน้ากรอบเขตโทษ",
+      "en": "A defender is backing off at the edge of the box"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_L2"
+        },
+        {
+          "kind": "tap",
+          "button": "FACE_RIGHT"
+        }
+      ],
+      "note": {
+        "th": "กดปุ่มยิง หรือปุ่มโยนบอลแทนก็ได้",
+        "en": "Press shoot; the cross button works too."
+      }
+    },
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_L2"
+        },
+        {
+          "kind": "tap",
+          "button": "FACE_BOTTOM"
+        },
+        {
+          "kind": "hold-stick",
+          "stick": "STICK_L",
+          "direction": "up"
+        }
+      ],
+      "note": {
+        "th": "กดจ่ายเพื่อยกเลิก พร้อมดันอนาล็อกซ้ายขึ้น แหล่งข้อมูลให้ปุ่มเดียวกับ Running Fake Drag (5 ดาว)",
+        "en": "Press pass to cancel while pushing the left stick up. Sources give the same input as the 5-star Running Fake Drag."
+      }
+    }
+  ],
+  "mirror": false,
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      82,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          63,
+          50
+        ],
+        "ball": [
+          66,
+          50
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          66,
+          48
+        ],
+        "ball": [
+          69,
+          47
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          69,
+          52
+        ],
+        "ball": [
+          72,
+          53
+        ]
+      }
+    ]
+  },
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-27-skill-moves/",
+    "https://proclubshq.com/blog/fc27-skill-moves/",
+    "https://www.thespike.gg/fifa/ea-fc-27/all-skills"
+  ],
+  "verified": true
+}

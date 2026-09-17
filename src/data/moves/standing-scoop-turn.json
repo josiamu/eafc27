@@ -1,0 +1,113 @@
+{
+  "slug": "standing-scoop-turn",
+  "game": "FC27",
+  "name": {
+    "th": "ตักบอลหมุนตัวจากท่ายืน",
+    "en": "Standing Scoop Turn"
+  },
+  "summary": {
+    "th": "ท่าใหม่ใน FC 27 จากท่ายืน หลอกยิงแล้วตักบอลหันไปทิศที่เลือก",
+    "en": "New in FC 27: from a standstill, fake a shot and scoop the ball round to a new direction."
+  },
+  "stars": 4,
+  "difficulty": 2,
+  "contexts": [
+    "standing"
+  ],
+  "situations": [
+    {
+      "th": "ยืนคุมบอลโดยมีกองหลังประกบด้านหน้า",
+      "en": "Standing with a defender in front, needing to turn"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "tap",
+          "button": "FACE_RIGHT"
+        }
+      ],
+      "note": {
+        "th": "กดปุ่มยิง หรือปุ่มโยนบอลแทนก็ได้",
+        "en": "Press shoot; the cross button works too."
+      }
+    },
+    {
+      "inputs": [
+        {
+          "kind": "tap",
+          "button": "FACE_BOTTOM"
+        },
+        {
+          "kind": "hold-stick",
+          "stick": "STICK_L",
+          "direction": "down"
+        }
+      ],
+      "note": {
+        "th": "กดจ่ายเพื่อยกเลิก พร้อมดันอนาล็อกซ้ายไปทิศที่จะหัน ตัวอย่างนี้หันกลับหลัง",
+        "en": "Press pass to cancel while pushing the left stick where you want to turn; this example turns back."
+      }
+    }
+  ],
+  "mirror": false,
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      74,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          63,
+          50
+        ],
+        "ball": [
+          66,
+          50
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          63,
+          53
+        ],
+        "ball": [
+          62,
+          55
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          59,
+          52
+        ],
+        "ball": [
+          56,
+          51
+        ]
+      }
+    ]
+  },
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-27-skill-moves/",
+    "https://proclubshq.com/blog/fc27-skill-moves/"
+  ],
+  "verified": true
+}

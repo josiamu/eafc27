@@ -1,6 +1,6 @@
 {
   "slug": "drag-back-spin",
-  "game": "FC26",
+  "game": "FC27",
   "name": {
     "th": "ลากถอยแล้วหมุน",
     "en": "Drag Back Spin"
@@ -28,8 +28,8 @@
         }
       ],
       "note": {
-        "th": "มีหนึ่งแหล่งให้ค้างทริกเกอร์ซ้ายและปัดขึ้นก่อน",
-        "en": "One source adds holding the left trigger and flicking up first."
+        "th": "มีหนึ่งแหล่งให้ปัดขึ้นก่อน",
+        "en": "One source says flick up first."
       }
     },
     {
@@ -97,10 +97,9 @@
   "followUps": [],
   "video": null,
   "sources": [
-    "https://fifauteam.com/fc-26-skill-moves/",
-    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
-    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
-    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+    "https://www.fifplay.com/fc-27-skill-moves/",
+    "https://proclubshq.com/blog/fc27-skill-moves/",
+    "https://www.thespike.gg/fifa/ea-fc-27/all-skills"
   ],
   "verified": true
 }

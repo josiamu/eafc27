@@ -1,6 +1,6 @@
 {
   "slug": "stutter-feint",
-  "game": "FC26",
+  "game": "FC27",
   "name": {
     "th": "ย่ำเท้าหลอก",
     "en": "Stutter Feint"
@@ -26,14 +26,30 @@
           "button": "TRIGGER_L2"
         },
         {
+          "kind": "tap",
+          "button": "FACE_RIGHT"
+        }
+      ],
+      "note": {
+        "th": "กดปุ่มยิง หรือปุ่มโยนบอลแทนก็ได้ มีหนึ่งแหล่งไม่ได้ให้กดขั้นนี้",
+        "en": "Press shoot; the cross button works too. One source leaves this press out."
+      }
+    },
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_L2"
+        },
+        {
           "kind": "flick",
           "stick": "STICK_R",
           "direction": "left"
         }
       ],
       "note": {
-        "th": "บางแหล่งให้กดปุ่มยิงหรือโยนก่อนปัด ปัดขวาก่อนแล้วซ้ายก็ได้",
-        "en": "Some sources add a shot or cross press first; right then left also works."
+        "th": "ปัดขวาก่อนแล้วซ้ายก็ได้",
+        "en": "Right then left also works."
       }
     },
     {
@@ -70,6 +86,17 @@
         "step": 0,
         "player": [
           63,
+          50
+        ],
+        "ball": [
+          67,
+          50
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          63,
           46
         ],
         "ball": [
@@ -78,7 +105,7 @@
         ]
       },
       {
-        "step": 1,
+        "step": 2,
         "player": [
           64,
           54
@@ -89,7 +116,7 @@
         ]
       },
       {
-        "step": 1,
+        "step": 2,
         "player": [
           66,
           50
@@ -104,10 +131,9 @@
   "followUps": [],
   "video": null,
   "sources": [
-    "https://fifauteam.com/fc-26-skill-moves/",
-    "https://www.dexerto.com/wikis/ea-fc-26-guides-walkthrough-tips/all-skill-moves-how-to-do-them/",
-    "https://www.sportsdunia.com/esports/ea-fc-26-skills",
-    "https://skycoach.gg/blog/ea-fc/articles/fc-26-skill-moves-guide"
+    "https://www.fifplay.com/fc-27-skill-moves/",
+    "https://proclubshq.com/blog/fc27-skill-moves/",
+    "https://www.thespike.gg/fifa/ea-fc-27/all-skills"
   ],
   "verified": true
 }

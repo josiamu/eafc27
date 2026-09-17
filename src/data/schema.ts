@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { DIGITAL_BUTTONS, DIRECTIONS, STICKS } from "@/controller/buttons";
 
-const localized = z.object({ th: z.string().min(1), en: z.string().min(1) }).strict();
+export const localized = z.object({ th: z.string().min(1), en: z.string().min(1) }).strict();
 
 /**
  * Pitch coordinates in the move's own frame: x 0–160 toward the opponent's goal, y 0–100 across.
@@ -10,27 +10,33 @@ const localized = z.object({ th: z.string().min(1), en: z.string().min(1) }).str
 const point = z.tuple([z.number().min(0).max(160), z.number().min(0).max(100)]);
 
 const button = z.enum(DIGITAL_BUTTONS);
-const stick = z.enum(STICKS);
+export const stick = z.enum(STICKS);
 const direction = z.enum(DIRECTIONS);
 
-const input = z.discriminatedUnion("kind", [
+/** The inputs a move is made of. Controls (`control-schema.ts`) add a few that a move never needs. */
+export const MOVE_INPUTS = [
   z.object({ kind: z.literal("tap"), button }).strict(),
   z.object({ kind: z.literal("hold"), button }).strict(),
   z.object({ kind: z.literal("flick"), stick, direction }).strict(),
   z.object({ kind: z.literal("hold-stick"), stick, direction }).strict(),
   z.object({ kind: z.literal("rotate"), stick, path: z.array(direction).min(2) }).strict(),
-]);
+] as const;
+
+const input = z.discriminatedUnion("kind", MOVE_INPUTS);
 
 const step = z.object({ inputs: z.array(input).min(1), note: localized.optional() }).strict();
 
 const keyframe = z.object({ step: z.number().int().min(0), player: point, ball: point }).strict();
 
-export const MOVE_CONTEXTS = ["standing", "jogging", "running"] as const;
+/** The game every data file describes. Moves and controls move to a new game together. */
+export const GAME = z.literal("FC27");
+
+export const MOVE_CONTEXTS =["standing", "jogging", "running"] as const;
 
 export const moveSchema = z
   .object({
     slug: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/),
-    game: z.literal("FC26"),
+    game: GAME,
     name: localized,
     summary: localized,
     stars: z.number().int().min(1).max(5),

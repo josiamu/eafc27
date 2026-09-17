@@ -1,0 +1,106 @@
+{
+  "slug": "giant-fake-shot",
+  "game": "FC27",
+  "name": {
+    "th": "หลอกยิงง้างเต็มแรง",
+    "en": "Giant Fake Shot"
+  },
+  "summary": {
+    "th": "ท่าใหม่ใน FC 27 ง้างยิงเต็มวงแล้วยกเลิก หลอกให้กองหลังพุ่งบล็อก",
+    "en": "New in FC 27: a big wind-up fake shot that baits a block."
+  },
+  "stars": 1,
+  "difficulty": 1,
+  "contexts": [
+    "standing"
+  ],
+  "situations": [
+    {
+      "th": "ยืนรับบอลหน้ากรอบเขตโทษ กองหลังพร้อมพุ่งบล็อก",
+      "en": "Standing on the ball at the edge of the box, a defender ready to block"
+    }
+  ],
+  "sequence": [
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_L2"
+        },
+        {
+          "kind": "tap",
+          "button": "FACE_RIGHT"
+        }
+      ],
+      "note": {
+        "th": "กดปุ่มยิง หรือปุ่มโยนบอลแทนก็ได้",
+        "en": "Press shoot; the cross button works too."
+      }
+    },
+    {
+      "inputs": [
+        {
+          "kind": "hold",
+          "button": "TRIGGER_L2"
+        },
+        {
+          "kind": "tap",
+          "button": "FACE_BOTTOM"
+        }
+      ],
+      "note": {
+        "th": "กดจ่ายเพื่อยกเลิก",
+        "en": "Press pass to cancel."
+      }
+    }
+  ],
+  "mirror": false,
+  "diagram": {
+    "start": {
+      "player": [
+        62,
+        50
+      ],
+      "ball": [
+        66,
+        50
+      ]
+    },
+    "defender": [
+      78,
+      50
+    ],
+    "keyframes": [
+      {
+        "step": 0,
+        "player": [
+          63,
+          50
+        ],
+        "ball": [
+          66,
+          50
+        ]
+      },
+      {
+        "step": 1,
+        "player": [
+          64,
+          51
+        ],
+        "ball": [
+          67,
+          51
+        ]
+      }
+    ]
+  },
+  "followUps": [],
+  "video": null,
+  "sources": [
+    "https://fifauteam.com/fc-27-skill-moves/",
+    "https://proclubshq.com/blog/fc27-skill-moves/",
+    "https://www.thespike.gg/fifa/ea-fc-27/all-skills"
+  ],
+  "verified": true
+}

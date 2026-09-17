@@ -1,6 +1,7 @@
 import type { ButtonId, Direction } from "@/controller/buttons";
 import type { GlyphShape } from "@/controller/presets";
-import type { InputKind, MoveContext } from "@/data/schema";
+import type { ControlInputKind } from "@/data/control-schema";
+import type { MoveContext } from "@/data/schema";
 
 const th = {
   meta: {
@@ -11,6 +12,7 @@ const th = {
   nav: {
     home: "หน้าแรก",
     skills: "สกิลมูฟ",
+    controls: "ปุ่มควบคุม",
     settings: "ตั้งค่าจอย",
     about: "ที่มาของข้อมูล",
     main: "เมนูหลัก",
@@ -23,7 +25,7 @@ const th = {
     themeDark: "มืด",
     controller: "จอยที่ใช้",
   },
-  dataBadge: "ข้อมูลอ้างอิง EA FC 26",
+  dataBadge: "ข้อมูลอ้างอิง EA FC 27",
   home: {
     eyebrow: "สกิลมูฟ EA FC",
     title: "เรียนท่าเลี้ยงบอล ด้วยปุ่มของจอยคุณเอง",
@@ -95,7 +97,10 @@ const th = {
       flick: "ปัด",
       "hold-stick": "ค้างทิศ",
       rotate: "หมุน",
-    } satisfies Record<InputKind, string>,
+      move: "ดันทิศ",
+      "flick-any": "ปัดทิศไหนก็ได้",
+      neutral: "ปล่อยตรงกลาง",
+    } satisfies Record<ControlInputKind, string>,
     directions: {
       up: "ขึ้น",
       "up-right": "ขึ้นขวา",
@@ -111,6 +116,16 @@ const th = {
       jogging: "วิ่งเหยาะ",
       running: "วิ่ง",
     } satisfies Record<MoveContext, string>,
+  },
+  controls: {
+    title: "ปุ่มควบคุม",
+    lead: "ปุ่มของทุกคำสั่งในเกม ตั้งแต่จ่ายบอลถึงจุดโทษ แสดงตามจอยที่คุณเลือกไว้",
+    classicNote: "อิงคอนฟิกปุ่มแบบ Classic ซึ่งเป็นค่าตั้งต้นของเกม ถ้าเปลี่ยนเป็นแบบอื่นในเกม ปุ่มจะไม่ตรงกับหน้านี้",
+    remapLink: "สลับปุ่มไว้เอง? ตั้งให้ตรงได้ที่หน้าตั้งค่าจอย",
+    jump: "หมวดปุ่ม",
+    count: "{n} คำสั่ง",
+    or: "หรือ",
+    sources: "แหล่งอ้างอิง",
   },
   settings: {
     title: "ตั้งค่าจอย",
@@ -176,7 +191,7 @@ const th = {
     /**
      * หน้าที่ของแต่ละปุ่มในคอนฟิก Classic ของ EA FC
      * ใส่เฉพาะปุ่มที่แหล่งอ้างอิงสองแหล่งตรงกัน ปุ่มที่ไม่มีในนี้จะถอยไปใช้ชื่อตำแหน่งใน roles
-     * แหล่ง: fifplay.com/fc-26-controls, eafczone.com/ea-fc-controls
+     * แหล่ง: fifplay.com/fc-27-controls, fifauteam.com/fc-27-controls (ตรงกับข้อมูลในหน้าปุ่มควบคุม)
      */
     actions: {
       FACE_BOTTOM: { attack: "จ่ายบอลเรียด", defend: "ประกบ" },
@@ -193,10 +208,10 @@ const th = {
   },
   about: {
     title: "ที่มาของข้อมูล",
-    lead: "ปุ่มและระดับดาวของทุกท่ามาจากไหน ตรวจกันยังไง และถ้าเจอข้อมูลผิดจะแจ้งได้ที่ไหน",
+    lead: "ปุ่มควบคุมและระดับดาวของทุกท่ามาจากไหน ตรวจกันยังไง และถ้าเจอข้อมูลผิดจะแจ้งได้ที่ไหน",
     versionTitle: "อ้างอิงเกมภาคไหน",
     versionBody:
-      "ข้อมูลชุดแรกเทียบกับคู่มือของ EA FC 26 และบางท่าเทียบกับคู่มือ EA FC 27 แล้ว ปุ่มสกิลมูฟส่วนใหญ่ไม่เปลี่ยนข้ามภาค แต่บางท่าถูกเพิ่ม ตัดออก หรือย้ายระดับดาวได้ ถ้าในเกมไม่ตรงกับเว็บ ให้เชื่อในเกมก่อน",
+      "ทุกท่าเทียบกับคู่มือ EA FC 27 ซึ่งส่วนใหญ่เขียนช่วงก่อนเกมวางขายหรือช่วงแรกที่เกมออก ท่าใหม่ของ FC 27 อยู่ในเว็บแล้ว ส่วนท่าที่คู่มือ FC 27 ไม่มีแล้วก็เอาออก ถ้าในเกมไม่ตรงกับเว็บ ให้เชื่อในเกมก่อน",
     checkTitle: "ตรวจข้อมูลยังไง",
     checkSteps: [
       "ทุกท่าเทียบจากคู่มือบนเว็บอย่างน้อยหนึ่งแหล่ง และมีรายชื่อแหล่งไว้ท้ายหน้าท่านั้น",
@@ -206,6 +221,7 @@ const th = {
     ],
     sourcesTitle: "แหล่งที่ใช้",
     sourcesCount: "อ้างอิงใน {n} ท่า",
+    sourcesControls: "ใช้ในหน้าปุ่มควบคุม",
     reportTitle: "เจอข้อมูลผิด",
     reportBody: "เปิด issue บน GitHub ได้เลย ยิ่งบอกละเอียด ยิ่งแก้ได้เร็ว",
     reportChecklist: ["ชื่อท่า", "จอยที่ใช้", "กดอะไรไป แล้วในเกมเกิดอะไรขึ้น", "ลิงก์คลิปหรือคู่มือที่ถูกต้อง ถ้ามี"],

@@ -1,0 +1,259 @@
+{
+  "slug": "corners-and-throw-ins",
+  "game": "FC27",
+  "order": 8,
+  "title": {
+    "th": "เตะมุมและทุ่ม",
+    "en": "Corners and throw-ins"
+  },
+  "summary": {
+    "th": "เปิดบอลจากมุม ทุ่มสั้น ทุ่มไกล และทุ่มหลอก",
+    "en": "Corner deliveries, short and long throws, and fake throws."
+  },
+  "controls": [
+    {
+      "name": {
+        "th": "เตะมุมโยนเข้ากลาง",
+        "en": "Corner lob cross"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_LEFT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "เตะมุมจ่ายสั้น",
+        "en": "Corner pass"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_BOTTOM"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "เล็งทิศ",
+        "en": "Aim kick"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "move",
+                "stick": "STICK_L"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "เล็งด้วยเป้า",
+        "en": "Reticle aim"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "move",
+                "stick": "STICK_R"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "เมนูแท็กติกเตะมุม",
+        "en": "Corner tactics"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_DOWN"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "DPAD_UP"
+              }
+            ]
+          }
+        ]
+      ],
+      "note": {
+        "th": "แหล่งหนึ่งเปิดเมนูด้วยลูกศรลง (วิ่งเสาไกล วิ่งหน้ากรอบ บังผู้รักษาประตู วิ่งเสาใกล้) อีกแหล่งเปิดด้วยลูกศรขึ้น (เพิ่มคน วิ่งเสาใกล้ วิ่งเสาไกล ลดคน)",
+        "en": "One source opens the menu with d-pad down (far post, edge of box, crowd the keeper, near post), the other with d-pad up (add player, near post, far post, remove player)."
+      },
+      "verified": false
+    },
+    {
+      "name": {
+        "th": "เดินตามเส้นก่อนทุ่ม",
+        "en": "Move along line (throw-in)"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "move",
+                "stick": "STICK_L"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ทุ่มสั้น",
+        "en": "Short throw-in"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_BOTTOM"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ทุ่มสั้นเล็งเอง",
+        "en": "Short throw-in (manual)"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_TOP"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ทุ่มไกล",
+        "en": "Long throw-in"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "FACE_LEFT"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "inputs": [
+              {
+                "kind": "hold",
+                "button": "FACE_BOTTOM"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    },
+    {
+      "name": {
+        "th": "ทุ่มหลอก",
+        "en": "Fake throw"
+      },
+      "ways": [
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_LEFT"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_BOTTOM"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_BOTTOM"
+              }
+            ]
+          },
+          {
+            "inputs": [
+              {
+                "kind": "tap",
+                "button": "FACE_LEFT"
+              }
+            ]
+          }
+        ]
+      ],
+      "verified": true
+    }
+  ],
+  "sources": [
+    "https://www.fifplay.com/fc-27-controls/",
+    "https://fifauteam.com/fc-27-controls/"
+  ]
+}

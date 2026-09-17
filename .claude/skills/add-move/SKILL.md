@@ -10,7 +10,7 @@ Copy the shape of an existing file (e.g. `elastico.json`) rather than writing fr
 
 ## 1. Research (never from memory)
 
-- Find the move in **at least two independent guides for the current game** (`game` field, now `FC26`). Sources used so far: fifauteam.com, dexerto.com, sportsdunia.com, skycoach.gg, eafczone.com, and insider-gaming.com for moves new in FC 26. Prefer EA's own pages when available.
+- Find the move in **at least two independent guides for the current game** (`game` field, now `FC27`). FC 27 guides used so far: fifauteam.com, proclubshq.com, thespike.gg and fifplay.com. Don't use driffle.com: it copies fifplay's table, mistakes included. Prefer the in-game Skill Games list or EA's own pages when available.
 - Record for each source: star rating, exact PlayStation input, hold vs tap vs flick, stick rotation direction, standing/jogging/running.
 - When fetching a guide, ask for the input **verbatim** and for one or two star levels at a time. Page summaries drop moves and have mislabelled stars before, so re-check any surprising value against a second fetch.
 - Guides copy each other. Identical wording across two sites (e.g. the FC 26 new-move blurbs) is weaker evidence than two independently worded guides; mention it in the report.
